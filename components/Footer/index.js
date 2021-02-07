@@ -2,8 +2,9 @@ import styles from "./Footer.module.css";
 import { FaInstagram } from "react-icons/fa";
 import { FiFacebook, FiYoutube, FiChevronRight } from "react-icons/fi";
 import Image from "next/image";
+import { withNamespaces } from "react-i18next";
 
-export default function Footer() {
+const Footer = ({ t }) => {
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -18,7 +19,8 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.lang}>
-        <Image src="/img/rus_lang.png" width="12" height="12" /> Рус{" "}
+        <Image src="/img/rus_lang.png" width="12" height="12" />
+        {t("lang")}
         <FiChevronRight />
       </div>
 
@@ -71,4 +73,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default withNamespaces()(Footer);
