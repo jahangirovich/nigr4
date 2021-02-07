@@ -25,12 +25,18 @@
 }
 
 .lang {
+  display: flex;
+  column-gap: 15px;
   height: fit-content;
   padding: 8px 10px;
   border-radius: 5px;
   justify-self: flex-end;
   background: #ffffff;
   border: 1px solid #c4c4c4;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .socials {

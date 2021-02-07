@@ -1,7 +1,7 @@
 import styles from "./Footer.module.css";
 import { FaInstagram } from "react-icons/fa";
-import { FiFacebook, FiYoutube } from "react-icons/fi";
-import { BsArrowUp } from "react-icons/bs";
+import { FiFacebook, FiYoutube, FiChevronRight } from "react-icons/fi";
+import Image from "next/image";
 
 export default function Footer() {
   const scrollTop = () => {
@@ -17,19 +17,28 @@ export default function Footer() {
           развития человека”
         </div>
       </div>
-      <div className={styles.lang}>Рус</div>
+      <div className={styles.lang}>
+        <Image src="/img/rus_lang.png" width="12" height="12" /> Рус{" "}
+        <FiChevronRight />
+      </div>
 
       <div>
         <div className={styles.socials}>
-          <div className={styles.socialLogo}>
-            <FaInstagram color="#ffffff" />
-          </div>
-          <div className={styles.socialLogo}>
-            <FiFacebook color="#ffffff" />
-          </div>
-          <div className={styles.socialLogo}>
-            <FiYoutube color="#ffffff" />
-          </div>
+          <a href="https://instagram.com">
+            <div className={styles.socialLogo}>
+              <FaInstagram color="#ffffff" />
+            </div>
+          </a>
+          <a href="https://facebook.com">
+            <div className={styles.socialLogo}>
+              <FiFacebook color="#ffffff" />
+            </div>
+          </a>
+          <a href="https://youtube.com">
+            <div className={styles.socialLogo}>
+              <FiYoutube color="#ffffff" />
+            </div>
+          </a>
         </div>
         <div className={styles.copyright}>© 2021 Самопознание</div>
       </div>
