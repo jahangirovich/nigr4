@@ -12,11 +12,7 @@ const Footer = ({ t }) => {
   return (
     <footer className={styles.footer}>
       <div className={styles.logotype}>
-        <div className={styles.title}>НАО НИГРЧ</div>
-        <div className={styles.subtitle}>
-          Некомерческое акционерное общество “Национальный институ гармоничного
-          развития человека”
-        </div>
+        <div className={styles.subtitle}>{t("logotype")}</div>
       </div>
       <div className={styles.lang}>
         <Image src="/img/rus_lang.png" width="12" height="12" />
@@ -69,7 +65,7 @@ const Footer = ({ t }) => {
             stroke-linecap="round"
           />
         </svg>
-        Вверх страницы
+        {t("toUp")}
       </div>
     </footer>
   );

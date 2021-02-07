@@ -1,0 +1,30 @@
+.header {
+  background-color: var(--mainBlue);
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.header nav {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 30px;
+  row-gap: 35px;
+}
+
+.subtitle {
+  font-size: 10px;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.menu {
+  justify-self: end;
+}
+
+.line {
+  margin-top: 40px;
+  height: 0.3px;
+  width: 100%;
+  background-color: white;
+  border: none;
+}
