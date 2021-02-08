@@ -1,0 +1,61 @@
+.hero {
+  background-color: var(--mainBlue);
+  margin-top: -1px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.image {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.heroSymbol {
+  position: absolute;
+  bottom: -30px;
+}
+
+.quote {
+  padding: 60px 20px 30px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+  color: white;
+}
+.author {
+  padding: 0 20px 0;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+}
+.subtitle {
+  color: white;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 4px 20px 0;
+  font-weight: 300;
+}
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+.dots {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin: 0 20px;
+}
+.dots div {
+  width: 10px;
+  height: 10px;
+  background-color: #81ceff;
+  border-radius: 10px;
+}
+.dots div.selected {
+  background-color: white;
+}
