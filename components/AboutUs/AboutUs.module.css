@@ -1,0 +1,22 @@
+.aboutUs {
+  padding: 100px 80px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 50px;
+}
+
+.title {
+  display: flex;
+  font-size: 38px;
+  color: var(--black);
+  font-weight: 700;
+  text-transform: uppercase;
+  align-items: center;
+}
+.title span {
+  margin-left: 10px;
+}
+
+.wrapper {
+  display: grid;
+}

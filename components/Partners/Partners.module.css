@@ -1,14 +1,14 @@
 .partners {
   display: flex;
   flex-direction: column;
-  padding: 60px 20px;
+  padding: 60px 80px;
 }
 
 .title {
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 38px;
   font-weight: 700;
 }
 .title span {
