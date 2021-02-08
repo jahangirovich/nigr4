@@ -1,0 +1,58 @@
+.title {
+    display: flex;
+    align-items: flex-start;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.title svg{
+    display: block;
+    color: var(--lightBlue);
+}
+
+.title span {
+    margin-left: 8px;
+    width: calc(100% - 32px);
+}
+
+.header{
+    background-color: var(--mainBlue);
+    color: var(--white);
+    padding: 32px 20px;
+}
+
+.body{
+    padding: 20px;
+}
+
+.item{
+    display: flex;
+    align-items: flex-start;
+    padding: 24px 0;
+}
+
+.item:not(:last-of-type){
+    border-bottom: 1px var(--lightGrey) solid;
+}
+
+.itemNumber{
+    font-size: 14px;
+    color: var(--darkGrey);
+    width: 20px;
+    margin-right: 8px;
+}
+
+.itemTitle{
+    color: var(--black);
+    font-size: 14px;
+    font-weight: bold;
+    width: calc(100% - 60px);
+}
+
+.itemChevron{
+    width: 24px;
+    display: block;
+    margin-left: 8px;
+    color: var(--darkGrey);
+}

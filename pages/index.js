@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-import { Header, Hero, Partners, Footer } from "../components";
+import { Header, Hero, Partners, Footer, Gallery, FAQ, News } from "../components";
 
 export default function Home() {
   return (
@@ -13,7 +13,9 @@ export default function Home() {
       <Header />
       <Hero />
       <main className={styles.main}>123</main>
-
+      <News/>
+      <FAQ/>
+      <Gallery/>
       <Partners />
       <Footer />
     </div>
