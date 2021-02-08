@@ -6,5 +6,7 @@ import Tabs from "./Tabs"
 import Gallery from "./Gallery"
 import FAQ from "./FAQ"
 import News from "./News"
+import Reviews from "./Reviews"
+import Project from "./Project"
 
-export { Header, Hero, Partners, Footer, Tabs, Gallery, FAQ, News };
+export { Header, Hero, Partners, Footer, Tabs, Gallery, FAQ, News, Reviews, Project };

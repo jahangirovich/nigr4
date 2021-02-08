@@ -1,0 +1,42 @@
+.tabs{
+    margin-bottom: 64px;
+}
+
+.project{
+    padding: 60px 20px;
+}
+
+.item{
+    padding: 8px 0;
+}
+
+.itemTitle{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.itemTitle svg{
+    color: var(--mainBlue);
+    display: block;
+    margin-right: 16px;
+}
+
+.itemTitle span{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.active .itemTitle span{
+    color: var(--mainBlue);
+    text-decoration: underline;
+}
+
+.item p{
+    display: none;
+}
+
+.item.active p{
+    display: block;
+}

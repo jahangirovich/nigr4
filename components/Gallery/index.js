@@ -26,7 +26,7 @@ const Gallery = ({t}) => {
                 <FiChevronRight size={24}/>
             </div>
             <div className={styles.photoBlock}>
-                <img alt="Изображение" src="/gallery-placeholder.jpg"/>
+                <img alt="Изображение" src="/img/gallery-placeholder.jpg"/>
                 <div className={styles.zoom}>
                 <FiZoomIn size={24}/>
                 </div>

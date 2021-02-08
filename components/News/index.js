@@ -22,7 +22,7 @@ const News = ({t}) => {
             <Tabs value={tab} onChange={setTab} theme="default" items={tabs}/>
             </div>
             <div className={styles.post}>
-                <img src="/post-placeholder.jpg" alt="Пост"/>
+                <img src="/img/post-placeholder.jpg" alt="Пост"/>
                 <div className={styles.content}>
                     <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
                     <a href="#">Подробнее</a>

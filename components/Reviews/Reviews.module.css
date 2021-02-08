@@ -1,0 +1,96 @@
+.reviews{
+    padding: 60px 20px;
+    background-color: var(--mainBlue);
+    color: var(--white);
+}
+
+.tabs{
+    margin-bottom: 64px;
+}
+
+
+.arrow{
+    appearance: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px var(--lightBlue) solid;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    color: var(--white)
+}
+
+.arrow svg{
+    display: block;
+}
+
+.review .content{
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    color: var(--black);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quote{
+    background-image: url("/img/q.svg");
+    background-size: cover;
+    width: 30px;
+    height: 24px;
+}
+
+.quote:last-of-type{
+    transform: rotate(180deg);
+    margin-left: auto;
+}
+
+.person{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -36px;
+}
+
+.personPhoto{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: var(--lightGrey);
+    margin-bottom: 20px;
+}
+
+.personName{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.personTitle{
+    font-size: 14px;
+    color: var(--lightBlue)
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.dots{
+    display: flex;
+    padding: 0 12px;
+}
+
+.dot{
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    margin: 4px;
+    background-color: var(--lightBlue);
+}
+
+.dot.active{
+    background-color: var(--white);
+}
