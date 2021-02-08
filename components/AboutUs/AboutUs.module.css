@@ -21,7 +21,7 @@
   display: grid;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .aboutUs {
     padding: 50px 20px;
     display: flex;

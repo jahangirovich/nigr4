@@ -60,7 +60,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .aboutProgram {
     z-index: -1;
     margin-top: -25px;
