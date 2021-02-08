@@ -3,7 +3,7 @@
   margin-top: -1px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  padding: 60px 80px;
+  padding: 60px 80px 180px;
   display: flex;
 }
 .image {
@@ -20,43 +20,62 @@
   background-size: cover;
   border-radius: 50px;
   box-shadow: 2px 2px 15px 0px #00000020;
+  margin-right: 100px;
 }
 
 .heroSymbol {
   position: absolute;
-  bottom: -30px;
+  top: 0;
+  right: -20px;
 }
 
 .quote {
-  padding: 60px 100px 30px;
+  padding: 60px 0px 30px;
   font-size: 32px;
   line-height: 40px;
   font-weight: 300;
   color: white;
+  font-style: italic;
 }
+
+.credentialsMobile {
+  display: none;
+}
+
 .author {
   padding: 0 20px 0;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 24px;
+  line-height: 28px;
   font-weight: 700;
-  color: white;
+  color: var(--lightBlue);
   text-transform: uppercase;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
 }
 .subtitle {
   color: white;
-  font-size: 12px;
+  font-size: 20px;
   line-height: 14px;
-  padding: 4px 20px 0;
+  padding: 8px 20px 0;
   font-weight: 300;
 }
 .controls {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   margin: 40px 0;
+  column-gap: 15px;
 }
+.controls div {
+  cursor: pointer;
+}
+
 .dots {
-  display: flex;
+  display: none;
   align-items: center;
   column-gap: 10px;
   margin: 0 20px;
@@ -71,13 +90,11 @@
   background-color: white;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
   .hero {
-    background-color: var(--mainBlue);
     margin-top: -1px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    padding: 0 80px;
+    padding: 0 20px;
+    flex-direction: column;
   }
   .image {
     display: flex;
@@ -87,8 +104,8 @@
   }
 
   .heroImage {
-    width: 500px;
-    height: 400px;
+    width: 100%;
+    height: 300px;
     background-image: url("/img/hero.jpg");
     background-size: cover;
     border-radius: 50px;
@@ -98,17 +115,27 @@
   .heroSymbol {
     position: absolute;
     bottom: -30px;
+    left: 0;
+    top: unset;
   }
 
   .quote {
-    padding: 60px 20px 30px;
+    padding: 60px 0 30px;
     font-size: 14px;
     line-height: 20px;
     font-weight: 300;
     color: white;
   }
+
+  .credentials {
+    display: none;
+  }
+  .credentialsMobile {
+    display: block;
+  }
+
   .author {
-    padding: 0 20px 0;
+    padding: 0 0;
     font-size: 14px;
     line-height: 16px;
     font-weight: 700;
@@ -119,7 +146,7 @@
     color: white;
     font-size: 12px;
     line-height: 14px;
-    padding: 4px 20px 0;
+    padding: 4px 0 0;
     font-weight: 300;
   }
   .controls {
