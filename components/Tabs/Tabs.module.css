@@ -17,7 +17,7 @@
 
 .tabs .tab{
     flex: 1;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     line-height: 40px;
     cursor: pointer;

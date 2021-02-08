@@ -8,7 +8,7 @@ import { FiChevronRight, FiChevronLeft, FiBriefcase, FiBookOpen, FiFeather } fro
 const tabs = [
     {
         value: "pilot",
-        label: "Пилотный проект"
+        label: "Проект"
     }, {
         value: "seminar",
         label: "Семинары"
