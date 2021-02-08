@@ -20,3 +20,60 @@
 .wrapper {
   display: grid;
 }
+
+@media screen and (max-width: 400px) {
+  .aboutUs {
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 50px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .wrapper {
+    margin-top: 40px;
+  }
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  .linkTag {
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: var(--darkGrey);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    font-weight: 300;
+    width: 100%;
+  }
+  .selected {
+    color: white;
+    background: var(--mainBlue);
+  }
+  .linkTag:nth-child(4) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .mission {
+    margin-top: 45px;
+  }
+
+  .missionTitle {
+    display: flex;
+    align-items: center;
+  }
+  .missionTitle span {
+    margin-left: 10px;
+  }
+  .missionText {
+    font-size: 14px;
+    margin-top: 30px;
+    font-weight: 400;
+    color: #454545;
+  }
+}
