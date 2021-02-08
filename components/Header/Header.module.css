@@ -1,7 +1,7 @@
 .header {
   background-color: var(--mainBlue);
   width: 100%;
-  padding: 40px 20px;
+  padding: 65px 80px;
 }
 
 .header nav {
@@ -12,13 +12,15 @@
 }
 
 .subtitle {
-  font-size: 10px;
+  width: 400px;
+  font-size: 20px;
   font-weight: 300;
   color: #ffffff;
 }
 
 .menu {
   justify-self: end;
+  align-self: center;
 }
 
 .line {
@@ -27,4 +29,17 @@
   width: 100%;
   background-color: white;
   border: none;
+}
+
+@media screen and (max-width: 600px) {
+  .subtitle {
+    font-size: 10px;
+    font-weight: 300;
+    color: #ffffff;
+  }
+  .header {
+    background-color: var(--mainBlue);
+    width: 100%;
+    padding: 40px 20px;
+  }
 }

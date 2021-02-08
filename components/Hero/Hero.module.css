@@ -3,6 +3,8 @@
   margin-top: -1px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+  padding: 60px 80px;
+  display: flex;
 }
 .image {
   display: flex;
@@ -11,15 +13,24 @@
   position: relative;
 }
 
+.heroImage {
+  width: 620px;
+  height: 540px;
+  background-image: url("/img/hero.jpg");
+  background-size: cover;
+  border-radius: 50px;
+  box-shadow: 2px 2px 15px 0px #00000020;
+}
+
 .heroSymbol {
   position: absolute;
   bottom: -30px;
 }
 
 .quote {
-  padding: 60px 20px 30px;
-  font-size: 14px;
-  line-height: 20px;
+  padding: 60px 100px 30px;
+  font-size: 32px;
+  line-height: 40px;
   font-weight: 300;
   color: white;
 }
@@ -58,4 +69,78 @@
 }
 .dots div.selected {
   background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    background-color: var(--mainBlue);
+    margin-top: -1px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 0 80px;
+  }
+  .image {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .heroImage {
+    width: 500px;
+    height: 400px;
+    background-image: url("/img/hero.jpg");
+    background-size: cover;
+    border-radius: 50px;
+    box-shadow: 2px 2px 15px 0px #00000020;
+  }
+
+  .heroSymbol {
+    position: absolute;
+    bottom: -30px;
+  }
+
+  .quote {
+    padding: 60px 20px 30px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 300;
+    color: white;
+  }
+  .author {
+    padding: 0 20px 0;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+  }
+  .subtitle {
+    color: white;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 4px 20px 0;
+    font-weight: 300;
+  }
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+  }
+  .dots {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin: 0 20px;
+  }
+  .dots div {
+    width: 10px;
+    height: 10px;
+    background-color: #81ceff;
+    border-radius: 10px;
+  }
+  .dots div.selected {
+    background-color: white;
+  }
 }
