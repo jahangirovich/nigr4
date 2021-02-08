@@ -34,7 +34,7 @@
 @media screen and (max-width: 600px) {
   .subtitle {
     width: unset;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 300;
     color: #ffffff;
   }

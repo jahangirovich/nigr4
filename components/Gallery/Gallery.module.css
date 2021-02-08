@@ -1,0 +1,78 @@
+.gallery{
+    padding: 60px 20px;
+    background-color: var(--mainBlue);
+    color: var(--white);
+}
+
+.photoBlock{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.photoBlock img{
+    width: 100%;
+    display: block;
+}
+
+.photoBlock::after{
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(128, 128, 128, 0) 0%, rgba(3, 3, 3, 0.8) 100%);
+}
+
+.select{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 3px;
+    background-color: var(--white);
+    color: var(--black);
+    margin-bottom: 32px;
+}
+
+.zoom{
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1;
+}
+
+.photoLabel{
+    font-weight: 300;
+    width: calc(100% - 106px);
+}
+
+.photoBlockControls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.photoBlockArrows{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px var(--lightBlue) solid;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+.arrow svg{
+    display: block;
+}

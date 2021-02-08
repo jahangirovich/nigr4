@@ -4,10 +4,13 @@ import styles from "../styles/Home.module.css";
 import {
   Header,
   Hero,
+  Partners,
   AboutUs,
   AboutProgram,
-  Partners,
   Footer,
+  Gallery,
+  FAQ,
+  News,
 } from "../components";
 
 export default function Home() {
@@ -21,7 +24,9 @@ export default function Home() {
       <Hero />
       <AboutProgram />
       <AboutUs />
-
+      <News />
+      <FAQ />
+      <Gallery />
       <Partners />
       <Footer />
     </div>

@@ -10,11 +10,6 @@ const AboutProgram = ({ t }) => {
         <div className={styles.title}>
           о программе нравственно- духовного образования “Самопознание”
         </div>
-        <div className={styles.subtitle}>
-          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-          sint. Velit officia consequat duis enim velit mollit. Exercitation
-          veniam consequat sunt nostrud amet.
-        </div>
       </div>
       <div className={styles.cards}>
         <Card>
@@ -25,10 +20,7 @@ const AboutProgram = ({ t }) => {
             }}
           ></div>
           <div className={styles.cardContent}>
-            <div className={styles.cardTitle}>
-              Об авторе <br />
-              программы
-            </div>
+            <div className={styles.cardTitle}>Об авторе программы</div>
             <div className={styles.cardText}>
               Amet minim mollit non deserunt ullamco Amet minim mollit non
               deserunt ullamco
@@ -46,9 +38,7 @@ const AboutProgram = ({ t }) => {
             }}
           ></div>
           <div className={styles.cardContent}>
-            <div className={styles.cardTitle}>
-              История <br /> развития
-            </div>
+            <div className={styles.cardTitle}>История развития</div>
             <div className={styles.cardText}>
               Amet minim mollit non deserunt ullamco Amet minim mollit non
               deserunt ullamco
