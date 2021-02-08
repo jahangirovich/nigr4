@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-
 import {
   Header,
   Hero,
@@ -11,6 +10,7 @@ import {
   Gallery,
   FAQ,
   News,
+  Reviews, Project
 } from "../components";
 
 export default function Home() {
@@ -24,6 +24,8 @@ export default function Home() {
       <Hero />
       <AboutProgram />
       <AboutUs />
+      <Project/>
+      <Reviews/>
       <News />
       <FAQ />
       <Gallery />
