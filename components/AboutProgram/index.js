@@ -22,8 +22,9 @@ const AboutProgram = ({ t }) => {
           <div className={styles.cardContent}>
             <div className={styles.cardTitle}>Об авторе программы</div>
             <div className={styles.cardText}>
-              Amet minim mollit non deserunt ullamco Amet minim mollit non
-              deserunt ullamco
+              Судьба автора Программы нравственно-духовного образования
+              «Самопознание» Сары Алпысовны Назарбаевой – это жизнь, наполненная
+              искренней заботой о детях, пример высокого служения людям...
             </div>
             <a className={styles.more} href="#">
               Подробнее
@@ -40,8 +41,10 @@ const AboutProgram = ({ t }) => {
           <div className={styles.cardContent}>
             <div className={styles.cardTitle}>История развития</div>
             <div className={styles.cardText}>
-              Amet minim mollit non deserunt ullamco Amet minim mollit non
-              deserunt ullamco
+              Программа нравственно-духовного образования «Самопознание» в своем
+              развитии прошла следующие этапы: I – разработка концепции и
+              теоретической основы: Руководство разработкой программы НДО
+              «Самопознание» ведущими учеными страны...
             </div>
             <a className={styles.more} href="#">
               Подробнее

@@ -1,0 +1,61 @@
+.qualifications {
+  padding: 100px 80px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 50px;
+  background-color: var(--mainBlue);
+}
+
+.title {
+  display: flex;
+  font-size: 38px;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  align-items: center;
+}
+.title span {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 400px) {
+  .qualifications {
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 50px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .text {
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+  }
+  .button {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: var(--black);
+    background: white;
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  .eduProgram {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    text-decoration: underline;
+    color: white;
+  }
+  .eduProgram span {
+    margin-left: 10px;
+  }
+}

@@ -61,9 +61,8 @@ const AboutUs = ({ t }) => {
             <span>Миссия</span>
           </div>
           <div className={styles.missionText}>
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. Exercitation
-            veniam consequat sunt nostrud amet.
+            Наша миссия – содействовать развитию человеческого потенциала страны
+            через программу нравственно-духовного образования «Самопознание».
           </div>
         </div>
       </div>

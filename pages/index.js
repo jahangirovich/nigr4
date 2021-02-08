@@ -10,22 +10,28 @@ import {
   Gallery,
   FAQ,
   News,
-  Reviews, Project
+  Qualifications,
+  Reviews,
+  Project,
 } from "../components";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>
+          Некомерческое акционерное общество “Национальный институ гармоничного
+          развития человека”
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <Hero />
       <AboutProgram />
       <AboutUs />
-      <Project/>
-      <Reviews/>
+      <Qualifications />
+      <Project />
+      <Reviews />
       <News />
       <FAQ />
       <Gallery />
