@@ -22,8 +22,6 @@ export default function Home() {
       </Head>
       <Header />
       <Hero />
-      <Partners />
-      <Footer />
       <AboutProgram />
       <AboutUs />
       <Project/>
@@ -31,6 +29,8 @@ export default function Home() {
       <News />
       <FAQ />
       <Gallery />
+      <Partners />
+      <Footer />
     </div>
   );
 }
