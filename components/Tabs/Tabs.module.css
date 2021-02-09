@@ -6,18 +6,18 @@
 }
 
 .tabs:global(.default){
-    box-shadow: 0 0 0 1px inset var(--darkGrey);
+    border: 1px solid var(--darkGrey);
     color: var(--darkGrey);
 }
 
 .tabs:global(.white){
-    box-shadow: 0 0 0 1px inset var(--white);
+    border: 1px solid var(--white);
     color: var(--white);
 }
 
 .tabs .tab{
     flex: 1;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     line-height: 40px;
     cursor: pointer;

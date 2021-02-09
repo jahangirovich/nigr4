@@ -10,6 +10,7 @@ import {
   FiBookOpen,
   FiFeather,
 } from "react-icons/fi";
+import Button from "../Button";
 
 const tabs = [
   {
@@ -18,7 +19,7 @@ const tabs = [
   },
   {
     value: "seminar",
-    label: "Семинары",
+    label: "Мероприятия",
   },
 ];
 
@@ -32,14 +33,15 @@ const items = [
   {
     title: "Базовые школы",
     icon: <FiBookOpen size={24} />,
-    text:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+    link: "#",
+    locale:
+      "baseSchools",
   },
   {
     title: "Пилотные школы",
     icon: <FiFeather size={24} />,
-    text:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+    link: "#",
+    locale: "pilotSchools",
   },
 ];
 
@@ -62,7 +64,8 @@ const Project = ({ t }) => {
               {o.icon}
               <span>{o.title}</span>
             </div>
-            <p>{o.text}</p>
+            <p>{o.text || t(o.locale)}</p>
+            {o.link ? <a href={o.link}><Button>{t("more")}</Button></a> : null}
           </div>
         ))}
       </div>

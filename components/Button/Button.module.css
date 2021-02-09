@@ -1,0 +1,15 @@
+.button{
+    display: block;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid var(--lightBlue);
+    color: var(--mainBlue);
+    border-radius: 10px;
+    max-width: 180px;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 20px;
+    font-weight: 400;
+    cursor: pointer;
+}

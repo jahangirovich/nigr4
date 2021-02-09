@@ -34,7 +34,7 @@ const News = ({ t }) => {
           </p>
           <a href="#">Подробнее</a>
         </div>
-        <div className={styles.tag}>Направления деятельности</div>
+        {/*<div className={styles.tag}>Направления деятельности</div>*/}
       </div>
       <div className={styles.controls}>
         <button className={styles.arrow}>

@@ -33,10 +33,10 @@
     text-decoration: underline;
 }
 
-.item p{
+.item p, .item a{
     display: none;
 }
 
-.item.active p{
+.item.active p, .item.active a{
     display: block;
 }
