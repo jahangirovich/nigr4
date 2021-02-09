@@ -1,7 +1,6 @@
 import styles from "./Footer.module.css";
 import { FaInstagram } from "react-icons/fa";
 import { FiFacebook, FiYoutube, FiChevronRight } from "react-icons/fi";
-import Image from "next/image";
 import { withNamespaces } from "react-i18next";
 
 const Footer = ({ t }) => {
@@ -15,7 +14,7 @@ const Footer = ({ t }) => {
         <div className={styles.subtitle}>{t("logotype")}</div>
       </div>
       <div className={styles.lang}>
-        <Image src="/img/rus_lang.png" width="12" height="12" />
+        <img src="/img/rus_lang.png" />
         {t("lang")}
         <FiChevronRight />
       </div>

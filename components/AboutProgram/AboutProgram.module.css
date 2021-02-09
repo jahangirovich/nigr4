@@ -1,8 +1,9 @@
 .aboutProgram {
-  padding: 100px 80px;
+  margin-top: -30px;
+  padding: 130px 80px;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  column-gap: 50px;
+  column-gap: 30px;
   background-color: var(--lightBlue);
 }
 
@@ -35,6 +36,7 @@
   flex-direction: column;
   justify-content: space-between;
   color: var(--black);
+  margin-left: 40px;
 }
 
 .cardTitle {
@@ -49,14 +51,17 @@
 }
 
 .more {
-  border: 1px solid var(--lightBlue);
   color: var(--mainBlue);
-  border-radius: 10px;
-  max-width: 180px;
-  text-align: center;
-  padding: 10px 20px;
+  width: 180px;
+  font-size: 24px;
+  text-align: left;
+  text-decoration: underline;
   font-weight: 400;
   cursor: pointer;
+}
+
+.cards > div:first-child {
+  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 450px) {
@@ -68,7 +73,6 @@
   }
 
   .aboutProgram {
-    z-index: -1;
     margin-top: -25px;
     padding: 100px 20px;
     display: grid;
@@ -79,6 +83,9 @@
     min-width: unset;
     height: 150px;
     background-size: cover;
+  }
+  .cardContent {
+    margin-left: unset;
   }
   .title {
     font-size: 20px;
@@ -95,5 +102,20 @@
     font-size: 14px;
     line-height: 16px;
     margin-bottom: 20px;
+  }
+  .cards > div:first-child {
+    margin-bottom: 40px;
+  }
+  .more {
+    border: 1px solid var(--lightBlue);
+    color: var(--mainBlue);
+    border-radius: 10px;
+    max-width: 180px;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: unset;
+    padding: 10px 20px;
+    font-weight: 400;
+    cursor: pointer;
   }
 }

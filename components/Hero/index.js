@@ -106,7 +106,6 @@ const Hero = ({ t }) => {
         </div>
         <div className={styles.credentials}>
           <div className={styles.author}>Сара Алпысовна Назарбаева</div>
-          <div className={styles.subtitle}>Автор программы “Самопознание”</div>
         </div>
       </div>
     </section>

@@ -1,7 +1,8 @@
 .qualifications {
   padding: 100px 80px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 30px;
   background-color: var(--mainBlue);
 }
 
@@ -12,9 +13,39 @@
   font-weight: 700;
   text-transform: uppercase;
   align-items: center;
+  display: flex;
+  align-items: start;
+  margin-bottom: 80px;
 }
 .title span {
   margin-left: 10px;
+}
+
+.title svg {
+  width: 40px;
+  height: 40px;
+}
+
+.text {
+  color: white;
+  margin-bottom: 40px;
+}
+
+.eduProgram {
+  font-weight: 400;
+  color: white;
+}
+
+.eduProgram span {
+  text-decoration: underline;
+}
+.eduProgram div {
+  display: flex;
+  align-items: center;
+}
+.eduProgram svg {
+  width: 20px;
+  height: 25px;
 }
 
 @media screen and (max-width: 450px) {
@@ -25,9 +56,10 @@
   }
   .title {
     font-size: 20px;
+    margin-bottom: 40px;
   }
   .text {
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 14px;
     font-weight: 400;
     color: white;
@@ -45,15 +77,26 @@
     width: 100%;
   }
   .eduProgram {
-    margin-top: 40px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-weight: 400;
-    text-decoration: underline;
     color: white;
   }
   .eduProgram span {
     margin-left: 10px;
+    text-decoration: underline;
+  }
+  .title svg {
+    width: 24px;
+    height: 24px;
+  }
+  .eduProgram svg {
+    width: 24px;
+    height: 24px;
+  }
+  .eduProgramButton {
+    align-self: flex-start;
   }
 }
