@@ -14,7 +14,7 @@ import {
 const tabs = [
   {
     value: "pilot",
-    label: "Проект",
+    label: "Пилотный проект",
   },
   {
     value: "seminar",
