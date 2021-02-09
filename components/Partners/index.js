@@ -70,6 +70,12 @@ const Partners = ({ t }) => {
         <div className={styles.logo}>
           <img src="/img/partner-4.jpg" />
         </div>
+        <div className={styles.logo}>
+          <img src="/img/partner-5.jpg" />
+        </div>
+        <div className={styles.logo}>
+          <img src="/img/partner-6.jpg" />
+        </div>
       </div>
     </section>
   );

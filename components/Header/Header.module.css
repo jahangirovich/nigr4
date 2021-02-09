@@ -6,6 +6,7 @@
 
 .header nav {
   display: grid;
+  width: 100%;
   grid-template-columns: 2fr 1fr;
   column-gap: 30px;
   row-gap: 35px;
@@ -23,24 +24,22 @@
   align-self: center;
 }
 
-.line {
-  margin-top: 40px;
-  height: 0.3px;
-  width: 100%;
-  background-color: white;
-  border: none;
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 450px) {
+  .header nav {
+    column-gap: 10px;
+  }
   .subtitle {
     width: unset;
     font-size: 12px;
     font-weight: 300;
-    color: #ffffff;
+    color: var(--black);
   }
   .header {
-    background-color: var(--mainBlue);
+    z-index: 1;
+    position: fixed;
+    background-color: white;
     width: 100%;
-    padding: 40px 20px;
+    padding: 20px 20px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
   }
 }

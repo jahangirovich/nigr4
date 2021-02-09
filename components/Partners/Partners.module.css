@@ -16,10 +16,20 @@
 }
 
 .logos {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  row-gap: 20px;
   margin-top: 40px;
+}
+
+.logo {
+  justify-self: center;
+}
+
+.logo img {
+  max-width: 60px;
+  filter: grayscale(1);
 }
 
 @media screen and (max-width: 450px) {

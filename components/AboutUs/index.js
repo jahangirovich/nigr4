@@ -1,9 +1,22 @@
+import React, { useState } from "react";
 import styles from "./AboutUs.module.css";
 import { withNamespaces } from "react-i18next";
 
 import cn from "classnames";
 
 const AboutUs = ({ t }) => {
+  const sections = [
+    { name: "Миссия", desc: "mission_desc", link: "/mission" },
+    { name: "Задачи", desc: "tasks_desc", link: "/tasks" },
+    { name: "Структура", desc: "structure_desc", link: "/structure" },
+    {
+      name: "Направления деятельности",
+      desc: "directions_desc",
+      link: "/directions",
+    },
+  ];
+
+  const [current, setCurrent] = useState(0);
   return (
     <section className={styles.aboutUs}>
       <div className={styles.title}>
@@ -27,10 +40,16 @@ const AboutUs = ({ t }) => {
 
       <div className={styles.wrapper}>
         <div className={styles.links}>
-          <div className={cn(styles.linkTag, styles.selected)}>Миссия</div>
-          <div className={styles.linkTag}>Задачи</div>
-          <div className={styles.linkTag}>Структура</div>
-          <div className={styles.linkTag}>Направления деятельности</div>
+          {sections.map((item, index) => (
+            <div
+              className={cn(styles.linkTag, {
+                [styles.selected]: index === current,
+              })}
+              onClick={() => setCurrent(index)}
+            >
+              {t(item.name)}
+            </div>
+          ))}
         </div>
 
         <div className={styles.mission}>
@@ -57,15 +76,12 @@ const AboutUs = ({ t }) => {
                 stroke-linejoin="round"
               />
             </svg>
-            <span>Миссия</span>
+            <span>{sections[current].name}</span>
           </div>
-          <div className={styles.missionText}>
-            Наша миссия – содействовать развитию человеческого потенциала страны
-            через программу нравственно-духовного образования «Самопознание».
-          </div>
+          <div className={styles.missionText}>{t(sections[current].desc)}</div>
         </div>
-        <a className={styles.more} href="#">
-          Подробнее
+        <a className={styles.more} href={sections[current].link}>
+          {t("more")}
         </a>
       </div>
     </section>

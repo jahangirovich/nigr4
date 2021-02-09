@@ -91,7 +91,7 @@
 @media screen and (max-width: 450px) {
   .hero {
     margin-top: -1px;
-    padding: 0 20px;
+    padding: 150px 20px 20px;
     flex-direction: column;
   }
   .image {
@@ -149,7 +149,7 @@
   }
   .controls {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     margin: 40px 0;
   }

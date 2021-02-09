@@ -21,7 +21,7 @@ const Header = ({ t }) => {
               y1="1.5"
               x2="-1.31134e-07"
               y2="1.5"
-              stroke="white"
+              stroke="#3d3d3d"
               stroke-width="3"
             />
             <line
@@ -29,7 +29,7 @@ const Header = ({ t }) => {
               y1="21.5"
               x2="-1.31134e-07"
               y2="21.5"
-              stroke="white"
+              stroke="#3d3d3d"
               stroke-width="3"
             />
             <line
@@ -37,14 +37,12 @@ const Header = ({ t }) => {
               y1="11.5"
               x2="10"
               y2="11.5"
-              stroke="white"
+              stroke="#3d3d3d"
               stroke-width="3"
             />
           </svg>
         </div>
       </nav>
-
-      <hr className={styles.line} />
     </header>
   );
 };
