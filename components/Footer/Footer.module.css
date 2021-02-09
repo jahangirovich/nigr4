@@ -4,7 +4,6 @@
   padding: 40px 20px;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  column-gap: 30px;
   row-gap: 35px;
 }
 
@@ -20,22 +19,27 @@
 
 .lang {
   display: flex;
-  column-gap: 15px;
   height: fit-content;
   padding: 8px 10px;
   border-radius: 5px;
+  justify-content: space-between;
   justify-self: flex-end;
   background: #ffffff;
   border: 1px solid #c4c4c4;
   align-items: center;
-  justify-content: center;
   font-weight: 700;
   font-size: 12px;
+  width: 100px;
 }
 
 .socials {
   display: flex;
-  column-gap: 18px;
+}
+.socials a {
+  margin-right: 18px;
+}
+.socials a:last-child {
+  margin-right: 0;
 }
 
 .socialLogo {

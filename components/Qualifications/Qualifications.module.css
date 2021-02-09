@@ -2,7 +2,6 @@
   padding: 100px 80px;
   display: flex;
   flex-direction: column;
-  column-gap: 50px;
   background-color: var(--mainBlue);
 }
 
@@ -23,7 +22,6 @@
     padding: 50px 20px;
     display: flex;
     flex-direction: column;
-    column-gap: 50px;
   }
   .title {
     font-size: 20px;

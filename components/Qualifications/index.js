@@ -66,7 +66,7 @@ const Qualifications = ({ t }) => {
         Программа) предназначена для руководителей организаций образования, их
         заместителей.
       </div>
-      <div className={styles.button}>График курсов</div>
+      {/* <div className={styles.button}>График курсов</div> */}
 
       <div className={styles.text}>
         Программа направлена на получение руководителями, заместителями

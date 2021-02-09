@@ -31,7 +31,6 @@ const AboutUs = ({ t }) => {
           <div className={styles.linkTag}>Задачи</div>
           <div className={styles.linkTag}>Структура</div>
           <div className={styles.linkTag}>Направления деятельности</div>
-          <div className={styles.linkTag}>Руководство</div>
         </div>
 
         <div className={styles.mission}>
@@ -65,6 +64,9 @@ const AboutUs = ({ t }) => {
             через программу нравственно-духовного образования «Самопознание».
           </div>
         </div>
+        <a className={styles.more} href="#">
+          Подробнее
+        </a>
       </div>
     </section>
   );

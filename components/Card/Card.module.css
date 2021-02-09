@@ -4,7 +4,6 @@
   border-radius: 20px;
   padding: 30px;
   display: flex;
-  column-gap: 40px;
 }
 
 @media screen and (max-width: 450px) {
@@ -12,6 +11,5 @@
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
-    column-gap: unset;
   }
 }

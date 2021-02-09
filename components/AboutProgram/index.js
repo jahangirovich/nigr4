@@ -39,7 +39,7 @@ const AboutProgram = ({ t }) => {
             }}
           ></div>
           <div className={styles.cardContent}>
-            <div className={styles.cardTitle}>История развития</div>
+            <div className={styles.cardTitle}>Этапы становления</div>
             <div className={styles.cardText}>
               Программа нравственно-духовного образования «Самопознание» в своем
               развитии прошла следующие этапы: I – разработка концепции и

@@ -36,9 +36,6 @@ const Hero = ({ t }) => {
           <div className={styles.quote}>{quotes[current].text_ru}</div>
           <div className={styles.credentialsMobile}>
             <div className={styles.author}>Сара Алпысовна Назарбаева</div>
-            <div className={styles.subtitle}>
-              Автор программы “Самопознание”
-            </div>
           </div>
           <div className={styles.controls}>
             <div
