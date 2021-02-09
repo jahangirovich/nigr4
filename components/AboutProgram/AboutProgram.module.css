@@ -22,7 +22,6 @@
 .cards {
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
 }
 
 .cardImage {
@@ -61,6 +60,13 @@
 }
 
 @media screen and (max-width: 450px) {
+  .cards > div {
+    margin-bottom: 50px;
+  }
+  .cards > div:last-child {
+    margin-bottom: 0;
+  }
+
   .aboutProgram {
     z-index: -1;
     margin-top: -25px;

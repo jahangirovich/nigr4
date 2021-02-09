@@ -22,17 +22,17 @@ const Footer = ({ t }) => {
 
       <div>
         <div className={styles.socials}>
-          <a href="https://instagram.com">
+          <a href="https://www.instagram.com/p/CK3eksPDZik/?igshid=1kzvjo0g7wdav">
             <div className={styles.socialLogo}>
               <FaInstagram color="#ffffff" />
             </div>
           </a>
-          <a href="https://facebook.com">
+          <a href="https://www.facebook.com/bobek.samopoznanie">
             <div className={styles.socialLogo}>
               <FiFacebook color="#ffffff" />
             </div>
           </a>
-          <a href="https://youtube.com">
+          <a href="https://www.youtube.com/c/ВИДЕОУРОКИСАМОПОЗНАНИЯ/featured">
             <div className={styles.socialLogo}>
               <FiYoutube color="#ffffff" />
             </div>
