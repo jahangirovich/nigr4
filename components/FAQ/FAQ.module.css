@@ -1,102 +1,102 @@
 .title {
-    display: flex;
-    align-items: flex-start;
-    text-transform: uppercase;
-    font-size: 20px;
-    font-weight: 700;
+  display: flex;
+  align-items: flex-start;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.title svg{
-    display: block;
-    color: var(--lightBlue);
+.title svg {
+  display: block;
+  color: var(--lightBlue);
 }
 
 .title span {
-    margin-left: 8px;
-    width: calc(100% - 32px);
+  margin-left: 8px;
+  width: calc(100% - 32px);
 }
 
-.header{
-    background-color: var(--mainBlue);
-    color: var(--white);
-    padding: 32px 20px;
+.header {
+  background-color: var(--mainBlue);
+  color: var(--white);
+  padding: 32px 20px;
 }
 
-.body{
-    padding: 20px;
+.body {
+  padding: 20px;
 }
 
-.item{
-    display: flex;
-    align-items: flex-start;
-    padding: 24px 0;
+.item {
+  display: flex;
+  align-items: flex-start;
+  padding: 24px 0;
 }
 
-.item:not(:last-of-type){
-    border-bottom: 1px var(--lightGrey) solid;
+.item:not(:last-of-type) {
+  border-bottom: 1px var(--lightGrey) solid;
 }
 
-.itemNumber{
-    font-size: 14px;
-    color: var(--darkGrey);
-    width: 20px;
-    margin-right: 8px;
+.itemNumber {
+  font-size: 14px;
+  color: var(--darkGrey);
+  width: 20px;
+  margin-right: 8px;
 }
 
-.itemTitle{
-    color: var(--black);
-    font-size: 14px;
-    font-weight: bold;
-    width: calc(100% - 60px);
+.itemTitle {
+  color: var(--black);
+  font-size: 12px;
+  font-weight: bold;
+  width: calc(100% - 60px);
 }
 
-.itemChevron{
-    width: 24px;
-    display: block;
-    margin-left: 8px;
-    color: var(--darkGrey);
+.itemChevron {
+  width: 24px;
+  display: block;
+  margin-left: 8px;
+  color: var(--darkGrey);
 }
 
 @media screen and (min-width: 450px) {
-    .faq{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: "a b b";
-        gap: 48px;
-        padding: 100px 80px;
-    }
-    .header{
-        display: block;
-        grid-area: a;
-        background-color: transparent;
-        color: inherit;
-    }
-    .title{
-        font-size: 36px;
-    }
-    .title svg{
-        color: var(--mainBlue);
-        margin-top: 8px;
-    }
-    .body{
-        grid-area: b;
-    }
-    .item{
-        border-bottom: 1px var(--lightBlue) solid!important;
-    }
-    .itemNumber{
-        font-size: 36px;
-        font-weight: bold;
-        color: var(--lightBlue);
-        width: 32px;
-        margin-right: 16px;
-    }
-    .itemNumber::after{
-        content: "."
-    }
-    .itemTitle{
-        font-size: 22px;
-        font-weight: 400;
-        width: calc(100% - 80px);
-    }
+  .faq {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "a b b";
+    gap: 48px;
+    padding: 100px 80px;
+  }
+  .header {
+    display: block;
+    grid-area: a;
+    background-color: transparent;
+    color: inherit;
+  }
+  .title {
+    font-size: 36px;
+  }
+  .title svg {
+    color: var(--mainBlue);
+    margin-top: 8px;
+  }
+  .body {
+    grid-area: b;
+  }
+  .item {
+    border-bottom: 1px var(--lightBlue) solid !important;
+  }
+  .itemNumber {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--lightBlue);
+    width: 32px;
+    margin-right: 16px;
+  }
+  .itemNumber::after {
+    content: ".";
+  }
+  .itemTitle {
+    font-size: 22px;
+    font-weight: 400;
+    width: calc(100% - 80px);
+  }
 }

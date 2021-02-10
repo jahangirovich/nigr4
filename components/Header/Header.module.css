@@ -16,7 +16,7 @@
 .subtitle {
   width: 450px;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 500;
   color: var(--black);
 }
 
@@ -25,10 +25,9 @@
   align-self: center;
 }
 
-.links{
+.links {
   display: none;
 }
-
 
 @media screen and (max-width: 450px) {
   .header nav {
@@ -50,19 +49,21 @@
   }
 }
 
-@media (min-width:1190px){
-  .links{
+@media (min-width: 1190px) {
+  .links {
     display: flex;
     align-items: center;
-    white-space: nowrap
+    text-align: center;
+    white-space: wrap;
   }
-  .links a:not(:last-of-type){
-    margin-right: 24px;
+  .links a:not(:last-of-type) {
+    margin-right: 30px;
+    min-width: 70px;
   }
-  .subtitle{
+  .subtitle {
     font-size: 18px;
   }
-  .menu{
+  .menu {
     display: none;
   }
 }

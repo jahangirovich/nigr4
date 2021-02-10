@@ -29,7 +29,6 @@
 
 .logo img {
   max-width: 90px;
-  filter: grayscale(1);
 }
 
 @media screen and (max-width: 450px) {
