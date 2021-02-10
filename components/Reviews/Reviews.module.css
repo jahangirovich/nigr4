@@ -94,3 +94,49 @@
 .dot.active{
     background-color: var(--white);
 }
+
+.desktop{
+    display: none;
+}
+
+@media screen and (min-width: 450px) {
+    .reviews{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "a b b";
+        gap: 48px;
+        padding: 100px 80px;
+    }
+    .tabs{
+        display: none;
+    }
+    .desktop{
+        display: block;
+    }
+    .card{
+        grid-area: b;
+        border-radius: 10px;
+        background-color: var(--white);
+        color: var(--black);
+        padding: 24px;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+    }
+    .content{
+        box-shadow: unset!important;
+        padding: 0;
+    }
+    .dot.active{
+        background-color: var(--mainBlue);
+    }
+    .arrow{
+        color: var(--mainBlue)
+    }
+    .controls{
+        justify-content: flex-start;
+        padding: 0 16px;
+    }
+    .person{
+        display: block;
+        padding: 16px;
+    }
+}

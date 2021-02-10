@@ -8,6 +8,13 @@ const Header = ({ t }) => {
         <div className={styles.logotype}>
           <div className={styles.subtitle}>{t("logotype")}</div>
         </div>
+        <div className={styles.links}>
+          <a href="#">О программе</a>
+          <a href="#">О нас</a>
+          <a href="#">Образовательная программа</a>
+          <a href="#">Новости</a>
+          <a href="#">Галерея</a>
+        </div>
         <div className={styles.menu}>
           <svg
             width="30"

@@ -76,3 +76,30 @@
 .arrow svg{
     display: block;
 }
+
+.desktop{
+    display: none;
+}
+
+@media screen and (min-width: 450px) {
+    .gallery{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "a b b";
+        gap: 48px;
+        padding: 100px 80px;
+    }
+    .mobile{
+        display: none;
+    }
+    .desktop{
+        display: block;
+        grid-area: a;
+    }
+    .desktop p{
+        margin: 24px 0;
+    }
+    .wrap{
+        grid-area: b;
+    }
+}

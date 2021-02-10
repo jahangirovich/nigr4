@@ -1,0 +1,37 @@
+.bigTab{
+    appearance: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    border-radius: 10px;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.bigTab svg{
+    display: block;
+    margin-right: 18px;
+}
+
+.bigTab:global(.default){
+    border: 1px solid var(--lightBlue);
+    color: var(--mainBlue);
+}
+
+.bigTab:global(.default).active{
+    color: var(--white);
+    border-color: transparent;
+    background-color: var(--mainBlue);
+}
+
+.bigTab:global(.white){
+    border: 1px solid var(--lightBlue);
+    color: var(--white);
+}
+
+.bigTab:global(.white).active{
+    color: var(--mainBlue);
+    border-color: transparent;
+    background-color: var(--lightBlue);
+}
