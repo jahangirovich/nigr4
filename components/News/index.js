@@ -8,6 +8,8 @@ import {
   FiThumbsUp,
   FiStar,
 } from "react-icons/fi";
+import useWindowSize from "../../hooks/useWindowSize";
+
 import BigTab from "../BigTab";
 import cn from "classnames";
 
@@ -24,22 +26,26 @@ const tabs = [
 
 const News = ({ t }) => {
   const [tab, setTab] = useState("news");
+  const size = useWindowSize();
   return (
     <div className={styles.news}>
       <div className={styles.tabs}>
         <Tabs value={tab} onChange={setTab} theme="default" items={tabs} />
       </div>
-      <div className={styles.desktop}>
-        <BigTab value={tab} onClick={setTab} theme="default" tab="news">
-          <FiThumbsUp size={24} />
-          <span>Новости</span>
-        </BigTab>
-        <p>Lorem ipsum</p>
-        <BigTab value={tab} onClick={setTab} theme="default" tab="board">
-          <FiStar size={24} />
-          <psan>Объявления</psan>
-        </BigTab>
-      </div>
+      {size.width > 450 && (
+        <div className={styles.desktop}>
+          <BigTab value={tab} onClick={setTab} theme="default" tab="news">
+            <FiThumbsUp size={24} />
+            <span>Новости</span>
+          </BigTab>
+          <p></p>
+          <BigTab value={tab} onClick={setTab} theme="default" tab="board">
+            <FiStar size={24} />
+            <psan>Объявления</psan>
+          </BigTab>
+        </div>
+      )}
+
       <div className={styles.wrap}>
         <div className={styles.posts}>
           <div className={styles.post}>

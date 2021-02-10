@@ -4,10 +4,7 @@ import { useState } from "react";
 import cn from "classnames";
 import Tabs from "../Tabs";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
-import {
-  FiThumbsUp,
-  FiStar,
-} from "react-icons/fi";
+import { FiThumbsUp, FiStar } from "react-icons/fi";
 import BigTab from "../BigTab";
 
 const tabs = [
@@ -33,7 +30,7 @@ const News = ({ t }) => {
           <FiThumbsUp size={24} />
           <span>Отзывы</span>
         </BigTab>
-        <p>Lorem ipsum</p>
+        <p></p>
         <BigTab value={tab} onClick={setTab} theme="white" tab="about">
           <FiStar size={24} />
           <psan>СМИ о нас</psan>
@@ -62,7 +59,6 @@ const News = ({ t }) => {
               Авдеева Наталья Владимировна
             </div>
             <div className={styles.personTitle}>
-              {" "}
               учитель самопознания школы № 29 г.Алматы
             </div>
           </div>
