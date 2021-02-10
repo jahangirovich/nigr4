@@ -48,7 +48,7 @@ const AboutUs = ({ t }) => {
               })}
               onClick={() => setCurrent(index)}
             >
-              {t(item.name)}
+              {t(`${item.name}_name`)}
             </div>
           ))}
         </div>
@@ -77,7 +77,7 @@ const AboutUs = ({ t }) => {
                 stroke-linejoin="round"
               />
             </svg>
-            <span>{sections[current].name}</span>
+            <span>{t(`${sections[current].name}_name`)}</span>
           </div>
           <div className={styles.missionText}>{t(sections[current].desc)}</div>
         </div>
