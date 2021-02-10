@@ -2,23 +2,25 @@ import React, { useState } from "react";
 import styles from "./AboutUs.module.css";
 import { withNamespaces } from "react-i18next";
 
+import useWindowSize from "../../hooks/useWindowSize";
+
 import cn from "classnames";
 
 const AboutUs = ({ t }) => {
+  const size = useWindowSize();
   const sections = [
-    { name: "Миссия", desc: "mission_desc", link: "/mission" },
-    { name: "Задачи", desc: "tasks_desc", link: "/tasks" },
-    { name: "Структура", desc: "structure_desc", link: "/structure" },
+    { name: "mission", desc: "mission_desc", link: "/mission" },
+    { name: "tasks", desc: "tasks_desc", link: "/tasks" },
+    { name: "structure", desc: "structure_desc", link: "/structure" },
     {
-      name: "Направления деятельности",
+      name: "directions",
       desc: "directions_desc",
       link: "/directions",
     },
   ];
 
-  const [current, setCurrent] = useState(0);
-  return (
-    <section className={styles.aboutUs}>
+  const renderMobile = () => (
+    <>
       <div className={styles.title}>
         <svg
           width="16"
@@ -37,7 +39,6 @@ const AboutUs = ({ t }) => {
         </svg>
         <span>{t("aboutUs")}</span>
       </div>
-
       <div className={styles.wrapper}>
         <div className={styles.links}>
           {sections.map((item, index) => (
@@ -84,6 +85,65 @@ const AboutUs = ({ t }) => {
           {t("more")}
         </a>
       </div>
+    </>
+  );
+
+  const renderDesktop = () => (
+    <>
+      <div className={styles.title}>
+        <svg
+          width="16"
+          height="20"
+          viewBox="0 0 16 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 19L8 14L1 19V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H13C13.5304 1 14.0391 1.21071 14.4142 1.58579C14.7893 1.96086 15 2.46957 15 3V19Z"
+            stroke="#0077C0"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <span>{t("aboutUs")}</span>
+      </div>
+      <div className={styles.gridAboutUs}>
+        <div className={styles.links}>
+          {sections.map((item, index) => (
+            <div
+              className={cn(styles.linkTag, {
+                [styles.selected]: index === current,
+              })}
+              onClick={() => setCurrent(index)}
+            >
+              <img src={`/img/icons/${item.name}.svg`} />
+              <span>{t(`${item.name}_name`)}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className={styles.card}>
+          <div className={styles.mission}>
+            <div className={styles.missionTitle}>
+              <span>{t(`${sections[current].name}_name`)}</span>
+            </div>
+            <div className={styles.missionText}>
+              {t(sections[current].desc)}
+            </div>
+          </div>
+          <a className={styles.more} href={sections[current].link}>
+            {t("more")}
+          </a>
+        </div>
+      </div>
+    </>
+  );
+
+  const [current, setCurrent] = useState(0);
+  return (
+    <section className={styles.aboutUs}>
+      {size.width > 450 ? renderDesktop() : renderMobile()}
     </section>
   );
 };

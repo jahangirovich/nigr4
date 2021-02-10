@@ -1,7 +1,5 @@
 .aboutUs {
   padding: 100px 80px;
-  display: flex;
-  flex-direction: column;
 }
 
 .title {
@@ -15,11 +13,43 @@
 .title span {
   margin-left: 10px;
 }
+.title svg {
+  height: 30px;
+  width: 23px;
+}
 
-.wrapper {
+.gridAboutUs {
   display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 70px;
+}
+.linkTag {
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 36px;
+  border-radius: 10px;
+  font-weight: 300;
+  width: 100%;
+}
+.selected {
+}
+
+.card {
+  box-shadow: 0px 5px 40px 0px #00000020;
+  border-radius: 10px;
+  padding: 64px 69px;
+}
+.card .missionTitle {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 60px;
+  color: var(--mainBlue);
+}
+.card .missionText {
+  font-size: 24px;
 }
 .more {
+  display: block;
   margin-top: 40px;
   border: 1px solid var(--lightBlue);
   color: var(--mainBlue);
@@ -31,6 +61,27 @@
   cursor: pointer;
 }
 
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.linkTag {
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+}
+
+.linkTag span {
+  margin-left: 25px;
+}
+
+.selected {
+  color: var(--mainBlue);
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 450px) {
   .aboutUs {
     padding: 50px 20px;
@@ -40,7 +91,13 @@
   .title {
     font-size: 20px;
   }
+  .title svg {
+    height: unset;
+    width: unset;
+  }
+
   .wrapper {
+    display: grid;
     margin-top: 40px;
   }
   .links {

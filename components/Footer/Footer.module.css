@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--lightGrey);
   width: 100%;
-  padding: 40px 20px;
+  padding: 100px 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 300px;
