@@ -56,3 +56,47 @@
     margin-left: 8px;
     color: var(--darkGrey);
 }
+
+@media screen and (min-width: 450px) {
+    .faq{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "a b b";
+        gap: 48px;
+        padding: 100px 80px;
+    }
+    .header{
+        display: block;
+        grid-area: a;
+        background-color: transparent;
+        color: inherit;
+    }
+    .title{
+        font-size: 36px;
+    }
+    .title svg{
+        color: var(--mainBlue);
+        margin-top: 8px;
+    }
+    .body{
+        grid-area: b;
+    }
+    .item{
+        border-bottom: 1px var(--lightBlue) solid!important;
+    }
+    .itemNumber{
+        font-size: 36px;
+        font-weight: bold;
+        color: var(--lightBlue);
+        width: 32px;
+        margin-right: 16px;
+    }
+    .itemNumber::after{
+        content: "."
+    }
+    .itemTitle{
+        font-size: 22px;
+        font-weight: 400;
+        width: calc(100% - 80px);
+    }
+}

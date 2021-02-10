@@ -9,6 +9,9 @@ import {
   FiBriefcase,
   FiBookOpen,
   FiFeather,
+  FiClipboard,
+  FiFolder,
+  FiCodesandbox,
 } from "react-icons/fi";
 import Button from "../Button";
 
@@ -27,6 +30,7 @@ const items = [
   {
     title: "О проекте",
     icon: <FiBriefcase size={24} />,
+    link: "#",
     text:
       "Цель пилотного проекта - создание в организациях образования целостной воспитывающей среды, основанной на общечеловеческих  ценностях. Целостная воспитывающая среда - это результат деятельности субъектов педагогического процесса с учетом единства физической, психической и духовной природы человека и социально-бытовых условий, в которых протекает жизнедеятельность и становление личности.",
   },
@@ -45,6 +49,23 @@ const items = [
   },
 ];
 
+const items2 = [
+  {
+    title: "О проекте",
+    icon: <FiClipboard size={24} />,
+    link: "#",
+    text:
+      "Цель пилотного проекта - создание в организациях образования целостной воспитывающей среды, основанной на общечеловеческих  ценностях. Целостная воспитывающая среда - это результат деятельности субъектов педагогического процесса с учетом единства физической, психической и духовной природы человека и социально-бытовых условий, в которых протекает жизнедеятельность и становление личности.",
+  },
+  {
+    title: "Базовые школы",
+    icon: <FiFolder size={24} />,
+    link: "#",
+    locale:
+      "baseSchools",
+  }
+];
+
 const Project = ({ t }) => {
   const [tab, setTab] = useState("pilot");
   const [item, setItem] = useState(0);
@@ -54,7 +75,31 @@ const Project = ({ t }) => {
         <Tabs value={tab} onChange={setTab} theme="default" items={tabs} />
       </div>
       <div className={styles.body}>
+        <div className={styles.title}>
+          <FiCodesandbox size={24}/>
+          <span>Пилотный проект</span>
+        </div>
         {items.map((o, i) => (
+          <div
+            className={cn(styles.item, {
+              [styles.active]: item === i,
+            })}
+          >
+            <div onClick={() => setItem(i)} className={styles.itemTitle}>
+              {o.icon}
+              <span>{o.title}</span>
+            </div>
+            <p>{o.text || t(o.locale)}</p>
+            {o.link ? <a href={o.link}><Button>{t("more")}</Button></a> : null}
+          </div>
+        ))}
+      </div>
+      <div className={styles.body2}>
+      <div className={styles.title}>
+          <FiCodesandbox size={24}/>
+          <span>Мероприятия</span>
+        </div>
+        {items2.map((o, i) => (
           <div
             className={cn(styles.item, {
               [styles.active]: item === i,
