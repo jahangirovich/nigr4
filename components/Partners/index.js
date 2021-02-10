@@ -59,16 +59,19 @@ const Partners = ({ t }) => {
       </div>
       <div className={styles.logos}>
         <div className={styles.logo}>
-          <img src="/img/partner-1.jpg" />
+          <img src="/img/partner-1.png" />
         </div>
         <div className={styles.logo}>
-          <img src="/img/partner-2.jpg" />
+          <img src="/img/partner-2.png" />
         </div>
         <div className={styles.logo}>
-          <img src="/img/partner-3.jpg" />
+          <img src="/img/partner-3.png" />
         </div>
         <div className={styles.logo}>
-          <img src="/img/partner-4.jpg" />
+          <img src="/img/partner-4.png" />
+        </div>
+        <div className={styles.logo}>
+          <img src="/img/partner-7.png" />
         </div>
         <div className={styles.logo}>
           <img src="/img/partner-5.jpg" />

@@ -38,8 +38,7 @@ const items = [
     title: "Базовые школы",
     icon: <FiBookOpen size={24} />,
     link: "#",
-    locale:
-      "baseSchools",
+    locale: "baseSchools",
   },
   {
     title: "Пилотные школы",
@@ -50,20 +49,20 @@ const items = [
 ];
 
 const items2 = [
+  // {
+  //   title: "План мероприятий",
+  //   icon: <FiClipboard size={24} />,
+  //   link: "#",
+  //   text:
+  //     "Цель пилотного проекта - создание в организациях образования целостной воспитывающей среды, основанной на общечеловеческих  ценностях. Целостная воспитывающая среда - это результат деятельности субъектов педагогического процесса с учетом единства физической, психической и духовной природы человека и социально-бытовых условий, в которых протекает жизнедеятельность и становление личности.",
+  // },
   {
-    title: "О проекте",
-    icon: <FiClipboard size={24} />,
-    link: "#",
-    text:
-      "Цель пилотного проекта - создание в организациях образования целостной воспитывающей среды, основанной на общечеловеческих  ценностях. Целостная воспитывающая среда - это результат деятельности субъектов педагогического процесса с учетом единства физической, психической и духовной природы человека и социально-бытовых условий, в которых протекает жизнедеятельность и становление личности.",
-  },
-  {
-    title: "Базовые школы",
+    title: "Материалы",
     icon: <FiFolder size={24} />,
-    link: "#",
-    locale:
-      "baseSchools",
-  }
+    text:
+      "4 февраля 2021 года Гуманитарный колледж «Самопознание» ННПООЦ «Бөбек» при поддержке Министерства образования и науки Республики Казахстан, Комитета по охране прав детей МОН РК прошли Республиканские педагогические чтения в онлайн-формате для организаций технического и профессионального образования по теме: «Педагогика любви и творчества».",
+    locale: "baseSchools",
+  },
 ];
 
 const Project = ({ t }) => {
@@ -76,7 +75,7 @@ const Project = ({ t }) => {
       </div>
       <div className={styles.body}>
         <div className={styles.title}>
-          <FiCodesandbox size={24}/>
+          <FiCodesandbox size={24} />
           <span>Пилотный проект</span>
         </div>
         {items.map((o, i) => (
@@ -90,13 +89,17 @@ const Project = ({ t }) => {
               <span>{o.title}</span>
             </div>
             <p>{o.text || t(o.locale)}</p>
-            {o.link ? <a href={o.link}><Button>{t("more")}</Button></a> : null}
+            {o.link ? (
+              <a href={o.link}>
+                <Button>{t("more")}</Button>
+              </a>
+            ) : null}
           </div>
         ))}
       </div>
       <div className={styles.body2}>
-      <div className={styles.title}>
-          <FiCodesandbox size={24}/>
+        <div className={styles.title}>
+          <FiCodesandbox size={24} />
           <span>Мероприятия</span>
         </div>
         {items2.map((o, i) => (
@@ -110,7 +113,11 @@ const Project = ({ t }) => {
               <span>{o.title}</span>
             </div>
             <p>{o.text || t(o.locale)}</p>
-            {o.link ? <a href={o.link}><Button>{t("more")}</Button></a> : null}
+            {o.link ? (
+              <a href={o.link}>
+                <Button>{t("more")}</Button>
+              </a>
+            ) : null}
           </div>
         ))}
       </div>

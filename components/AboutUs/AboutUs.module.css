@@ -107,6 +107,8 @@
     row-gap: 20px;
   }
   .linkTag {
+    display: flex;
+    justify-content: center;
     text-align: center;
     padding: 10px 15px;
     font-size: 14px;
