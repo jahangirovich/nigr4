@@ -58,27 +58,27 @@ const Partners = ({ t }) => {
         <span>{t("ourPartners")}</span>
       </div>
       <div className={styles.logos}>
-        <div className={styles.logo}>
+        <a href={`http://orleu-edu.kz`} className={styles.logo}>
           <img src="/img/partner-1.png" />
-        </div>
-        <div className={styles.logo}>
+        </a>
+        <a href={`http://daryn.kz`} className={styles.logo}>
           <img src="/img/partner-2.png" />
-        </div>
-        <div className={styles.logo}>
+        </a>
+        <a href={`http://www.gumannajapedagogika.by/teacher/kurs`} className={styles.logo}>
           <img src="/img/partner-3.png" />
-        </div>
-        <div className={styles.logo}>
+        </a>
+        <a href={`https://bobek.kz/#bobek`} className={styles.logo}>
           <img src="/img/partner-4.png" />
-        </div>
-        <div className={styles.logo}>
+        </a>
+        <a href={`https://nao.kz`} className={styles.logo}>
           <img src="/img/partner-7.png" />
-        </div>
-        <div className={styles.logo}>
+        </a>
+        <a href={`https://foundation.kz/ru/`} className={styles.logo}>
           <img src="/img/partner-5.jpg" />
-        </div>
-        <div className={styles.logo}>
+        </a>
+        <a href={`https://www.gov.kz/memleket/entities/edu?lang=kk`} className={styles.logo}>
           <img src="/img/partner-6.jpg" />
-        </div>
+        </a>
       </div>
     </section>
   );
