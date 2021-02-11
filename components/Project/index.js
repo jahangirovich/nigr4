@@ -68,7 +68,8 @@ const items2 = [
 
 const Project = ({ t }) => {
   const [tab, setTab] = useState("pilot");
-  const [item, setItem] = useState(0);
+  const [itemProject, setItemProject] = useState(0);
+  const [itemEvent, setItemEvent] = useState(0);
   return (
     <div className={styles.project}>
       <div className={styles.tabs}>
@@ -82,10 +83,10 @@ const Project = ({ t }) => {
         {items.map((o, i) => (
           <div
             className={cn(styles.item, {
-              [styles.active]: item === i,
+              [styles.active]: itemProject === i,
             })}
           >
-            <div onClick={() => setItem(i)} className={styles.itemTitle}>
+            <div onClick={() => setItemProject(i)} className={styles.itemTitle}>
               {o.icon}
               <span>{o.title}</span>
             </div>
@@ -106,10 +107,10 @@ const Project = ({ t }) => {
         {items2.map((o, i) => (
           <div
             className={cn(styles.item, {
-              [styles.active]: item === i,
+              [styles.active]: itemEvent === i,
             })}
           >
-            <div onClick={() => setItem(i)} className={styles.itemTitle}>
+            <div onClick={() => setItemEvent(i)} className={styles.itemTitle}>
               {o.icon}
               <span>{o.title}</span>
             </div>
