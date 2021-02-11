@@ -14,7 +14,7 @@
   text-transform: uppercase;
   align-items: center;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   margin-bottom: 80px;
 }
 .title span {

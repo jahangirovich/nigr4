@@ -33,7 +33,7 @@ const News = ({ t }) => {
         <p></p>
         <BigTab value={tab} onClick={setTab} theme="white" tab="about">
           <FiStar size={24} />
-          <psan>СМИ о нас</psan>
+          <span>СМИ о нас</span>
         </BigTab>
       </div>
       <div className={styles.card}>

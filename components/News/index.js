@@ -41,7 +41,7 @@ const News = ({ t }) => {
           <p></p>
           <BigTab value={tab} onClick={setTab} theme="default" tab="board">
             <FiStar size={24} />
-            <psan>Объявления</psan>
+            <span>Объявления</span>
           </BigTab>
         </div>
       )}
