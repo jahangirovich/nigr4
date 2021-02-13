@@ -58,7 +58,6 @@
   border-radius: 50%;
   background-color: var(--lightGrey);
   margin-bottom: 20px;
-  background-image: url("/img/avatar.jpeg");
   background-size: cover;
 }
 

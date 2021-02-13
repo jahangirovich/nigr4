@@ -7,7 +7,7 @@
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
-.header nav {
+.header>nav {
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 2fr;
@@ -15,8 +15,9 @@
   row-gap: 35px;
 }
 
-.subtitle {
-  font-size: 20px;
+.home {
+  font-size: 18px;
+  line-height: 21px;
   font-weight: 500;
   color: var(--black);
 }
@@ -35,9 +36,10 @@
     grid-template-columns: 2fr 1fr;
     column-gap: 10px;
   }
-  .subtitle {
+  .home {
     width: unset;
     font-size: 12px;
+    line-height: 14px;
     font-weight: 300;
     color: var(--black);
   }
@@ -49,6 +51,7 @@
     padding: 20px 20px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
   }
+
 }
 
 @media (min-width: 1190px) {
@@ -63,8 +66,11 @@
     margin-right: 20px;
     min-width: 90px;
   }
-  .subtitle {
+  .home {
     font-size: 18px;
+  }
+  .home:hover{
+    cursor: pointer;
   }
   .menu {
     display: none;

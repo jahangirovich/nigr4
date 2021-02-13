@@ -19,6 +19,20 @@ const Footer = ({ t }) => {
         <FiChevronRight />
       </div>
 
+      <div className={styles.contacts}>
+        <div className={styles.address}>
+          <div>Наш адрес:</div> город Алматы,Бостандыкский р-н,микрорайон
+          Дарын-1,дом 47
+        </div>
+        <div className={styles.phone}>
+          <div>Контактный номер телефона:</div>
+          <a href="tel:+77272997172"> +7 (727) 299-71-72</a>
+        </div>
+        <div className={styles.email}>
+          <div>E-mail:</div> <a href="mailto:nigrch@mail.ru">nigrch@mail.ru</a>
+        </div>
+      </div>
+
       <div>
         <div className={styles.socials}>
           <a href="https://www.instagram.com/p/CK3eksPDZik/?igshid=1kzvjo0g7wdav">

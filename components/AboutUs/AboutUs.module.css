@@ -24,12 +24,19 @@
   margin-top: 70px;
 }
 .linkTag {
+  display: flex;
+  align-items: center;
   text-align: center;
   padding: 10px 15px 10px 0;
   font-size: 36px;
   border-radius: 10px;
   font-weight: 300;
   width: 100%;
+}
+
+.linkTag img{
+  width: 33px;
+  height: 33px;
 }
 .selected {
 }

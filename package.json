@@ -12,6 +12,8 @@
     "i18next": "^19.8.7",
     "next": "10.0.6",
     "react": "17.0.1",
+    "react-burger-menu": "^3.0.3",
+    "react-device-detect": "^1.15.0",
     "react-dom": "17.0.1",
     "react-i18next": "^9.0.10",
     "react-icons": "^4.2.0"
