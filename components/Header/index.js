@@ -27,13 +27,13 @@ const Header = ({ t }) => {
     },
     bmCross: {
       background: "#ffffff",
-      height: "32px"
+      height: "32px",
     },
     bmMenuWrap: {
       position: "fixed",
       height: "100%",
       width: "100%",
-      marginTop: "-50px"
+      marginTop: "-50px",
     },
     bmMenu: {
       background: "#0077C0",
@@ -46,7 +46,7 @@ const Header = ({ t }) => {
     bmItemList: {
       color: "#ffffff",
       display: "flex",
-      flexDirection: "column"
+      flexDirection: "column",
     },
     bmItem: {
       display: "inline-block",
@@ -86,24 +86,35 @@ const Header = ({ t }) => {
         </div>
         <div className={styles.menu}>
           <Menu styles={menuStyles} right={true}>
-            <Link href="/">
-              <a className={styles.link}>О программе «Самопознание»</a>
-            </Link>
-            <Link href="/">
-              <a className={styles.link}>О нас</a>
-            </Link>
-            <Link href="/">
-              <a className={styles.link}>Образовательные программы</a>
-            </Link>
-            <Link href="/">
-              <a className={styles.link}>Пилотный проект</a>
-            </Link>
-            <Link href="/">
-              <a className={styles.link}>Новости</a>
-            </Link>
-            <Link href="/">
-              <a className={styles.link}>Галерея</a>
-            </Link>
+            <div className={styles.logotype}>
+              <Link href="/">
+                <a className={styles.home}>{t("logotype")}</a>
+              </Link>
+            </div>
+            <div className={styles.mobileLinks}>
+              <Link href="/">
+                <a className={styles.link}>О программе «Самопознание»</a>
+              </Link>
+              <Link href="/">
+                <a className={styles.link}>О нас</a>
+              </Link>
+              <Link href="/">
+                <a className={styles.link}>Образовательные программы</a>
+              </Link>
+              <Link href="/">
+                <a className={styles.link}>Пилотный проект</a>
+              </Link>
+              <Link href="/">
+                <a className={styles.link}>Новости</a>
+              </Link>
+              <Link href="/">
+                <a className={styles.link}>Галерея</a>
+              </Link>
+            </div>
+
+            <div>
+              
+            </div>
           </Menu>
         </div>
       </nav>

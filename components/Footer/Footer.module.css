@@ -1,11 +1,11 @@
 .footer {
   background-color: var(--lightGrey);
   width: 100%;
-  padding: 100px 80px;
+  padding: 20px 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 300px;
-  row-gap: 100px;
+  row-gap: 50px;
   align-items: center;
 }
 
@@ -49,6 +49,10 @@
   font-size: 20px;
 }
 
+.contacts a{
+  color: var(--mainBlue)
+}
+
 .address > div,
 .phone > div,
 .email > div {
@@ -80,7 +84,7 @@
   font-size: 20px;
   font-weight: 300;
   color: var(--black);
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .toTop {

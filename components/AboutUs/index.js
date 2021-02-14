@@ -128,9 +128,12 @@ const AboutUs = ({ t }) => {
             <div className={styles.missionTitle}>
               <span>{t(`${sections[current].name}_name`)}</span>
             </div>
+            <div className={styles.quote} />
             <div className={styles.missionText}>
               {t(sections[current].desc)}
             </div>
+            <div className={styles.quote} />
+
           </div>
           <a className={styles.more} href={sections[current].link}>
             {t("more")}

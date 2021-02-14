@@ -92,6 +92,22 @@
   background-color: white;
 }
 
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px var(--lightBlue) solid;
+  border-radius: 50%;
+  height: 47px;
+  width: 47px;
+}
+.arrow svg{
+  display: block;
+  color: #ffffff;
+  width: 20px;
+  height: 20px;
+}
+
 @media screen and (max-width: 450px) {
   .hero {
     margin-top: -1px;
@@ -177,5 +193,13 @@
   }
   .dots div.selected {
     background-color: white;
+  }
+  .arrow {
+    height: 30px;
+    width: 30px;
+  }
+  .arrow svg{
+    width: 15px;
+    height: 15px;
   }
 }

@@ -34,13 +34,25 @@
   width: 100%;
 }
 
-.linkTag img{
+.linkTag img {
   width: 33px;
   height: 33px;
 }
 .selected {
 }
 
+.quote {
+  background-image: url("/img/q.svg");
+  background-size: cover;
+  width: 30px;
+  height: 24px;
+  margin-bottom: 20px;
+}
+
+.quote:last-of-type {
+  transform: rotate(180deg);
+  margin-left: auto;
+}
 .card {
   box-shadow: 0px 5px 40px 0px #00000020;
   border-radius: 10px;
@@ -54,6 +66,7 @@
 }
 .card .missionText {
   font-size: 24px;
+  text-indent: 40px;
 }
 .more {
   display: block;

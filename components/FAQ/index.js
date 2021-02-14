@@ -2,6 +2,7 @@ import styles from "./FAQ.module.css";
 import { withNamespaces } from "react-i18next";
 import { FiChevronRight, FiChevronDown, FiHelpCircle } from "react-icons/fi";
 import { useState } from "react";
+import cn from "classnames";
 
 const faqs = [
   {
@@ -51,8 +52,18 @@ const FAQ = ({ t }) => {
           <div className={styles.item} onClick={() => handleOpen(i)}>
             <div className={styles.question}>
               <div className={styles.itemNumber}>{i + 1}</div>
-              <div className={styles.itemTitle}>{item.question}</div>
-              <div className={styles.itemChevron}>
+              <div
+                className={cn(styles.itemTitle, {
+                  [styles.isOpen]: item.isOpen,
+                })}
+              >
+                {item.question}
+              </div>
+              <div
+                className={cn(styles.itemChevron, {
+                  [styles.isOpen]: item.isOpen,
+                })}
+              >
                 {item.isOpen ? (
                   <FiChevronDown size={24} />
                 ) : (

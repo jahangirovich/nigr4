@@ -59,6 +59,7 @@
   padding: 24px 0;
 }
 
+
 .item:not(:last-of-type) {
   border-bottom: 1px var(--lightGrey) solid;
 }
@@ -75,6 +76,16 @@
   font-size: 12px;
   font-weight: bold;
   width: calc(100% - 60px);
+  transition: color 0.1s ease-in-out;
+}
+
+.question:hover .itemTitle, .question:hover .itemChevron{
+  color: var(--mainBlue);
+  cursor: pointer;
+}
+
+.isOpen{
+  color:var(--mainBlue); 
 }
 
 .itemChevron {
