@@ -15,6 +15,17 @@
   row-gap: 35px;
 }
 
+.logotype {
+  display: flex;
+  align-items: center;
+}
+
+.logotype img {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+}
+
 .home {
   font-size: 18px;
   line-height: 21px;
@@ -33,7 +44,7 @@
 
 @media screen and (max-width: 450px) {
   .header nav {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 0.5fr;
     column-gap: 10px;
   }
   .home {
@@ -54,6 +65,11 @@
   .logotype {
     outline: none;
   }
+  .logotype img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
   .menu .logotype {
     margin-bottom: 40px;
   }
@@ -61,10 +77,10 @@
     color: #81ceff;
     outline: none;
   }
-  .mobileLinks{
+  .mobileLinks {
     text-transform: uppercase;
   }
-  .mobileLinks .link{
+  .mobileLinks .link {
     display: block;
     margin-bottom: 10px;
   }

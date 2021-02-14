@@ -61,6 +61,12 @@ const Header = ({ t }) => {
       <nav>
         <div className={styles.logotype}>
           <Link href="/">
+            <a>
+              <img src="img/logo.png" />
+            </a>
+          </Link>
+
+          <Link href="/">
             <a className={styles.home}>{t("logotype")}</a>
           </Link>
         </div>
@@ -112,9 +118,7 @@ const Header = ({ t }) => {
               </Link>
             </div>
 
-            <div>
-              
-            </div>
+            <div></div>
           </Menu>
         </div>
       </nav>
