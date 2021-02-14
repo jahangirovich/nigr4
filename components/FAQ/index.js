@@ -42,7 +42,7 @@ const FAQ = ({ t }) => {
     <div className={styles.faq}>
       <div className={styles.header}>
         <div className={styles.title}>
-          <FiHelpCircle size={24} />
+          <FiHelpCircle size={40} />
           <span>FAQ / Часто задаваемые вопросы</span>
         </div>
       </div>

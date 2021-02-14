@@ -9,6 +9,8 @@
 .title svg {
   display: block;
   color: var(--lightBlue);
+  height: 24px;
+  width: 24px;
 }
 
 .title span {
@@ -26,11 +28,11 @@
   padding: 20px;
 }
 
-.question{
+.question {
   display: flex;
 }
 
-.response{
+.response {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -102,6 +104,8 @@
   .title svg {
     color: var(--mainBlue);
     margin-top: 8px;
+    height: 40px;
+    width: 40px;
   }
   .body {
     grid-area: b;

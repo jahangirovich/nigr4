@@ -37,17 +37,17 @@ const Footer = ({ t }) => {
         <div className={styles.socials}>
           <a href="https://www.instagram.com/p/CK3eksPDZik/?igshid=1kzvjo0g7wdav">
             <div className={styles.socialLogo}>
-              <FaInstagram color="#ffffff" />
+              <FaInstagram color="#ffffff" size={30} />
             </div>
           </a>
           <a href="https://www.facebook.com/bobek.samopoznanie">
             <div className={styles.socialLogo}>
-              <FiFacebook color="#ffffff" />
+              <FiFacebook color="#ffffff" size={30} />
             </div>
           </a>
           <a href="https://www.youtube.com/c/ВИДЕОУРОКИСАМОПОЗНАНИЯ/featured">
             <div className={styles.socialLogo}>
-              <FiYoutube color="#ffffff" />
+              <FiYoutube color="#ffffff" size={30} />
             </div>
           </a>
         </div>

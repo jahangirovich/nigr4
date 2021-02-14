@@ -1,87 +1,101 @@
-.tabs{
-    margin-bottom: 64px;
+.tabs {
+  margin-bottom: 64px;
 }
 
-.project{
-    padding: 60px 20px;
+.project {
+  padding: 60px 20px;
 }
 
-.item{
-    padding: 8px 0;
+.item {
+  padding: 8px 0;
 }
 
-.itemTitle{
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-    cursor: pointer;
+.itemTitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  cursor: pointer;
 }
 
-.itemTitle svg{
-    color: var(--mainBlue);
-    display: block;
-    margin-right: 16px;
+.itemTitle svg {
+  color: var(--mainBlue);
+  display: block;
+  margin-right: 16px;
+  width: 24px;
+  height: 24px;
 }
 
-.itemTitle span{
-    text-transform: uppercase;
-    font-weight: 500;
+.itemTitle span {
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
-.active .itemTitle span{
-    color: var(--mainBlue);
-    text-decoration: underline;
+.active .itemTitle span {
+  color: var(--mainBlue);
+  text-decoration: underline;
 }
 
-.item p, .item a{
-    display: none;
+.itemContent {
+  padding-left: 30px;
 }
 
-.item.active p, .item.active a{
-    display: block;
+.item p,
+.item a {
+  display: none;
 }
 
-.body2{
-    display: none;
+.item.active p,
+.item.active a {
+  display: block;
 }
 
-.title{
-    display: none;
+.body2 {
+  display: none;
+}
+
+.title {
+  display: none;
 }
 
 @media screen and (min-width: 450px) {
-    .project{
-        padding: 0;
-        display: flex;
-        align-items: stretch;
-    }
-    .body{
-        display: block;
-        width: 50%;
-        padding: 100px 40px 100px 80px;
-        background-color: var(--lightGrey);
-    }
-    .tabs{
-        display: none;
-    }
-    .body2{
-        display: block;
-        width: 50%;
-        padding: 100px 40px 100px 80px;
-    }
-    .title{
-        display: flex;
-        align-items: center;
-        font-size: 32px;
-        text-transform: uppercase;
-        font-weight: bold;
-        padding-bottom: 16px;
-        border-bottom: 1px var(--darkGrey) solid;
-        margin-bottom: 32px;
-    }
-    .title svg{
-        display: block;
-        color: var(--mainBlue);
-        margin-right: 16px;
-    }
+  .project {
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+  }
+  .body {
+    display: block;
+    width: 50%;
+    padding: 100px 40px 100px 80px;
+    background-color: var(--lightGrey);
+  }
+  .tabs {
+    display: none;
+  }
+  .body2 {
+    display: block;
+    width: 50%;
+    padding: 100px 40px 100px 80px;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-bottom: 16px;
+    border-bottom: 1px var(--darkGrey) solid;
+    margin-bottom: 32px;
+  }
+  .title svg {
+    display: block;
+    color: var(--mainBlue);
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+  .itemTitle svg {
+    width: 40px;
+    height: 40px;
+  }
 }

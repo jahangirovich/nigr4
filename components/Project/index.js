@@ -29,20 +29,20 @@ const tabs = [
 const items = [
   {
     title: "О проекте",
-    icon: <FiBriefcase size={24} />,
+    icon: <FiBriefcase size={40} />,
     link: "#",
     text:
       "Цель пилотного проекта - создание в организациях образования целостной воспитывающей среды, основанной на общечеловеческих  ценностях. Целостная воспитывающая среда - это результат деятельности субъектов педагогического процесса с учетом единства физической, психической и духовной природы человека и социально-бытовых условий, в которых протекает жизнедеятельность и становление личности.",
   },
   {
     title: "Базовые организации образования",
-    icon: <FiBookOpen size={24} />,
+    icon: <FiBookOpen size={40} />,
     link: "#",
     locale: "baseSchools",
   },
   {
     title: "Пилотные организации образования",
-    icon: <FiFeather size={24} />,
+    icon: <FiFeather size={40} />,
     link: "#",
     locale: "pilotSchools",
   },
@@ -51,14 +51,14 @@ const items = [
 const items2 = [
   // {
   //   title: "План мероприятий",
-  //   icon: <FiClipboard size={24} />,
+  //   icon: <FiClipboard size={40} />,
   //   link: "#",
   //   text:
   //     "Цель пилотного проекта - создание в организациях образования целостной воспитывающей среды, основанной на общечеловеческих  ценностях. Целостная воспитывающая среда - это результат деятельности субъектов педагогического процесса с учетом единства физической, психической и духовной природы человека и социально-бытовых условий, в которых протекает жизнедеятельность и становление личности.",
   // },
   {
     title: "Материалы",
-    icon: <FiFolder size={24} />,
+    icon: <FiFolder size={40} />,
     text:
       "4 февраля 2021 года Гуманитарный колледж «Самопознание» ННПООЦ «Бөбек» при поддержке Министерства образования и науки Республики Казахстан, Комитета по охране прав детей МОН РК прошли Республиканские педагогические чтения в онлайн-формате для организаций технического и профессионального образования по теме: «Педагогика любви и творчества».",
     locale: "baseSchools",
@@ -77,7 +77,7 @@ const Project = ({ t }) => {
       </div>
       <div className={styles.body}>
         <div className={styles.title}>
-          <FiCodesandbox size={24} />
+          <FiCodesandbox size={40} />
           <span>Пилотный проект</span>
         </div>
         {items.map((o, i) => (
@@ -90,18 +90,20 @@ const Project = ({ t }) => {
               {o.icon}
               <span>{o.title}</span>
             </div>
-            <p>{o.text || t(o.locale)}</p>
-            {o.link ? (
-              <a href={o.link}>
-                <Button>{t("more")}</Button>
-              </a>
-            ) : null}
+            <div className={styles.itemContent}>
+              <p>{o.text || t(o.locale)}</p>
+              {o.link ? (
+                <a href={o.link}>
+                  <Button>{t("more")}</Button>
+                </a>
+              ) : null}
+            </div>
           </div>
         ))}
       </div>
       <div className={styles.body2}>
         <div className={styles.title}>
-          <FiCodesandbox size={24} />
+          <FiCodesandbox size={40} />
           <span>Мероприятия</span>
         </div>
         {items2.map((o, i) => (
@@ -114,12 +116,14 @@ const Project = ({ t }) => {
               {o.icon}
               <span>{o.title}</span>
             </div>
-            <p>{o.text || t(o.locale)}</p>
-            {o.link ? (
-              <a href={o.link}>
-                <Button>{t("more")}</Button>
-              </a>
-            ) : null}
+            <div className={styles.itemContent}>
+              <p>{o.text || t(o.locale)}</p>
+              {o.link ? (
+                <a href={o.link}>
+                  <Button>{t("more")}</Button>
+                </a>
+              ) : null}
+            </div>
           </div>
         ))}
       </div>
