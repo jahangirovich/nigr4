@@ -3,6 +3,7 @@ import styles from "./Hero.module.css";
 import { withNamespaces } from "react-i18next";
 import quotes from "./quotes";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import i18n from "../../i18n";
 
 const Hero = ({ t }) => {
   const getRandomInt = (max) => {
@@ -34,9 +35,13 @@ const Hero = ({ t }) => {
 
       <div className={styles.content}>
         <div>
-          <div className={styles.quote}>{quotes[current].text_ru}</div>
+          <div className={styles.quote}>
+            {i18n.language === "ru"
+              ? quotes[current].text_ru
+              : quotes[current].text_kz}
+          </div>
           <div className={styles.credentialsMobile}>
-            <div className={styles.author}>Сара Алпысовна Назарбаева</div>
+            <div className={styles.author}>{t("first_lady")}</div>
           </div>
           <div className={styles.controls}>
             <div

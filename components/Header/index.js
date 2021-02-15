@@ -72,22 +72,22 @@ const Header = ({ t }) => {
         </div>
         <div className={styles.links}>
           <Link href="/">
-            <a className={styles.link}>О программе «Самопознание»</a>
+            <a className={styles.link}>{t("aboutProgram")}</a>
           </Link>
           <Link href="/">
-            <a className={styles.link}>О нас</a>
+            <a className={styles.link}>{t("aboutUs")}</a>
           </Link>
           <Link href="/">
-            <a className={styles.link}>Образовательные программы</a>
+            <a className={styles.link}>{t("eduProgram")}</a>
           </Link>
           <Link href="/">
-            <a className={styles.link}>Пилотный проект</a>
+            <a className={styles.link}>{t("pilotProject")}</a>
           </Link>
           <Link href="/">
-            <a className={styles.link}>Новости</a>
+            <a className={styles.link}>{t("news")}</a>
           </Link>
           <Link href="/">
-            <a className={styles.link}>Галерея</a>
+            <a className={styles.link}>{t("gallery")}</a>
           </Link>
         </div>
         <div className={styles.menu}>
@@ -99,22 +99,22 @@ const Header = ({ t }) => {
             </div>
             <div className={styles.mobileLinks}>
               <Link href="/">
-                <a className={styles.link}>О программе «Самопознание»</a>
+                <a className={styles.link}>{t("aboutProgram")}</a>
               </Link>
               <Link href="/">
-                <a className={styles.link}>О нас</a>
+                <a className={styles.link}>{t("aboutUs")}</a>
               </Link>
               <Link href="/">
-                <a className={styles.link}>Образовательные программы</a>
+                <a className={styles.link}>{t("eduProgram")}</a>
               </Link>
               <Link href="/">
-                <a className={styles.link}>Пилотный проект</a>
+                <a className={styles.link}>{t("pilotProject")}</a>
               </Link>
               <Link href="/">
-                <a className={styles.link}>Новости</a>
+                <a className={styles.link}>{t("news")}</a>
               </Link>
               <Link href="/">
-                <a className={styles.link}>Галерея</a>
+                <a className={styles.link}>{t("gallery")}</a>
               </Link>
             </div>
 

@@ -1,6 +1,7 @@
 import styles from "./Footer.module.css";
 import { FaInstagram } from "react-icons/fa";
 import { FiFacebook, FiYoutube, FiChevronRight } from "react-icons/fi";
+import i18n from "../../i18n";
 import { withNamespaces } from "react-i18next";
 
 const Footer = ({ t }) => {
@@ -8,24 +9,36 @@ const Footer = ({ t }) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.logotype}>
         <div className={styles.subtitle}>{t("logotype")}</div>
       </div>
-      <div className={styles.lang}>
-        <img src="/img/rus_lang.png" />
-        {t("lang")}
-        <FiChevronRight />
-      </div>
+
+      {i18n.language === "ru" ? (
+        <div className={styles.lang} onClick={() => changeLanguage("kz")}>
+          <img src="/img/rus_lang.png" />
+          {t("lang")}
+          <FiChevronRight />
+        </div>
+      ) : (
+        <div className={styles.lang} onClick={() => changeLanguage("ru")}>
+          <img src="/img/kaz_lang.svg" />
+          {t("lang")}
+          <FiChevronRight />
+        </div>
+      )}
 
       <div className={styles.contacts}>
         <div className={styles.address}>
-          <div>Наш адрес:</div> город Алматы,Бостандыкский р-н,микрорайон
-          Дарын-1,дом 47
+          <div>{t("ourAddress")}</div> {t("address")}
         </div>
         <div className={styles.phone}>
-          <div>Контактный номер телефона:</div>
+          <div>{t("phoneNumber")}</div>
           <a href="tel:+77272997172"> +7 (727) 299-71-72</a>
         </div>
         <div className={styles.email}>
