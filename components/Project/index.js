@@ -14,34 +14,41 @@ import {
   FiCodesandbox,
 } from "react-icons/fi";
 import Button from "../Button";
+import i18n from "../../i18n";
+
 
 const tabs = [
   {
     value: "pilot",
     label: "Пилотный проект",
+    labelKz: "Пилоттық жоба",
   },
   {
     value: "seminar",
     label: "Мероприятия",
+    labelKz: "Іс-шаралар",
   },
 ];
 
 const items = [
   {
     title: "О проекте",
+    titleKz: "Проект туралы",
     icon: <FiBriefcase size={40} />,
     link: "#",
-    text:
-      "Цель пилотного проекта - создание в организациях образования целостной воспитывающей среды, основанной на общечеловеческих  ценностях. Целостная воспитывающая среда - это результат деятельности субъектов педагогического процесса с учетом единства физической, психической и духовной природы человека и социально-бытовых условий, в которых протекает жизнедеятельность и становление личности.",
+    locale:
+      "aboutProject",
   },
   {
     title: "Базовые организации образования",
+    titleKz: "Базалық білім беру ұйымдары",
     icon: <FiBookOpen size={40} />,
     link: "#",
     locale: "baseSchools",
   },
   {
     title: "Пилотные организации образования",
+    titleKz: "Пилоттық білім беру ұйымдары",
     icon: <FiFeather size={40} />,
     link: "#",
     locale: "pilotSchools",
@@ -58,10 +65,9 @@ const items2 = [
   // },
   {
     title: "Материалы",
-    icon: <FiFolder size={40} />,
-    text:
-      "4 февраля 2021 года Гуманитарный колледж «Самопознание» ННПООЦ «Бөбек» при поддержке Министерства образования и науки Республики Казахстан, Комитета по охране прав детей МОН РК прошли Республиканские педагогические чтения в онлайн-формате для организаций технического и профессионального образования по теме: «Педагогика любви и творчества».",
-    locale: "baseSchools",
+    titleKK: "Материалдар",
+    icon: <FiFolder size={40} />,      
+    locale: "materials",
     link: "#",
   },
 ];
@@ -73,12 +79,12 @@ const Project = ({ t }) => {
   return (
     <div className={styles.project}>
       <div className={styles.tabs}>
-        <Tabs value={tab} onChange={setTab} theme="default" items={tabs} />
+        <Tabs value={tab} onChange={setTab} lang={i18n.language} theme="default" items={tabs} />
       </div>
       <div className={styles.body}>
         <div className={styles.title}>
           <FiCodesandbox size={40} />
-          <span>Пилотный проект</span>
+          <span>{t("pilotProject")}</span>
         </div>
         {items.map((o, i) => (
           <div
@@ -88,7 +94,7 @@ const Project = ({ t }) => {
           >
             <div onClick={() => setItemProject(i)} className={styles.itemTitle}>
               {o.icon}
-              <span>{o.title}</span>
+              <span>{i18n.language === "ru" ? o.title : o.titleKz}</span>
             </div>
             <div className={styles.itemContent}>
               <p>{o.text || t(o.locale)}</p>
@@ -104,7 +110,7 @@ const Project = ({ t }) => {
       <div className={styles.body2}>
         <div className={styles.title}>
           <FiCodesandbox size={40} />
-          <span>Мероприятия</span>
+          <span>{t("events")}</span>
         </div>
         {items2.map((o, i) => (
           <div
@@ -114,7 +120,7 @@ const Project = ({ t }) => {
           >
             <div onClick={() => setItemEvent(i)} className={styles.itemTitle}>
               {o.icon}
-              <span>{o.title}</span>
+              <span>{i18n.language === "ru" ? o.title : o.titleKz}</span>
             </div>
             <div className={styles.itemContent}>
               <p>{o.text || t(o.locale)}</p>

@@ -18,25 +18,15 @@ const Qualifications = ({ t }) => {
       </div>
 
       <div className={styles.eduProgram}>
-        <div className={styles.text}>
-          Образовательная программа курсов повышения квалификации педагогов
-          «Научно-методологические основы предмета «Самопознание» (далее –
-          Программа) предназначена для руководителей организаций образования, их
-          заместителей.
-        </div>
+        <div className={styles.text}>{t("qualText1")}</div>
         {/* <div className={styles.button}>График курсов</div> */}
 
-        <div className={styles.text}>
-          Программа направлена на получение руководителями, заместителями
-          руководителей организаций образования знаний по организации
-          деятельности в рамках программы нравственно-духовного образования
-          «Самопознание» в организациях образования.
-        </div>
+        <div className={styles.text}>{t("qualText2")}</div>
         <div className={styles.eduProgramButton}>
           <div>
             <FiFileText size={30} />
           </div>
-          <span>Образовательные программы</span>
+          <span>{t("eduProgram")}</span>
         </div>
       </div>
     </section>

@@ -9,6 +9,8 @@ import {
   FiStar,
 } from "react-icons/fi";
 import useWindowSize from "../../hooks/useWindowSize";
+import i18n from "../../i18n";
+
 
 import BigTab from "../BigTab";
 import cn from "classnames";
@@ -17,10 +19,12 @@ const tabs = [
   {
     value: "news",
     label: "Новости",
+    labelKz: "Жаңалықтар"
   },
   {
     value: "board",
     label: "Объявления",
+    labelKz: "Хабарландыру"
   },
 ];
 
@@ -36,12 +40,12 @@ const News = ({ t }) => {
         <div className={styles.desktop}>
           <BigTab value={tab} onClick={setTab} theme="default" tab="news">
             <FiThumbsUp size={24} />
-            <span>Новости</span>
+            <span>{i18n.language === "ru" ? tabs[0].label : tabs[0].labelKz}</span>
           </BigTab>
           <p></p>
           <BigTab value={tab} onClick={setTab} theme="default" tab="board">
             <FiStar size={24} />
-            <span>Объявления</span>
+            <span>{i18n.language === "ru" ? tabs[1].label : tabs[1].labelKz}</span>
           </BigTab>
         </div>
       )}
@@ -105,7 +109,7 @@ const News = ({ t }) => {
             </button>
           </div>
           <a href="#" className={styles.more}>
-            Все новости
+            {t("allNews")}
           </a>
         </div>
       </div>

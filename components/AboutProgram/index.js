@@ -7,9 +7,7 @@ const AboutProgram = ({ t }) => {
   return (
     <section className={styles.aboutProgram}>
       <div className={styles.titles}>
-        <div className={styles.title}>
-          о программе нравственно- духовного образования “Самопознание”
-        </div>
+        <div className={styles.title}>{t("aboutProgramFull")}</div>
       </div>
       <div className={styles.cards}>
         <Card>
@@ -20,14 +18,10 @@ const AboutProgram = ({ t }) => {
             }}
           ></div>
           <div className={styles.cardContent}>
-            <div className={styles.cardTitle}>Об авторе программы</div>
-            <div className={styles.cardText}>
-              Судьба автора Программы нравственно-духовного образования
-              «Самопознание» Сары Алпысовны Назарбаевой – это жизнь, наполненная
-              ...
-            </div>
+            <div className={styles.cardTitle}>{t("aboutAuthor")}</div>
+            <div className={styles.cardText}>{t("aboutAuthorText")}</div>
             <a className={styles.more} href="#">
-              Подробнее
+              {t("more")}
             </a>
           </div>
         </Card>
@@ -39,13 +33,10 @@ const AboutProgram = ({ t }) => {
             }}
           ></div>
           <div className={styles.cardContent}>
-            <div className={styles.cardTitle}>Этапы становления</div>
-            <div className={styles.cardText}>
-              Программа нравственно-духовного образования «Самопознание» в своем
-              развитии прошла следующие этапы: I – разработка концепции и ...
-            </div>
+            <div className={styles.cardTitle}>{t("stagesFormation")}</div>
+            <div className={styles.cardText}>{t("stagesFormationText")}</div>
             <a className={styles.more} href="#">
-              Подробнее
+              {t("more")}
             </a>
           </div>
         </Card>

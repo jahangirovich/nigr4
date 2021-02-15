@@ -7,15 +7,20 @@ import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { FiThumbsUp, FiStar } from "react-icons/fi";
 import BigTab from "../BigTab";
 import reviews from "./reviews";
+import i18n from "../../i18n";
+
+
 
 const tabs = [
   {
     value: "reviews",
     label: "Отзывы",
+    labelKz: "Пікірлер",
   },
   {
     value: "about",
     label: "СМИ о нас",
+    labelKz: "БАҚ біз туралы",
   },
 ];
 
@@ -55,12 +60,12 @@ const News = ({ t }) => {
       <div className={styles.desktop}>
         <BigTab value={tab} onClick={setTab} theme="white" tab="reviews">
           <FiThumbsUp size={24} />
-          <span>Отзывы</span>
+          <span>{i18n.language === "ru" ? "Отзывы" : "Пікірлер"}</span>
         </BigTab>
         <p></p>
         <BigTab value={tab} onClick={setTab} theme="white" tab="about">
           <FiStar size={24} />
-          <span>СМИ о нас</span>
+          <span>{i18n.language === "ru" ? "СМИ о нас" : "БАҚ біз туралы"}</span>
         </BigTab>
       </div>
       <div className={styles.card}>
