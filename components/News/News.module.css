@@ -13,6 +13,7 @@
 
 .post img {
   width: 100%;
+  max-height: 200px;
   display: block;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -101,6 +102,9 @@
 
 .extra {
   display: none;
+}
+.extra:first-child{
+  display: block;
 }
 
 @media screen and (min-width: 450px) {

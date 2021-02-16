@@ -1,6 +1,6 @@
 import styles from "./News.module.css";
 import { withNamespaces } from "react-i18next";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Tabs from "../Tabs";
 import {
   FiChevronRight,
@@ -11,7 +11,7 @@ import {
 import useWindowSize from "../../hooks/useWindowSize";
 import i18n from "../../i18n";
 
-
+import axios from "axios";
 import BigTab from "../BigTab";
 import cn from "classnames";
 
@@ -19,18 +19,31 @@ const tabs = [
   {
     value: "news",
     label: "Новости",
-    labelKz: "Жаңалықтар"
+    labelKz: "Жаңалықтар",
   },
   {
     value: "board",
     label: "Объявления",
-    labelKz: "Хабарландыру"
+    labelKz: "Хабарландыру",
   },
 ];
 
 const News = ({ t }) => {
   const [tab, setTab] = useState("news");
   const size = useWindowSize();
+  const [news, setNews] = useState([]);
+  const [current, setCurrent] = useState(1);
+
+  useEffect(async () => {
+    const result = await axios(
+      `https://nigrch.que.kz/ghost/api/v3/content/posts/?key=26a5cee97b2078f355b708967f&filter=tag:${i18n.language}`
+    );
+
+    setNews(result.data.posts);
+  }, [false]);
+
+  console.log(news);
+
   return (
     <div className={styles.news}>
       <div className={styles.tabs}>
@@ -40,59 +53,42 @@ const News = ({ t }) => {
         <div className={styles.desktop}>
           <BigTab value={tab} onClick={setTab} theme="default" tab="news">
             <FiThumbsUp size={24} />
-            <span>{i18n.language === "ru" ? tabs[0].label : tabs[0].labelKz}</span>
+            <span>
+              {i18n.language === "ru" ? tabs[0].label : tabs[0].labelKz}
+            </span>
           </BigTab>
           <p></p>
           <BigTab value={tab} onClick={setTab} theme="default" tab="board">
             <FiStar size={24} />
-            <span>{i18n.language === "ru" ? tabs[1].label : tabs[1].labelKz}</span>
+            <span>
+              {i18n.language === "ru" ? tabs[1].label : tabs[1].labelKz}
+            </span>
           </BigTab>
         </div>
       )}
 
       <div className={styles.wrap}>
         <div className={styles.posts}>
-          <div className={styles.post}>
-            <img src="/img/news-1.jpg" alt="Пост" />
-            <div className={styles.content}>
-              <p>
-                Как будет строиться деятельность средней школы им. К. Макпалеева
-                в качестве базовой организации по программе
-                нравственно-духовного образования «Самопознание»? Какой опыт
-                педагогический коллектив, ученики школы, родительская
-                общественность приобрели за время пилотного проекта?
-              </p>
-              <a href="#">Подробнее</a>
-            </div>
-            {/*<div className={styles.tag}>Направления деятельности</div>*/}
-          </div>
-          <div className={cn(styles.post, styles.extra)}>
-            <img src="/img/news-2.jpg" alt="Пост" />
-            <div className={styles.content}>
-              <p>
-                11 февраля 2021 года пройдет торжественное открытие НАО
-                «Национальный институт гармоничного развития человека». В
-                торжественной церемонии открытия НАО «Национальный институт
-                гармоничного развития человека» примут участие Министр
-                образования и науки Республики Казахстан Аймагамбетов Асхат
-                Канатович, Аким города Алматы Сагинтаев Бакытжан Абдирович.
-              </p>
-              <a href="#">Подробнее</a>
-            </div>
-            {/*<div className={styles.tag}>Направления деятельности</div>*/}
-          </div>
-          <div className={cn(styles.post, styles.extra)}>
-            <img src="/img/news-3.jpg" alt="Пост" />
-            <div className={styles.content}>
-              <p>
-                В НАО «Национальном институте гармоничного развития человека» с
-                1 по 11 февраля 2021 начались платные краткосрочные курсы
-                повышения квалификации в формате
-              </p>
-              <a href="#">Подробнее</a>
-            </div>
-            {/*<div className={styles.tag}>Направления деятельности</div>*/}
-          </div>
+          {news.map((item, i) => {
+            if (i < 3) {
+              return (
+                <div key={item.id} className={cn(styles.post, styles.extra)}>
+                  {item.feature_image ? (
+                    <img src={item.feature_image} alt="Пост" />
+                  ) : (
+                    <img src="/img/no-img.png" alt="Пост" />
+                  )}
+                  <div className={styles.content}>
+                    <p>{item.excerpt}</p>
+                    <a href="#">Подробнее</a>
+                  </div>
+                  {/* <div className={styles.tag}>Направления деятельности</div> */}
+                </div>
+              );
+            } else {
+              return false;
+            }
+          })}
         </div>
         <div className={styles.down}>
           <div className={styles.controls}>
@@ -100,9 +96,11 @@ const News = ({ t }) => {
               <FiChevronLeft />
             </button>
             <div className={styles.count}>
-              <span className={styles.countCurrent}>4</span>
+              <span className={styles.countCurrent}>{current}</span>
               <span> / </span>
-              <span className={styles.countTotal}>8</span>
+              <span className={styles.countTotal}>
+                {Math.ceil(news.length / 3)}
+              </span>
             </div>
             <button className={styles.arrow}>
               <FiChevronRight />

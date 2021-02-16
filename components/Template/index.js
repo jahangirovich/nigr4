@@ -1,15 +1,16 @@
 import styles from "./Template.module.css";
-import { FaInstagram } from "react-icons/fa";
-import { FiFacebook, FiYoutube, FiChevronRight } from "react-icons/fi";
-import i18n from "../../i18n";
 import { withNamespaces } from "react-i18next";
+import { useRouter } from 'next/router'
 
-const Template = ({ t }) => {
+
+const Template = ({ t, children }) => {
+  const router = useRouter()
 
 
   return (
     <main className={styles.Template}>
-      
+      <div onClick={() => router.back()}>Back</div>
+      {children}
     </main>
   );
 };
