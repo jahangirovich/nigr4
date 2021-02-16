@@ -22,7 +22,7 @@ const tabs = [
     labelKz: "Жаңалықтар",
   },
   {
-    value: "board",
+    value: "announcement",
     label: "Объявления",
     labelKz: "Хабарландыру",
   },
@@ -36,11 +36,11 @@ const News = ({ t }) => {
 
   useEffect(async () => {
     const result = await axios(
-      `https://nigrch.que.kz/ghost/api/v3/content/posts/?key=26a5cee97b2078f355b708967f&filter=tag:${i18n.language}`
+      `https://nigrch.que.kz/ghost/api/v3/content/posts/?key=26a5cee97b2078f355b708967f&filter=tag:${i18n.language}%2Btag:${tab}`
     );
 
     setNews(result.data.posts);
-  }, [false]);
+  }, [tab]);
 
   console.log(news);
 
@@ -58,7 +58,7 @@ const News = ({ t }) => {
             </span>
           </BigTab>
           <p></p>
-          <BigTab value={tab} onClick={setTab} theme="default" tab="board">
+          <BigTab value={tab} onClick={setTab} theme="default" tab="announcement">
             <FiStar size={24} />
             <span>
               {i18n.language === "ru" ? tabs[1].label : tabs[1].labelKz}
