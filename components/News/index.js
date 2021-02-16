@@ -36,7 +36,7 @@ const News = ({ t }) => {
 
   useEffect(async () => {
     const result = await axios(
-      `https://nigrch.que.kz/ghost/api/v3/content/posts/?key=26a5cee97b2078f355b708967f&filter=tag:${i18n.language}%2Btag:${tab}`
+      `https://api.nigrch.kz/ghost/api/v3/content/posts/?key=26a5cee97b2078f355b708967f&filter=tag:${i18n.language}%2Btag:${tab}`
     );
 
     setNews(result.data.posts);
