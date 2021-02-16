@@ -35,13 +35,16 @@ const News = ({ t }) => {
   const [current, setCurrent] = useState(1);
 
   useEffect(async () => {
+    const lang = i18n.language === "ru" ? "ru" : "kk" 
+
     const result = await axios(
-      `https://api.nigrch.kz/ghost/api/v3/content/posts/?key=26a5cee97b2078f355b708967f&filter=tag:${i18n.language}%2Btag:${tab}`
+      `https://api.nigrch.kz/ghost/api/v3/content/posts/?key=26a5cee97b2078f355b708967f&filter=tag:${lang}%2Btag:${tab}`
     );
 
     setNews(result.data.posts);
-  }, [tab]);
+  }, [tab, i18n.language]);
 
+  console.log(i18n.language)
   console.log(news);
 
   return (
