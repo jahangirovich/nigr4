@@ -65,7 +65,7 @@ const items2 = [
   // },
   {
     title: "Материалы",
-    titleKK: "Материалдар",
+    titleKz: "Материалдар",
     icon: <FiFolder size={40} />,      
     locale: "materials",
     link: "#",

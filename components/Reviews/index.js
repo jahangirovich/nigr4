@@ -55,7 +55,7 @@ const News = ({ t }) => {
   return (
     <div className={styles.reviews}>
       <div className={styles.tabs}>
-        <Tabs value={tab} onChange={setTab} theme="white" items={tabs} />
+        <Tabs value={tab} onChange={setTab} lang={i18n.language} theme="white" items={tabs} />
       </div>
       <div className={styles.desktop}>
         <BigTab value={tab} onClick={setTab} theme="white" tab="reviews">

@@ -50,7 +50,7 @@ const News = ({ t }) => {
   return (
     <div className={styles.news}>
       <div className={styles.tabs}>
-        <Tabs value={tab} onChange={setTab} theme="default" items={tabs} />
+        <Tabs value={tab} onChange={setTab}  lang={i18n.language} theme="default" items={tabs} />
       </div>
       {size.width > 450 && (
         <div className={styles.desktop}>
