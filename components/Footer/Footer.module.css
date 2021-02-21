@@ -9,9 +9,6 @@
   align-items: center;
 }
 
-.logotype {
-}
-
 .subtitle {
   width: 354px;
   margin-top: 7px;
@@ -115,8 +112,6 @@
     column-gap: 20px;
   }
 
-  .logotype {
-  }
 
   .subtitle {
     width: unset;

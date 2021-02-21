@@ -27,7 +27,7 @@ const Footer = ({ t }) => {
         </div>
       ) : (
         <div className={styles.lang} onClick={() => changeLanguage("ru")}>
-          <img src="/img/kaz_lang.svg" />
+          <img src="/img/kaz_lang.png" />
           {t("lang")}
           <FiChevronRight />
         </div>
