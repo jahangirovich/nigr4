@@ -64,11 +64,13 @@
 .personName {
   font-size: 20px;
   font-weight: 700;
+  text-align: center;
 }
 
 .personTitle {
   font-size: 14px;
   color: var(--lightBlue);
+  text-align: center;
 }
 
 .controls {

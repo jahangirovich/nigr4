@@ -40,20 +40,36 @@ const News = ({ t }) => {
     };
   }, [dot]);
 
-  const handeChange = () => {
+  const handeChange = (type = "forward") => {
     const length =
       i18n.language === "ru" ? reviews_ru.length : reviews_kz.length;
-    if (current === length - 1) {
-      setCurrent(0);
-      setDot(1);
-    } else {
-      setCurrent(current + 1);
-    }
+    if (type === "forward") {
+      if (current === length - 1) {
+        setCurrent(0);
+        setDot(1);
+      } else {
+        setCurrent(current + 1);
+      }
 
-    if (dot < 4) {
-      setDot(dot + 1);
-    } else {
-      setDot(1);
+      if (dot < length) {
+        setDot(dot + 1);
+      } else {
+        setDot(1);
+      }
+    }
+    else if(type==="back"){
+      if (current === 0) {
+        setCurrent(length - 1);
+        setDot(length);
+      } else {
+        setCurrent(current - 1);
+      }
+
+      if (dot > 0) {
+        setDot(dot - 1);
+      } else {
+        setDot(1);
+      }
     }
   };
 
@@ -127,7 +143,12 @@ const News = ({ t }) => {
         )}
 
         <div className={styles.controls}>
-          <button className={styles.arrow}>
+          <button
+            className={styles.arrow}
+            onClick={() => {
+              handeChange("back");
+            }}
+          >
             <FiChevronLeft />
           </button>
           <div className={styles.dots}>
@@ -147,7 +168,12 @@ const News = ({ t }) => {
                   />
                 ))}
           </div>
-          <button className={styles.arrow}>
+          <button
+            className={styles.arrow}
+            onClick={() => {
+              handeChange();
+            }}
+          >
             <FiChevronRight />
           </button>
         </div>
