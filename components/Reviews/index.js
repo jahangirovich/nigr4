@@ -6,10 +6,8 @@ import Tabs from "../Tabs";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { FiThumbsUp, FiStar } from "react-icons/fi";
 import BigTab from "../BigTab";
-import {reviews_kz, reviews_ru} from "./reviews";
+import { reviews_kz, reviews_ru } from "./reviews";
 import i18n from "../../i18n";
-
-
 
 const tabs = [
   {
@@ -35,27 +33,40 @@ const News = ({ t }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (current === reviews_kz.length - 1) {
-        setCurrent(0);
-        setDot(1);
-      } else {
-        setCurrent(current + 1);
-      }
-
-      if (dot < 4) {
-        setDot(dot + 1);
-      } else {
-        setDot(1);
-      }
+      handeChange();
     }, 10000);
     return () => {
       clearInterval(interval);
     };
   }, [dot]);
+
+  const handeChange = () => {
+    const length =
+      i18n.language === "ru" ? reviews_ru.length : reviews_kz.length;
+    if (current === length - 1) {
+      setCurrent(0);
+      setDot(1);
+    } else {
+      setCurrent(current + 1);
+    }
+
+    if (dot < 4) {
+      setDot(dot + 1);
+    } else {
+      setDot(1);
+    }
+  };
+
   return (
     <div className={styles.reviews}>
       <div className={styles.tabs}>
-        <Tabs value={tab} onChange={setTab} lang={i18n.language} theme="white" items={tabs} />
+        <Tabs
+          value={tab}
+          onChange={setTab}
+          lang={i18n.language}
+          theme="white"
+          items={tabs}
+        />
       </div>
       <div className={styles.desktop}>
         <BigTab value={tab} onClick={setTab} theme="white" tab="reviews">
@@ -69,50 +80,72 @@ const News = ({ t }) => {
         </BigTab>
       </div>
       <div className={styles.card}>
-        <div className={styles.review}>
-          <div className={styles.content}>
-            <div className={styles.quote} />
-            <p>
-              Прохожу курсы с 1 февраля. Несмотря на такой небольшой срок, уже
-              сейчас могу сказать, что в процессе обучения получила для себя
-              очень много нужной, полезной и очень важной информации. Занятия
-              проходят в теплой, уютной и очень доброжелательной атмосфере. Все
-              наши лекторы очень тактичны, открыты для общения и умеют
-              заинтересовать. Хочу им выразить за это огромную благодарность!
-              Очень нравятся лекции Татьяны Викторовны Рудьковой: интересно,
-              хочется слушать и слушать. Лекции всех педагогов проходят в
-              интересной форме.
-            </p>
-            <div className={styles.quote} />
-          </div>
-          <div className={styles.person}>
-            <div
-              className={styles.personPhoto}
-              style={{
-                backgroundImage: 'url("/img/avatar.jpeg")',
-              }}
-            />
-            <div className={styles.personName}>
-              Авдеева Наталья Владимировна
+        {i18n.language === "ru" ? (
+          <div className={styles.review} key={reviews_ru[current].id}>
+            <div className={styles.content}>
+              <div className={styles.quote} />
+              <p>{reviews_ru[current].text}</p>
+              <div className={styles.quote} />
             </div>
-            <div className={styles.personTitle}>
-              учитель самопознания школы № 29 г.Алматы
+            <div className={styles.person}>
+              <div
+                className={styles.personPhoto}
+                style={{
+                  backgroundImage: `url(${reviews_ru[current].img})`,
+                }}
+              />
+              <div className={styles.personName}>
+                {reviews_ru[current].name}
+              </div>
+              <div className={styles.personTitle}>
+                {reviews_ru[current].place}
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <div className={styles.review} key={reviews_kz[current].id}>
+            <div className={styles.content}>
+              <div className={styles.quote} />
+              <p>{reviews_kz[current].text}</p>
+              <div className={styles.quote} />
+            </div>
+            <div className={styles.person}>
+              <div
+                className={styles.personPhoto}
+                style={{
+                  backgroundImage: `url(${reviews_kz[current].img})`,
+                }}
+              />
+              <div className={styles.personName}>
+                {reviews_kz[current].name}
+              </div>
+              <div className={styles.personTitle}>
+                {reviews_kz[current].place}
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className={styles.controls}>
           <button className={styles.arrow}>
             <FiChevronLeft />
           </button>
           <div className={styles.dots}>
-            <div className={dot === 1 ? styles.selected : ""}></div>
-            <div className={dot === 2 ? styles.selected : ""}></div>
-            <div className={dot === 3 ? styles.selected : ""}></div>
-            <div className={dot === 4 ? styles.selected : ""}></div>
-            <div className={styles.dot} />
-            <div className={styles.dot} />
-            <div className={cn(styles.dot, styles.active)} />
-            <div className={styles.dot} />
+            {i18n.language === "ru"
+              ? reviews_ru.map((item, index) => (
+                  <div
+                    className={cn(styles.dot, {
+                      [styles.active]: current === index,
+                    })}
+                  />
+                ))
+              : reviews_kz.map((item, index) => (
+                  <div
+                    className={cn(styles.dot, {
+                      [styles.active]: current === index,
+                    })}
+                  />
+                ))}
           </div>
           <button className={styles.arrow}>
             <FiChevronRight />
