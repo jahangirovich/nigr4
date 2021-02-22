@@ -81,7 +81,9 @@ const Project = ({ t }) => {
       <div className={styles.tabs}>
         <Tabs value={tab} onChange={setTab} lang={i18n.language} theme="default" items={tabs} />
       </div>
-      <div className={styles.body}>
+      <div className={cn(styles.body, {
+        [styles.mobileShow]: tab === "pilot"
+      })}>
         <div className={styles.title}>
           <FiCodesandbox size={40} />
           <span>{t("pilotProject")}</span>
@@ -107,7 +109,9 @@ const Project = ({ t }) => {
           </div>
         ))}
       </div>
-      <div className={styles.body2}>
+      <div className={cn(styles.body2, {
+        [styles.mobileShow]: tab === "seminar"
+      })}>
         <div className={styles.title}>
           <FiCodesandbox size={40} />
           <span>{t("events")}</span>

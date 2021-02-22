@@ -57,6 +57,16 @@
   display: none;
 }
 
+.mobileShow.body2{
+  display: block;
+}
+
+@media screen and (max-width: 449px){
+  .body:not(.mobileShow){
+    display: none;
+  }
+}
+
 @media screen and (min-width: 450px) {
   .project {
     padding: 0;
