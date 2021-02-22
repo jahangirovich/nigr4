@@ -6,7 +6,7 @@ import Tabs from "../Tabs";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { FiThumbsUp, FiStar } from "react-icons/fi";
 import BigTab from "../BigTab";
-import reviews from "./reviews";
+import {reviews_kz, reviews_ru} from "./reviews";
 import i18n from "../../i18n";
 
 
@@ -35,7 +35,7 @@ const News = ({ t }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (current === reviews.length - 1) {
+      if (current === reviews_kz.length - 1) {
         setCurrent(0);
         setDot(1);
       } else {
