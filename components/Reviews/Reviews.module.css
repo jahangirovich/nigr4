@@ -19,6 +19,8 @@
   height: 30px;
   width: 30px;
   color: var(--white);
+  outline: none;
+  cursor: pointer;
 }
 
 .arrow svg {
@@ -140,5 +142,12 @@
   .person {
     display: block;
     padding: 16px;
+  }
+  .personName {
+    text-align: left;
+  }
+
+  .personTitle {
+    text-align: left;
   }
 }

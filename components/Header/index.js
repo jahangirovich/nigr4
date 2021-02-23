@@ -1,6 +1,9 @@
 import styles from "./Header.module.css";
 import { withNamespaces } from "react-i18next";
+import { FaInstagram } from "react-icons/fa";
+import { FiFacebook, FiYoutube, FiChevronRight } from "react-icons/fi";
 import Link from "next/link";
+import i18n from "../../i18n";
 import { slide as Menu } from "react-burger-menu";
 
 const Header = ({ t }) => {
@@ -54,6 +57,10 @@ const Header = ({ t }) => {
     bmOverlay: {
       background: "rgba(0, 0, 0, 0.3)",
     },
+  };
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
   };
 
   return (
@@ -118,7 +125,33 @@ const Header = ({ t }) => {
               </Link>
             </div>
 
-            <div>123</div>
+            <div className={styles.linkFooter}>
+              <div className={styles.socials}>
+                <a href="https://www.instagram.com/p/CK3eksPDZik/?igshid=1kzvjo0g7wdav">
+                  <div className={styles.socialLogo}>
+                    <FaInstagram color="#454545" size={30} />
+                  </div>
+                </a>
+                <a href="https://www.facebook.com/bobek.samopoznanie">
+                  <div className={styles.socialLogo}>
+                    <FiFacebook color="#454545" size={30} />
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/c/ВИДЕОУРОКИСАМОПОЗНАНИЯ/featured">
+                  <div className={styles.socialLogo}>
+                    <FiYoutube color="#454545" size={30} />
+                  </div>
+                </a>
+              </div>
+              <div className={styles.langs}>
+                <div className={`${styles.lang} ${i18n.language === "ru" ? styles.activeLang : ""}`} onClick={()=>{changeLanguage("ru")}}>
+                  Рус
+                </div>
+                <div className={`${styles.lang} ${i18n.language === "kz" ? styles.activeLang : ""}`} onClick={()=>{changeLanguage("kz")}}>
+                  Қаз
+                </div>
+              </div>
+            </div>
           </Menu>
         </div>
       </nav>

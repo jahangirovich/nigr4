@@ -79,10 +79,56 @@
   }
   .mobileLinks {
     text-transform: uppercase;
+    display: flex;
+    flex: 1;
+    outline: none;
   }
   .mobileLinks .link {
     display: block;
     margin-bottom: 10px;
+  }
+  .linkFooter {
+    position: absolute;
+    bottom: 30px;
+    border-top: 1px solid white;
+    width: calc(100% - 60px);
+    padding-top: 20px;
+    outline: none;
+  }
+  .socials {
+    display: flex;
+  }
+  .socials a {
+    margin-right: 18px;
+  }
+  .socials a:last-child {
+    margin-right: 0;
+  }
+  .socialLogo {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .socialLogo svg {
+    width: 15px;
+    height: 15px;
+  }
+  .langs {
+    display: flex;
+    margin-top: 20px;
+  }
+  .lang {
+    color: #bcbcbc;
+    font-size: 12px;
+    margin-right: 20px;
+  }
+  .activeLang {
+    color: #81ceff;
+    font-weight: bold;
   }
 }
 
@@ -106,5 +152,14 @@
   }
   .menu {
     display: none;
+  }
+  .socialLogo {
+    display: flex;
+    height: 71px;
+    width: 71px;
+    background-color: white;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
   }
 }

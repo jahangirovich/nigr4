@@ -3,6 +3,26 @@ import { FaInstagram } from "react-icons/fa";
 import { FiFacebook, FiYoutube, FiChevronRight } from "react-icons/fi";
 import i18n from "../../i18n";
 import { withNamespaces } from "react-i18next";
+import useComponentVisibility from "../../hooks/useComponentVisibility";
+
+const langs = [
+  { name: "kz", icon: "/img/kaz_lang.png", text: "Қаз" },
+  { name: "ru", icon: "/img/rus_lang.png", text: "Рус" },
+];
+
+const Dropdown = ({ className, control, items, showOnload = false }) => {
+  const { ref, isVisible, setIsVisible } = useComponentVisibility(showOnload);
+  return (
+    <div
+      ref={ref}
+      className={styles.dropdownbtn}
+      onClick={() => setIsVisible(!isVisible)}
+    >
+      {control}
+      {isVisible ? <div className={className}>{items}</div> : null}
+    </div>
+  );
+};
 
 const Footer = ({ t }) => {
   const scrollTop = () => {
@@ -13,25 +33,44 @@ const Footer = ({ t }) => {
     i18n.changeLanguage(lng);
   };
 
+  const currentLang = langs.find((l) => l.name === i18n.language);
+  const otherLangs = langs.filter((l) => l.name !== i18n.language);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.logotype}>
         <div className={styles.subtitle}>{t("logotype")}</div>
       </div>
 
-      {i18n.language === "ru" ? (
-        <div className={styles.lang} onClick={() => changeLanguage("kz")}>
-          <img src="/img/rus_lang.png" />
-          {t("lang")}
-          <FiChevronRight />
-        </div>
-      ) : (
-        <div className={styles.lang} onClick={() => changeLanguage("ru")}>
-          <img src="/img/kaz_lang.png" />
-          {t("lang")}
-          <FiChevronRight />
-        </div>
-      )}
+      <Dropdown
+        className={`${styles.dropdown}`}
+        control={
+          <div
+            className={styles.lang}
+            onClick={() => changeLanguage(currentLang.name)}
+          >
+            <img src={currentLang.icon} />
+            {currentLang.text}
+            <FiChevronRight />
+          </div>
+        }
+        items={
+          <>
+            {otherLangs.map((l, i) => (
+              <div
+                key={i}
+                className={styles.lang}
+                onClick={() => changeLanguage(l.name)}
+              >
+                <img src={l.icon} />
+                {l.text}
+                <FiChevronRight />
+              </div>
+            ))}
+          </>
+        }
+      />
+
 
       <div className={styles.contacts}>
         <div className={styles.address}>
