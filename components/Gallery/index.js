@@ -3,6 +3,7 @@ import { withNamespaces } from "react-i18next";
 import Tabs from "../Tabs";
 import BigTab from "../BigTab";
 import { useState } from "react";
+import i18n from "../../i18n";
 import { FiChevronRight, FiChevronLeft, FiZoomIn, FiAperture, FiFilm } from "react-icons/fi";
 
 const tabs = [
@@ -21,7 +22,7 @@ const Gallery = ({ t }) => {
   return (
     <div className={styles.gallery}>
       <div className={styles.mobile}>
-        <Tabs theme="white" onChange={setTab} value={tab} items={tabs} />
+        <Tabs theme="white" onChange={setTab}  lang={i18n.language} value={tab} items={tabs} />
         <p>
           4 февраля 2021 года Гуманитарный колледж «Самопознание» ННПООЦ «Бөбек»
           при поддержке Министерства образования и науки Республики Казахстан,
