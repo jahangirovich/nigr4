@@ -6,9 +6,18 @@
   margin-bottom: 20px;
   cursor: pointer;
 }
+.content{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 100px;
+}
 
 @media screen and (max-width: 450px) {
   .template{
     padding: 120px 20px 20px;
+  }
+  .content{
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }

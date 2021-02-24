@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Program.module.css";
 import { withNamespaces } from "react-i18next";
 
 import { Header, Template, Footer } from "../components";
@@ -17,8 +17,15 @@ function Program({ t }) {
       </Head>
       <Header blue={true} />
       <Template>
-        <h1>{t("programTitle")}</h1>
-        <p>{t("programText")}</p>
+        <div className={styles.image}>
+          <img src="/img/program.jpg" />
+          <div className={styles.name}>{t("first_lady")}</div>
+          <div className={styles.subtitle}>Автор программы “Самопознание”</div>
+        </div>
+        <div className={styles.content}>
+          <div className={styles.title}>{t("aboutAuthor")}</div>
+          <p className={styles.text}>{t("aboutAuthorTextFull")}</p>
+        </div>
       </Template>
       <Footer />
     </div>
