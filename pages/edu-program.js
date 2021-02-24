@@ -1,12 +1,9 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import {
-  Header,
-  Template,
-  Footer,
-} from "../components";
+import { Header, Template, Footer } from "../components";
+import { withNamespaces } from "react-i18next";
 
-export default function Courses() {
+function EduProgram({ t }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,10 +14,9 @@ export default function Courses() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header blue={true} />
-      <Template>
-        Courses
-      </Template>
+      <Template>Courses</Template>
       <Footer />
     </div>
   );
 }
+export default withNamespaces()(EduProgram);

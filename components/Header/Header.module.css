@@ -6,10 +6,10 @@
   position: fixed;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
 }
-.blueHeader{
+.blueHeader {
   background-color: var(--mainBlue);
 }
-.blueHeader a{
+.blueHeader a {
   color: white;
 }
 
@@ -46,6 +46,37 @@
 
 .links {
   display: none;
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdownLink {
+  top: 140%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  min-width: 132px;
+}
+.blueHeader .dropdownLink {
+  background-color: var(--mainBlue);
+}
+
+.dropdownLink .dropdownLinkItem {
+  padding: 20px 10px;
+  margin: 0;
+}
+.dropdownLinkItem:hover {
+  background-color: var(--lightBlue);
+  border-radius: 10px;
+  color: white;
+}
+.link{
+  padding: 30px 0;
 }
 
 @media screen and (max-width: 450px) {
@@ -139,16 +170,19 @@
 
 @media (min-width: 1190px) {
   .links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
     text-align: center;
-    white-space: wrap;
+    align-items: center;
   }
-  .links a:not(:last-of-type) {
-    margin-right: 20px;
+  .links a {
     min-width: 90px;
   }
+  .links a:last-child {
+    margin-right: 0;
+  }
+
   .home {
     font-size: 18px;
   }

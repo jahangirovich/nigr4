@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./Header.module.css";
 import { withNamespaces } from "react-i18next";
 import { FaInstagram } from "react-icons/fa";
@@ -59,11 +60,35 @@ const Header = ({ t, blue }) => {
       background: "rgba(0, 0, 0, 0.3)",
     },
   };
+  const [isOpenProgram, setOpenProgram] = useState(false);
+  const [isOpenAboutUs, setOpenAboutUs] = useState(false);
+  const [isOpenCourses, setOpenCourses] = useState(false);
+
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
 
+  const openFirstLink = () => {
+    setOpenProgram(true);
+  };
+  const closeFirstLink = () => {
+    setOpenProgram(false);
+  };
+
+  const openSecondLink = () => {
+    setOpenAboutUs(true);
+  };
+  const closeSecondLink = () => {
+    setOpenAboutUs(false);
+  };
+
+  const openThirdLink = () => {
+    setOpenCourses(true);
+  };
+  const closeThirdLink = () => {
+    setOpenCourses(false);
+  };
   return (
     <header className={cn(styles.header, { [styles.blueHeader]: blue })}>
       <nav>
@@ -79,18 +104,76 @@ const Header = ({ t, blue }) => {
           </Link>
         </div>
         <div className={styles.links}>
-          <div>
-            <Link href="/program">
+          <div
+            className={styles.dropdown}
+            onMouseEnter={() => openFirstLink()}
+            onMouseLeave={() => closeFirstLink()}
+          >
+            <div>
               <a className={styles.link}>{t("aboutProgram")}</a>
-            </Link>
+            </div>
+
+            {isOpenProgram ? (
+              <div className={styles.dropdownLink}>
+                <Link href="/program">
+                  <a className={styles.dropdownLinkItem}>{t("aboutAuthor")}</a>
+                </Link>
+                <Link href="/steps">
+                  <a className={styles.dropdownLinkItem}>{t("stepsTitle")}</a>
+                </Link>
+                
+              </div>
+            ) : null}
           </div>
 
-          <Link href="/about-us">
-            <a className={styles.link}>{t("aboutUs")}</a>
-          </Link>
-          <Link href="/courses">
+          <div
+            className={styles.dropdown}
+            onMouseEnter={() => openSecondLink()}
+            onMouseLeave={() => closeSecondLink()}
+          >
+            <div>
+              <a className={styles.link}>{t("aboutUs")}</a>
+            </div>
+
+            {isOpenAboutUs ? (
+              <div className={styles.dropdownLink}>
+                <Link href="/mission">
+                  <a className={styles.dropdownLinkItem}>{t("mission_name")}</a>
+                </Link>
+                <Link href="/tasks">
+                  <a className={styles.dropdownLinkItem}>{t("tasks_name")}</a>
+                </Link>
+                <Link href="/structure">
+                  <a className={styles.dropdownLinkItem}>{t("structure_name")}</a>
+                </Link>
+                <Link href="/direction">
+                  <a className={styles.dropdownLinkItem}>{t("directions_name")}</a>
+                </Link>
+              </div>
+            ) : null}
+          </div>
+
+          <div
+            className={styles.dropdown}
+            onMouseEnter={() => openThirdLink()}
+            onMouseLeave={() => closeThirdLink()}
+          >
+            <div>
             <a className={styles.link}>{t("courses")}</a>
-          </Link>
+            </div>
+
+            {isOpenCourses ? (
+              <div className={styles.dropdownLink}>
+                <Link href="/edu-program">
+                  <a className={styles.dropdownLinkItem}>{t("eduProgram")}</a>
+                </Link>
+                <Link href="/tasks">
+                  <a className={styles.dropdownLinkItem}>{t("reviews")}</a>
+                </Link>
+              </div>
+            ) : null}
+          </div>
+
           <Link href="/pilot">
             <a className={styles.link}>{t("pilotProject")}</a>
           </Link>
