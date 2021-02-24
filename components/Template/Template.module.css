@@ -1,3 +1,14 @@
 .template{
+  padding: 160px 80px 100px;
+}
 
+.back{
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+  .template{
+    padding: 120px 20px 20px;
+  }
 }

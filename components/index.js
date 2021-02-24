@@ -12,6 +12,8 @@ import News from "./News";
 import Reviews from "./Reviews";
 import Project from "./Project";
 import Qualifications from "./Qualifications";
+import Template from "./Template";
+
 
 export {
   Header,
@@ -28,4 +30,5 @@ export {
   Reviews,
   Project,
   Qualifications,
+  Template
 };

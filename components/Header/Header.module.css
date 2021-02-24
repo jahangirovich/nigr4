@@ -6,6 +6,12 @@
   position: fixed;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
 }
+.blueHeader{
+  background-color: var(--mainBlue);
+}
+.blueHeader a{
+  color: white;
+}
 
 .header > nav {
   display: grid;
@@ -57,7 +63,6 @@
   .header {
     z-index: 2;
     position: fixed;
-    background-color: white;
     width: 100%;
     padding: 20px 20px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);

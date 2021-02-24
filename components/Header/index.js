@@ -5,8 +5,9 @@ import { FiFacebook, FiYoutube, FiChevronRight } from "react-icons/fi";
 import Link from "next/link";
 import i18n from "../../i18n";
 import { slide as Menu } from "react-burger-menu";
+import cn from "classnames";
 
-const Header = ({ t }) => {
+const Header = ({ t, blue }) => {
   var menuStyles = {
     bmBurgerButton: {
       position: "fixed",
@@ -16,7 +17,7 @@ const Header = ({ t }) => {
       top: "30px",
     },
     bmBurgerBars: {
-      background: "#0077C0",
+      background: blue ? "#ffffff" : "#0077C0",
       height: "4px",
     },
     bmBurgerBarsHover: {
@@ -64,7 +65,7 @@ const Header = ({ t }) => {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={cn(styles.header, { [styles.blueHeader]: blue })}>
       <nav>
         <div className={styles.logotype}>
           <Link href="/">
@@ -78,22 +79,25 @@ const Header = ({ t }) => {
           </Link>
         </div>
         <div className={styles.links}>
-          <Link href="/">
-            <a className={styles.link}>{t("aboutProgram")}</a>
-          </Link>
-          <Link href="/">
+          <div>
+            <Link href="/program">
+              <a className={styles.link}>{t("aboutProgram")}</a>
+            </Link>
+          </div>
+
+          <Link href="/about-us">
             <a className={styles.link}>{t("aboutUs")}</a>
           </Link>
-          <Link href="/">
-            <a className={styles.link}>{t("eduProgram")}</a>
+          <Link href="/courses">
+            <a className={styles.link}>{t("courses")}</a>
           </Link>
-          <Link href="/">
+          <Link href="/pilot">
             <a className={styles.link}>{t("pilotProject")}</a>
           </Link>
-          <Link href="/">
+          <Link href="/news">
             <a className={styles.link}>{t("news")}</a>
           </Link>
-          <Link href="/">
+          <Link href="/gallery">
             <a className={styles.link}>{t("gallery")}</a>
           </Link>
         </div>
@@ -105,22 +109,22 @@ const Header = ({ t }) => {
               </Link>
             </div>
             <div className={styles.mobileLinks}>
-              <Link href="/">
+              <Link href="/program">
                 <a className={styles.link}>{t("aboutProgram")}</a>
               </Link>
-              <Link href="/">
+              <Link href="/about-us">
                 <a className={styles.link}>{t("aboutUs")}</a>
               </Link>
-              <Link href="/">
-                <a className={styles.link}>{t("eduProgram")}</a>
+              <Link href="/courses">
+                <a className={styles.link}>{t("courses")}</a>
               </Link>
-              <Link href="/">
+              <Link href="/pilot">
                 <a className={styles.link}>{t("pilotProject")}</a>
               </Link>
-              <Link href="/">
+              <Link href="/news">
                 <a className={styles.link}>{t("news")}</a>
               </Link>
-              <Link href="/">
+              <Link href="/gallery">
                 <a className={styles.link}>{t("gallery")}</a>
               </Link>
             </div>
@@ -144,10 +148,24 @@ const Header = ({ t }) => {
                 </a>
               </div>
               <div className={styles.langs}>
-                <div className={`${styles.lang} ${i18n.language === "ru" ? styles.activeLang : ""}`} onClick={()=>{changeLanguage("ru")}}>
+                <div
+                  className={`${styles.lang} ${
+                    i18n.language === "ru" ? styles.activeLang : ""
+                  }`}
+                  onClick={() => {
+                    changeLanguage("ru");
+                  }}
+                >
                   Рус
                 </div>
-                <div className={`${styles.lang} ${i18n.language === "kz" ? styles.activeLang : ""}`} onClick={()=>{changeLanguage("kz")}}>
+                <div
+                  className={`${styles.lang} ${
+                    i18n.language === "kz" ? styles.activeLang : ""
+                  }`}
+                  onClick={() => {
+                    changeLanguage("kz");
+                  }}
+                >
                   Қаз
                 </div>
               </div>
