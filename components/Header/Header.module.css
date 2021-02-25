@@ -116,8 +116,9 @@
   .mobileLinks {
     text-transform: uppercase;
     display: flex;
-    flex: 1;
     outline: none;
+    height: 380px;
+    overflow-y: scroll;
   }
   .mobileLinks .link {
     display: block;
@@ -165,6 +166,9 @@
   .activeLang {
     color: #81ceff;
     font-weight: bold;
+  }
+  .link{
+    padding: 0;
   }
 }
 

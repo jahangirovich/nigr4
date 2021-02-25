@@ -64,7 +64,6 @@ const Header = ({ t, blue }) => {
   const [isOpenAboutUs, setOpenAboutUs] = useState(false);
   const [isOpenCourses, setOpenCourses] = useState(false);
 
-
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
@@ -121,7 +120,6 @@ const Header = ({ t, blue }) => {
                 <Link href="/steps">
                   <a className={styles.dropdownLinkItem}>{t("stepsTitle")}</a>
                 </Link>
-                
               </div>
             ) : null}
           </div>
@@ -144,10 +142,14 @@ const Header = ({ t, blue }) => {
                   <a className={styles.dropdownLinkItem}>{t("tasks_name")}</a>
                 </Link>
                 <Link href="/structure">
-                  <a className={styles.dropdownLinkItem}>{t("structure_name")}</a>
+                  <a className={styles.dropdownLinkItem}>
+                    {t("structure_name")}
+                  </a>
                 </Link>
                 <Link href="/direction">
-                  <a className={styles.dropdownLinkItem}>{t("directions_name")}</a>
+                  <a className={styles.dropdownLinkItem}>
+                    {t("directions_name")}
+                  </a>
                 </Link>
               </div>
             ) : null}
@@ -159,7 +161,7 @@ const Header = ({ t, blue }) => {
             onMouseLeave={() => closeThirdLink()}
           >
             <div>
-            <a className={styles.link}>{t("courses")}</a>
+              <a className={styles.link}>{t("courses")}</a>
             </div>
 
             {isOpenCourses ? (
@@ -192,9 +194,21 @@ const Header = ({ t, blue }) => {
               </Link>
             </div>
             <div className={styles.mobileLinks}>
-              <Link href="/program">
-                <a className={styles.link}>{t("aboutProgram")}</a>
-              </Link>
+              <div>
+                <a className={styles.link} onClick={() => {}}>
+                  {t("aboutProgram")}
+                </a>
+                <div style={{marginLeft: "20px"}}>
+                  <Link href="/program">
+                    <a className={styles.dropdownLinkItem}>
+                      {t("aboutAuthor")}
+                    </a>
+                  </Link>
+                  <Link href="/steps">
+                    <a className={styles.dropdownLinkItem}>{t("stepsTitle")}</a>
+                  </Link>
+                </div>
+              </div>
               <Link href="/about-us">
                 <a className={styles.link}>{t("aboutUs")}</a>
               </Link>
