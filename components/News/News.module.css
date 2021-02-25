@@ -11,9 +11,15 @@
   justify-content: space-between;
 }
 
+.posts :global(.slick-slide) {
+  padding: 0 16px;
+}
+
 .post img {
   width: 100%;
-  max-height: 200px;
+  object-fit: cover;
+  height: 200px;
+  vertical-align: middle;
   display: block;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -103,7 +109,7 @@
 .extra {
   display: none;
 }
-.extra:first-child{
+.extra:first-child {
   display: block;
 }
 
@@ -120,9 +126,6 @@
     display: none;
   }
   .posts {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 24px;
     margin-right: -80px;
   }
   .desktop {
