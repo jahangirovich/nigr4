@@ -67,7 +67,6 @@ const Header = ({ t, blue }) => {
   const [isOpenNews, setOpenNews] = useState(false);
   const [isOpenGallery, setOpenGallery] = useState(false);
 
-
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
@@ -134,9 +133,7 @@ const Header = ({ t, blue }) => {
             onMouseEnter={() => openFirstLink()}
             onMouseLeave={() => closeFirstLink()}
           >
-            <div>
-              <a className={styles.link}>{t("aboutProgram")}</a>
-            </div>
+            <a className={styles.link}>{t("aboutProgram")}</a>
 
             {isOpenProgram ? (
               <div className={styles.dropdownLink}>
@@ -238,7 +235,7 @@ const Header = ({ t, blue }) => {
             onMouseLeave={() => closeFifthLink()}
           >
             <div>
-            <a className={styles.link}>{t("news")}</a>
+              <a className={styles.link}>{t("news")}</a>
             </div>
 
             {isOpenNews ? (
@@ -253,12 +250,13 @@ const Header = ({ t, blue }) => {
                   <a className={styles.dropdownLinkItem}>СМИ о нас</a>
                 </Link>
                 <Link href="/tasks">
-                  <a className={styles.dropdownLinkItem}>Часто задаваемые вопросы</a>
+                  <a className={styles.dropdownLinkItem}>
+                    Часто задаваемые вопросы
+                  </a>
                 </Link>
               </div>
             ) : null}
           </div>
-
 
           <div
             className={styles.dropdown}
@@ -281,6 +279,10 @@ const Header = ({ t, blue }) => {
             ) : null}
           </div>
 
+          <div className={styles.langs}>
+            <div onClick={()=>changeLanguage("kz")} className={i18n.language === "kz" && styles.activeLang}>Қаз</div>
+            <div onClick={()=>changeLanguage("ru")} className={i18n.language === "ru" && styles.activeLang}>Рус</div>
+          </div>
         </div>
         <div className={styles.menu}>
           <Menu styles={menuStyles} right={true}>
@@ -294,7 +296,7 @@ const Header = ({ t, blue }) => {
                 <a className={styles.link} onClick={() => {}}>
                   {t("aboutProgram")}
                 </a>
-                <div style={{marginLeft: "20px"}}>
+                <div style={{ marginLeft: "20px" }}>
                   <Link href="/program">
                     <a className={styles.dropdownLinkItem}>
                       {t("aboutAuthor")}
@@ -320,6 +322,7 @@ const Header = ({ t, blue }) => {
               <Link href="/gallery">
                 <a className={styles.link}>{t("gallery")}</a>
               </Link>
+              
             </div>
 
             <div className={styles.linkFooter}>

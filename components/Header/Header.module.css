@@ -54,7 +54,7 @@
 }
 
 .dropdownLink {
-  top: 140%;
+  top: 120%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -76,7 +76,20 @@
   color: white;
 }
 .link {
-  padding: 4px 0;
+  padding: 10px 0;
+}
+
+.langs{
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+.langs div:first-child{
+  margin-right: 10px;
+}
+
+.activeLang{
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 450px) {
@@ -175,7 +188,7 @@
 @media (min-width: 1190px) {
   .links {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     column-gap: 20px;
     text-align: center;
     align-items: center;
@@ -186,6 +199,7 @@
   .links a:last-child {
     margin-right: 0;
   }
+  
 
   .home {
     font-size: 18px;
