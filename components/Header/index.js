@@ -63,6 +63,10 @@ const Header = ({ t, blue }) => {
   const [isOpenProgram, setOpenProgram] = useState(false);
   const [isOpenAboutUs, setOpenAboutUs] = useState(false);
   const [isOpenCourses, setOpenCourses] = useState(false);
+  const [isOpenPilot, setOpenPilot] = useState(false);
+  const [isOpenNews, setOpenNews] = useState(false);
+  const [isOpenGallery, setOpenGallery] = useState(false);
+
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -88,6 +92,28 @@ const Header = ({ t, blue }) => {
   const closeThirdLink = () => {
     setOpenCourses(false);
   };
+
+  const openFourthLink = () => {
+    setOpenPilot(true);
+  };
+  const closeFourthLink = () => {
+    setOpenPilot(false);
+  };
+
+  const openFifthLink = () => {
+    setOpenNews(true);
+  };
+  const closeFifthLink = () => {
+    setOpenNews(false);
+  };
+
+  const openSixthLink = () => {
+    setOpenGallery(true);
+  };
+  const closeSixthLink = () => {
+    setOpenGallery(false);
+  };
+
   return (
     <header className={cn(styles.header, { [styles.blueHeader]: blue })}>
       <nav>
@@ -176,15 +202,85 @@ const Header = ({ t, blue }) => {
             ) : null}
           </div>
 
-          <Link href="/pilot">
-            <a className={styles.link}>{t("pilotProject")}</a>
-          </Link>
-          <Link href="/news">
+          <div
+            className={styles.dropdown}
+            onMouseEnter={() => openFourthLink()}
+            onMouseLeave={() => closeFourthLink()}
+          >
+            <div>
+              <a className={styles.link}>{t("pilotProject")}</a>
+            </div>
+
+            {isOpenPilot ? (
+              <div className={styles.dropdownLink}>
+                <Link href="/edu-program">
+                  <a className={styles.dropdownLinkItem}>О проекте</a>
+                </Link>
+                <Link href="/tasks">
+                  <a className={styles.dropdownLinkItem}>Базовые школы</a>
+                </Link>
+                <Link href="/edu-program">
+                  <a className={styles.dropdownLinkItem}>Пилотные школы</a>
+                </Link>
+                <Link href="/tasks">
+                  <a className={styles.dropdownLinkItem}>План мероприятий</a>
+                </Link>
+                <Link href="/tasks">
+                  <a className={styles.dropdownLinkItem}>Материалы</a>
+                </Link>
+              </div>
+            ) : null}
+          </div>
+
+          <div
+            className={styles.dropdown}
+            onMouseEnter={() => openFifthLink()}
+            onMouseLeave={() => closeFifthLink()}
+          >
+            <div>
             <a className={styles.link}>{t("news")}</a>
-          </Link>
-          <Link href="/gallery">
-            <a className={styles.link}>{t("gallery")}</a>
-          </Link>
+            </div>
+
+            {isOpenNews ? (
+              <div className={styles.dropdownLink}>
+                <Link href="/edu-program">
+                  <a className={styles.dropdownLinkItem}>Новости</a>
+                </Link>
+                <Link href="/tasks">
+                  <a className={styles.dropdownLinkItem}>Объявления</a>
+                </Link>
+                <Link href="/edu-program">
+                  <a className={styles.dropdownLinkItem}>СМИ о нас</a>
+                </Link>
+                <Link href="/tasks">
+                  <a className={styles.dropdownLinkItem}>Часто задаваемые вопросы</a>
+                </Link>
+              </div>
+            ) : null}
+          </div>
+
+
+          <div
+            className={styles.dropdown}
+            onMouseEnter={() => openSixthLink()}
+            onMouseLeave={() => closeSixthLink()}
+          >
+            <div>
+              <a className={styles.link}>{t("gallery")}</a>
+            </div>
+
+            {isOpenGallery ? (
+              <div className={styles.dropdownLink}>
+                <Link href="/edu-program">
+                  <a className={styles.dropdownLinkItem}>Фотогалерея</a>
+                </Link>
+                <Link href="/tasks">
+                  <a className={styles.dropdownLinkItem}>Видеогалерея</a>
+                </Link>
+              </div>
+            ) : null}
+          </div>
+
         </div>
         <div className={styles.menu}>
           <Menu styles={menuStyles} right={true}>
