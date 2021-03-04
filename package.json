@@ -19,6 +19,7 @@
     "react-dropdown": "^1.9.2",
     "react-i18next": "^9.0.10",
     "react-icons": "^4.2.0",
+    "react-slick": "^0.28.0",
     "reactjs-pdf-reader": "^1.0.12",
     "sass": "^1.32.8",
     "swiper": "^6.4.15"
