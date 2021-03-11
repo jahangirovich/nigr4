@@ -10,10 +10,12 @@ const tabs = [
   {
     value: "photo",
     label: "Фотогалерея",
+    labelKz: "Фотогалерея",
   },
   {
     value: "video",
-    label: "Видеогалерея",
+    label: "Фотогалерея",
+    labelKz: "Видеогалерея",
   },
 ];
 

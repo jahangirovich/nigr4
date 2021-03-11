@@ -9,7 +9,7 @@
 .blueHeader {
   background-color: var(--mainBlue);
 }
-.blueHeader a {
+.blueHeader a, .blueHeader div {
   color: white;
 }
 
@@ -70,6 +70,9 @@
   padding: 20px 10px;
   margin: 0;
 }
+
+
+
 .dropdownLinkItem:hover {
   background-color: var(--lightBlue);
   border-radius: 10px;
@@ -154,6 +157,10 @@
   .socials a:last-child {
     margin-right: 0;
   }
+
+  .mobileDropdownMenu .dropdownLinkItem::before{
+    content: "•";
+  }
   .socialLogo {
     display: flex;
     height: 40px;
@@ -182,6 +189,14 @@
   }
   .link{
     padding: 0;
+  }
+  .mobileLink{
+    margin-bottom: 10px;
+  }
+  .mobileDropdownMenu{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
   }
 }
 

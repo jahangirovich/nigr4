@@ -141,7 +141,7 @@ const Header = ({ t, blue }) => {
                   <a className={styles.dropdownLinkItem}>{t("aboutAuthor")}</a>
                 </Link>
                 <Link href="/steps">
-                  <a className={styles.dropdownLinkItem}>{t("stepsTitle")}</a>
+                  <a className={styles.dropdownLinkItem}>{t("stagesFormation")}</a>
                 </Link>
               </div>
             ) : null}
@@ -210,20 +210,30 @@ const Header = ({ t, blue }) => {
 
             {isOpenPilot ? (
               <div className={styles.dropdownLink}>
-                <Link href="/edu-program">
-                  <a className={styles.dropdownLinkItem}>О проекте</a>
+                <Link href="/about-project">
+                  <a className={styles.dropdownLinkItem}>
+                    {t("aboutProjectMenu")}
+                  </a>
                 </Link>
-                <Link href="/tasks">
-                  <a className={styles.dropdownLinkItem}>Базовые школы</a>
+                <Link href="/basic-school">
+                  <a className={styles.dropdownLinkItem}>
+                    {t("basicSchoolsMenu")}
+                  </a>
                 </Link>
-                <Link href="/edu-program">
-                  <a className={styles.dropdownLinkItem}>Пилотные школы</a>
+                <Link href="/pilot-school">
+                  <a className={styles.dropdownLinkItem}>
+                    {t("pilotSchoolsMenu")}
+                  </a>
                 </Link>
-                <Link href="/tasks">
-                  <a className={styles.dropdownLinkItem}>План мероприятий</a>
+                <Link href="/event-plan">
+                  <a className={styles.dropdownLinkItem}>
+                    {t("eventsPlanMenu")}
+                  </a>
                 </Link>
-                <Link href="/tasks">
-                  <a className={styles.dropdownLinkItem}>Материалы</a>
+                <Link href="/materials">
+                  <a className={styles.dropdownLinkItem}>
+                    {t("materialsMenu")}
+                  </a>
                 </Link>
               </div>
             ) : null}
@@ -240,19 +250,19 @@ const Header = ({ t, blue }) => {
 
             {isOpenNews ? (
               <div className={styles.dropdownLink}>
-                <Link href="/edu-program">
-                  <a className={styles.dropdownLinkItem}>Новости</a>
+                <Link href="/news">
+                  <a className={styles.dropdownLinkItem}>{t("newsMenu")}</a>
                 </Link>
-                <Link href="/tasks">
-                  <a className={styles.dropdownLinkItem}>Объявления</a>
-                </Link>
-                <Link href="/edu-program">
-                  <a className={styles.dropdownLinkItem}>СМИ о нас</a>
-                </Link>
-                <Link href="/tasks">
+                <Link href="/announcements">
                   <a className={styles.dropdownLinkItem}>
-                    Часто задаваемые вопросы
+                    {t("announcementsMenu")}
                   </a>
+                </Link>
+                <Link href="/press">
+                  <a className={styles.dropdownLinkItem}>{t("pressMenu")}</a>
+                </Link>
+                <Link href="/faq">
+                  <a className={styles.dropdownLinkItem}>{t("faqMenu")}</a>
                 </Link>
               </div>
             ) : null}
@@ -269,10 +279,10 @@ const Header = ({ t, blue }) => {
 
             {isOpenGallery ? (
               <div className={styles.dropdownLink}>
-                <Link href="/edu-program">
+                <Link href="/photo-gallery">
                   <a className={styles.dropdownLinkItem}>Фотогалерея</a>
                 </Link>
-                <Link href="/tasks">
+                <Link href="/video-gallery">
                   <a className={styles.dropdownLinkItem}>Видеогалерея</a>
                 </Link>
               </div>
@@ -280,10 +290,21 @@ const Header = ({ t, blue }) => {
           </div>
 
           <div className={styles.langs}>
-            <div onClick={()=>changeLanguage("kz")} className={i18n.language === "kz" && styles.activeLang}>Қаз</div>
-            <div onClick={()=>changeLanguage("ru")} className={i18n.language === "ru" && styles.activeLang}>Рус</div>
+            <div
+              onClick={() => changeLanguage("kz")}
+              className={i18n.language === "kz" && styles.activeLang}
+            >
+              Қаз
+            </div>
+            <div
+              onClick={() => changeLanguage("ru")}
+              className={i18n.language === "ru" && styles.activeLang}
+            >
+              Рус
+            </div>
           </div>
         </div>
+
         <div className={styles.menu}>
           <Menu styles={menuStyles} right={true}>
             <div className={styles.logotype}>
@@ -292,37 +313,203 @@ const Header = ({ t, blue }) => {
               </Link>
             </div>
             <div className={styles.mobileLinks}>
-              <div>
-                <a className={styles.link} onClick={() => {}}>
+              <div className={styles.mobileLink}>
+                <a
+                  className={styles.link}
+                  onClick={() => {
+                    if (isOpenProgram) {
+                      closeFirstLink();
+                    } else {
+                      openFirstLink();
+                    }
+                  }}
+                >
                   {t("aboutProgram")}
                 </a>
-                <div style={{ marginLeft: "20px" }}>
-                  <Link href="/program">
-                    <a className={styles.dropdownLinkItem}>
-                      {t("aboutAuthor")}
-                    </a>
-                  </Link>
-                  <Link href="/steps">
-                    <a className={styles.dropdownLinkItem}>{t("stepsTitle")}</a>
-                  </Link>
-                </div>
+                {isOpenProgram ? (
+                  <div className={styles.mobileDropdownMenu}>
+                    <Link href="/program">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("aboutAuthor")}
+                      </a>
+                    </Link>
+                    <Link href="/steps">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("stepsTitle")}
+                      </a>
+                    </Link>
+                  </div>
+                ) : null}
               </div>
-              <Link href="/about-us">
-                <a className={styles.link}>{t("aboutUs")}</a>
-              </Link>
-              <Link href="/courses">
-                <a className={styles.link}>{t("courses")}</a>
-              </Link>
-              <Link href="/pilot">
-                <a className={styles.link}>{t("pilotProject")}</a>
-              </Link>
-              <Link href="/news">
-                <a className={styles.link}>{t("news")}</a>
-              </Link>
-              <Link href="/gallery">
-                <a className={styles.link}>{t("gallery")}</a>
-              </Link>
-              
+              <div className={styles.mobileLink}>
+                <a
+                  className={styles.link}
+                  onClick={() => {
+                    if (isOpenAboutUs) {
+                      closeSecondLink();
+                    } else {
+                      openSecondLink();
+                    }
+                  }}
+                >
+                  {t("aboutUs")}
+                </a>
+                {isOpenAboutUs ? (
+                  <div className={styles.mobileDropdownMenu}>
+                    <Link href="/mission">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("mission_name")}
+                      </a>
+                    </Link>
+                    <Link href="/tasks">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("tasks_name")}
+                      </a>
+                    </Link>
+                    <Link href="/structure">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("structure_name")}
+                      </a>
+                    </Link>
+                    <Link href="/direction">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("directions_name")}
+                      </a>
+                    </Link>
+                  </div>
+                ) : null}
+              </div>
+
+              <div className={styles.mobileLink}>
+                <a
+                  className={styles.link}
+                  onClick={() => {
+                    if (isOpenCourses) {
+                      closeThirdLink();
+                    } else {
+                      openThirdLink();
+                    }
+                  }}
+                >
+                  {t("courses")}
+                </a>
+                {isOpenCourses ? (
+                  <div className={styles.mobileDropdownMenu}>
+                    <Link href="/edu-program">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("eduProgram")}
+                      </a>
+                    </Link>
+                    <Link href="/tasks">
+                      <a className={styles.dropdownLinkItem}>{t("reviews")}</a>
+                    </Link>
+                  </div>
+                ) : null}
+              </div>
+
+              <div className={styles.mobileLink}>
+                <a
+                  className={styles.link}
+                  onClick={() => {
+                    if (isOpenPilot) {
+                      closeFourthLink();
+                    } else {
+                      openFourthLink();
+                    }
+                  }}
+                >
+                  {t("pilotProject")}
+                </a>
+                {isOpenPilot ? (
+                  <div className={styles.mobileDropdownMenu}>
+                    <Link href="/about-project">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("aboutProjectMenu")}
+                      </a>
+                    </Link>
+                    <Link href="/basic-school">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("basicSchoolsMenu")}
+                      </a>
+                    </Link>
+                    <Link href="/pilot-school">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("pilotSchoolsMenu")}
+                      </a>
+                    </Link>
+                    <Link href="/event-plan">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("eventsPlanMenu")}
+                      </a>
+                    </Link>
+                    <Link href="/materials">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("materialsMenu")}
+                      </a>
+                    </Link>
+                  </div>
+                ) : null}
+              </div>
+
+              <div className={styles.mobileLink}>
+                <a
+                  className={styles.link}
+                  onClick={() => {
+                    if (isOpenNews) {
+                      closeFifthLink();
+                    } else {
+                      openFifthLink();
+                    }
+                  }}
+                >
+                  {t("news")}
+                </a>
+                {isOpenNews ? (
+                  <div className={styles.mobileDropdownMenu}>
+                    <Link href="/news">
+                      <a className={styles.dropdownLinkItem}>{t("newsMenu")}</a>
+                    </Link>
+                    <Link href="/announcements">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("announcementsMenu")}
+                      </a>
+                    </Link>
+                    <Link href="/press">
+                      <a className={styles.dropdownLinkItem}>
+                        {t("pressMenu")}
+                      </a>
+                    </Link>
+                    <Link href="/faq">
+                      <a className={styles.dropdownLinkItem}>{t("faqMenu")}</a>
+                    </Link>
+                  </div>
+                ) : null}
+              </div>
+
+              <div className={styles.mobileLink}>
+                <a
+                  className={styles.link}
+                  onClick={() => {
+                    if (isOpenGallery) {
+                      closeSixthLink();
+                    } else {
+                      openSixthLink();
+                    }
+                  }}
+                >
+                  {t("gallery")}
+                </a>
+                {isOpenGallery ? (
+                  <div className={styles.mobileDropdownMenu}>
+                    <Link href="/photo-gallery">
+                      <a className={styles.dropdownLinkItem}>Фотогалерея</a>
+                    </Link>
+                    <Link href="/video-gallery">
+                      <a className={styles.dropdownLinkItem}>Видеогалерея</a>
+                    </Link>
+                  </div>
+                ) : null}
+              </div>
             </div>
 
             <div className={styles.linkFooter}>
