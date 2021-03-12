@@ -1,12 +1,9 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import {
-  Header,
-  Template,
-  Footer,
-} from "../components";
+import styles from "../styles/Program.module.css";
+import { withNamespaces } from "react-i18next";
+import { Header, Template, Footer, News } from "../components";
 
-export default function News() {
+function NewsPage({ t }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -18,9 +15,15 @@ export default function News() {
       </Head>
       <Header blue={true} />
       <Template>
-        News
+        <div className={styles.image}>
+          <div className={styles.title}>{t("news")}</div>
+        </div>
+        <div className={styles.content}>
+          <News page={true} />
+        </div>
       </Template>
       <Footer />
     </div>
   );
 }
+export default withNamespaces()(NewsPage);

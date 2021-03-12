@@ -3,6 +3,9 @@
   background-color: var(--mainBlue);
   color: var(--white);
 }
+.reviewsPage {
+  display: block;
+}
 
 .tabs {
   margin-bottom: 64px;

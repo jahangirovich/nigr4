@@ -1,6 +1,9 @@
 .news {
   padding: 60px 20px;
 }
+.newsPage {
+  padding: 20px 20px;
+}
 
 .post {
   position: relative;
@@ -121,6 +124,12 @@
     gap: 48px;
     padding: 100px 80px;
     background-color: var(--lightGrey);
+  }
+  .newsPage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "b b b";
+    gap: 48px;
   }
   .tabs {
     display: none;

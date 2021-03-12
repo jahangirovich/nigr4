@@ -22,7 +22,7 @@ const tabs = [
   },
 ];
 
-const News = ({ t }) => {
+const News = ({ t, page }) => {
   const getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max));
   };
@@ -56,8 +56,7 @@ const News = ({ t }) => {
       } else {
         setDot(1);
       }
-    }
-    else if(type==="back"){
+    } else if (type === "back") {
       if (current === 0) {
         setCurrent(length - 1);
         setDot(length);
@@ -74,27 +73,33 @@ const News = ({ t }) => {
   };
 
   return (
-    <div className={styles.reviews}>
-      <div className={styles.tabs}>
-        <Tabs
-          value={tab}
-          onChange={setTab}
-          lang={i18n.language}
-          theme="white"
-          items={tabs}
-        />
-      </div>
-      <div className={styles.desktop}>
-        <BigTab value={tab} onClick={setTab} theme="white" tab="reviews">
-          <FiThumbsUp size={24} />
-          <span>{i18n.language === "ru" ? "Отзывы" : "Пікірлер"}</span>
-        </BigTab>
-        <p></p>
-        <BigTab value={tab} onClick={setTab} theme="white" tab="about">
-          <FiStar size={24} />
-          <span>{i18n.language === "ru" ? "СМИ о нас" : "БАҚ біз туралы"}</span>
-        </BigTab>
-      </div>
+    <div className={!page ? styles.reviews : styles.reviewsPage}>
+      {!page && (
+        <>
+          <div className={styles.tabs}>
+            <Tabs
+              value={tab}
+              onChange={setTab}
+              lang={i18n.language}
+              theme="white"
+              items={tabs}
+            />
+          </div>
+          <div className={styles.desktop}>
+            <BigTab value={tab} onClick={setTab} theme="white" tab="reviews">
+              <FiThumbsUp size={24} />
+              <span>{i18n.language === "ru" ? "Отзывы" : "Пікірлер"}</span>
+            </BigTab>
+            <p></p>
+            <BigTab value={tab} onClick={setTab} theme="white" tab="about">
+              <FiStar size={24} />
+              <span>
+                {i18n.language === "ru" ? "СМИ о нас" : "БАҚ біз туралы"}
+              </span>
+            </BigTab>
+          </div>
+        </>
+      )}
       <div className={styles.card}>
         {i18n.language === "ru" ? (
           <div className={styles.review} key={reviews_ru[current].id}>

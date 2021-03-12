@@ -1,8 +1,9 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import { Header, Template, Footer } from "../components";
+import styles from "../styles/Program.module.css";
+import { withNamespaces } from "react-i18next";
+import { Header, Template, Footer, FAQ } from "../components";
 
-export default function Faq() {
+function Faq({ t }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,8 +14,16 @@ export default function Faq() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header blue={true} />
-      <Template>faq</Template>
+      <Template>
+        <div className={styles.image}>
+          <div className={styles.title}>{t("faqMenu")}</div>
+        </div>
+        <div className={styles.content}>
+          <FAQ page={true} />
+        </div>
+      </Template>
       <Footer />
     </div>
   );
 }
+export default withNamespaces()(Faq);

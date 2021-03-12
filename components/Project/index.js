@@ -35,7 +35,7 @@ const items = [
     title: "О проекте",
     titleKz: "Проект туралы",
     icon: <FiBriefcase size={40} />,
-    link: "#",
+    link: "/about-project",
     locale:
       "aboutProject",
   },
@@ -43,14 +43,14 @@ const items = [
     title: "Базовые организации образования",
     titleKz: "Базалық білім беру ұйымдары",
     icon: <FiBookOpen size={40} />,
-    link: "#",
+    link: "basic-school",
     locale: "baseSchools",
   },
   {
     title: "Пилотные организации образования",
     titleKz: "Пилоттық білім беру ұйымдары",
     icon: <FiFeather size={40} />,
-    link: "#",
+    link: "pilot-school",
     locale: "pilotSchools",
   },
 ];
@@ -68,7 +68,7 @@ const items2 = [
     titleKz: "Материалдар",
     icon: <FiFolder size={40} />,      
     locale: "materials",
-    link: "#",
+    link: "/materials",
   },
 ];
 

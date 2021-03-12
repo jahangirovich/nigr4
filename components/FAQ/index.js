@@ -44,7 +44,7 @@ const faqs = [
   },
 ];
 
-const FAQ = ({ t }) => {
+const FAQ = ({ t, page }) => {
   const [faqState, setFaqState] = useState(faqs);
 
   function handleOpen(i) {
@@ -54,13 +54,17 @@ const FAQ = ({ t }) => {
   }
 
   return (
-    <div className={styles.faq}>
-      <div className={styles.header}>
-        <div className={styles.title}>
-          <FiHelpCircle size={40} />
-          <span>{t("faq")}</span>
-        </div>
-      </div>
+    <div className={!page ? styles.faq : styles.faqPage }>
+      {!page && (
+        <>
+          <div className={styles.header}>
+            <div className={styles.title}>
+              <FiHelpCircle size={40} />
+              <span>{t("faq")}</span>
+            </div>
+          </div>
+        </>
+      )}
       <div className={styles.body}>
         {faqState.map((item, i) => (
           <div className={styles.item} onClick={() => handleOpen(i)}>

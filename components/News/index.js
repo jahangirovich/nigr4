@@ -29,7 +29,7 @@ const tabs = [
   },
 ];
 
-const News = ({ t }) => {
+const News = ({ t, page, announcements }) => {
   const [tab, setTab] = useState("news");
   const size = useWindowSize();
   const [news, setNews] = useState([]);
@@ -47,6 +47,10 @@ const News = ({ t }) => {
     setCurrent(0);
   }, [tab, i18n.language]);
 
+  useEffect( () => {
+    setTab("announcement")
+  }, [announcements]);
+
   const setPostsWidth = () => {
     setWidth(window.innerWidth);
   };
@@ -60,39 +64,42 @@ const News = ({ t }) => {
 
   const mobile = width < 768;
   return (
-    <div className={styles.news}>
-      <div className={styles.tabs}>
-        <Tabs
-          value={tab}
-          onChange={setTab}
-          lang={i18n.language}
-          theme="default"
-          items={tabs}
-        />
-      </div>
-      {size.width > 450 && (
-        <div className={styles.desktop}>
-          <BigTab value={tab} onClick={setTab} theme="default" tab="news">
-            <FiThumbsUp size={24} />
-            <span>
-              {i18n.language === "ru" ? tabs[0].label : tabs[0].labelKz}
-            </span>
-          </BigTab>
-          <p></p>
-          <BigTab
-            value={tab}
-            onClick={setTab}
-            theme="default"
-            tab="announcement"
-          >
-            <FiStar size={24} />
-            <span>
-              {i18n.language === "ru" ? tabs[1].label : tabs[1].labelKz}
-            </span>
-          </BigTab>
-        </div>
+    <div className={!page ? styles.news : styles.newsPage}>
+      {!page && (
+        <>
+          <div className={styles.tabs}>
+            <Tabs
+              value={tab}
+              onChange={setTab}
+              lang={i18n.language}
+              theme="default"
+              items={tabs}
+            />
+          </div>
+          {size.width > 450 && (
+            <div className={styles.desktop}>
+              <BigTab value={tab} onClick={setTab} theme="default" tab="news">
+                <FiThumbsUp size={24} />
+                <span>
+                  {i18n.language === "ru" ? tabs[0].label : tabs[0].labelKz}
+                </span>
+              </BigTab>
+              <p></p>
+              <BigTab
+                value={tab}
+                onClick={setTab}
+                theme="default"
+                tab="announcement"
+              >
+                <FiStar size={24} />
+                <span>
+                  {i18n.language === "ru" ? tabs[1].label : tabs[1].labelKz}
+                </span>
+              </BigTab>
+            </div>
+          )}
+        </>
       )}
-
       <div className={styles.wrap}>
         <div className={styles.posts}>
           <Carousel page={current} onChange={setCurrent} mobile={mobile}>
@@ -142,9 +149,11 @@ const News = ({ t }) => {
               <FiChevronRight />
             </button>
           </div>
-          <a href="#" className={styles.more}>
-            {t("allNews")}
-          </a>
+          {!page && (
+            <a href="/news" className={styles.more}>
+              {t("allNews")}
+            </a>
+          )}
         </div>
       </div>
     </div>

@@ -192,7 +192,7 @@ const Header = ({ t, blue }) => {
                 <Link href="/edu-program">
                   <a className={styles.dropdownLinkItem}>{t("eduProgram")}</a>
                 </Link>
-                <Link href="/tasks">
+                <Link href="/reviews">
                   <a className={styles.dropdownLinkItem}>{t("reviews")}</a>
                 </Link>
               </div>
