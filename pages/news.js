@@ -16,10 +16,10 @@ function NewsPage({ t }) {
       <Header blue={true} />
       <Template>
         <div className={styles.image}>
-          <div className={styles.title}>{t("news")}</div>
+          <div className={styles.title}>{t("newsMenu")}</div>
         </div>
         <div className={styles.content}>
-          <News page={true} />
+          <News page={true} announcements={false}/>
         </div>
       </Template>
       <Footer />

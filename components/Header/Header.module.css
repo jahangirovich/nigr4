@@ -50,6 +50,7 @@
 
 .dropdown {
   position: relative;
+  z-index: 2;
   cursor: pointer;
 }
 
@@ -217,7 +218,7 @@
   
 
   .home {
-    font-size: 18px;
+    font-size: 16px;
   }
   .home:hover {
     cursor: pointer;

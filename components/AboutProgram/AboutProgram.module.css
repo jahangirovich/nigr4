@@ -8,14 +8,14 @@
 }
 
 .title {
-  font-size: 38px;
+  font-size: 34px;
   color: var(--darkBlue);
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .subtitle {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 29px;
   margin-top: 80px;
 }
@@ -39,12 +39,12 @@
 }
 
 .cardTitle {
-  font-size: 36px;
+  font-size: 34px;
   line-height: 42px;
   font-weight: 400;
 }
 .cardText {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 25px;
   font-weight: 400;
   margin-top: 30px;
@@ -53,9 +53,9 @@
 .more {
   color: var(--mainBlue);
   width: 180px;
-  font-size: 24px;
+  font-size: 20px;
   text-align: left;
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: 400;
   cursor: pointer;
   margin-top: auto;

@@ -4,7 +4,7 @@
 
 .title {
   display: flex;
-  font-size: 38px;
+  font-size: 34px;
   color: var(--black);
   font-weight: 700;
   text-transform: uppercase;
@@ -28,7 +28,7 @@
   align-items: center;
   text-align: center;
   padding: 10px 15px 10px 0;
-  font-size: 36px;
+  font-size: 30px;
   border-radius: 10px;
   font-weight: 300;
   width: 100%;
@@ -59,13 +59,13 @@
   padding: 64px 69px;
 }
 .card .missionTitle {
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 400;
   margin-bottom: 60px;
   color: var(--mainBlue);
 }
 .card .missionText {
-  font-size: 24px;
+  font-size: 22px;
   text-indent: 40px;
 }
 .more {

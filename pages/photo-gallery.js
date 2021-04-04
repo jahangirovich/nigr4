@@ -1,12 +1,15 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { withNamespaces } from "react-i18next";
+
 import {
   Header,
   Template,
   Footer,
+  Gallery
 } from "../components";
 
-export default function PhotoGallery() {
+function PhotoGallery( { t } ) {
   return (
     <div className={styles.container}>
       <Head>
@@ -19,8 +22,13 @@ export default function PhotoGallery() {
       <Header blue={true} />
       <Template>
         Photo gallery
+        <div>
+          <div className={styles.title}>{t("gallery")}</div>
+          <Gallery />
+        </div>
       </Template>
       <Footer />
     </div>
   );
 }
+export default withNamespaces()(PhotoGallery);

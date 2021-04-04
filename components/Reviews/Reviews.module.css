@@ -104,8 +104,22 @@
 
 .desktop {
   display: none;
-}
 
+}
+.desktop_inner{
+  appearance: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  border-radius: 10px;
+  font-size: 34px;
+  cursor: pointer;
+  color: var(--white);
+}
+.desktop_inner_span{
+  margin-left: 20px;
+}
 @media screen and (min-width: 450px) {
   .reviews {
     display: grid;

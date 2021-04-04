@@ -6,6 +6,10 @@ import { Header, Template, Footer } from "../components";
 import i18n from "../i18n";
 
 function Tasks({ t }) {
+  const getText = () =>{
+    let item = t("tasks_full_text")
+    return {__html : item}
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -21,7 +25,7 @@ function Tasks({ t }) {
           <div className={styles.title}>{t("tasks_name")}</div>
         </div>
         <div className={styles.content}>
-          <p className={styles.text}>{t("tasks_full_text")}</p>
+          <p className={styles.text} dangerouslySetInnerHTML={getText()}></p>
         </div>
       </Template>
       <Footer />

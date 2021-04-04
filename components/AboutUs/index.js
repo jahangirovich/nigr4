@@ -15,7 +15,7 @@ const AboutUs = ({ t }) => {
     {
       name: "directions",
       desc: "directions_desc",
-      link: "/directions",
+      link: "/direction",
     },
   ];
 

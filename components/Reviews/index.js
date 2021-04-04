@@ -15,11 +15,11 @@ const tabs = [
     label: "Отзывы",
     labelKz: "Пікірлер",
   },
-  {
-    value: "about",
-    label: "СМИ о нас",
-    labelKz: "БАҚ біз туралы",
-  },
+  // {
+  //   value: "about",
+  //   label: "СМИ о нас",
+  //   labelKz: "БАҚ біз туралы",
+  // },
 ];
 
 const News = ({ t, page }) => {
@@ -86,17 +86,17 @@ const News = ({ t, page }) => {
             />
           </div>
           <div className={styles.desktop}>
-            <BigTab value={tab} onClick={setTab} theme="white" tab="reviews">
+            <div className={styles.desktop_inner}>
               <FiThumbsUp size={24} />
-              <span>{i18n.language === "ru" ? "Отзывы" : "Пікірлер"}</span>
-            </BigTab>
+              <span className={styles.desktop_inner_span}>{i18n.language === "ru" ? "Отзывы" : "Пікірлер"}</span>
+            </div>
             <p></p>
-            <BigTab value={tab} onClick={setTab} theme="white" tab="about">
+            {/* <BigTab value={tab} onClick={setTab} theme="white" tab="about">
               <FiStar size={24} />
               <span>
                 {i18n.language === "ru" ? "СМИ о нас" : "БАҚ біз туралы"}
               </span>
-            </BigTab>
+            </BigTab> */}
           </div>
         </>
       )}

@@ -1,16 +1,17 @@
 import styles from "./Footer.module.css";
 import { FaInstagram } from "react-icons/fa";
+import {useState} from 'react'
 import { FiFacebook, FiYoutube, FiChevronRight } from "react-icons/fi";
 import i18n from "../../i18n";
 import { withNamespaces } from "react-i18next";
 import useComponentVisibility from "../../hooks/useComponentVisibility";
 
-const langs = [
+export const langs = [
   { name: "kz", icon: "/img/kaz_lang.png", text: "Қаз" },
   { name: "ru", icon: "/img/rus_lang.png", text: "Рус" },
 ];
 
-const Dropdown = ({ className, control, items, showOnload = false }) => {
+export const Dropdown = ({ className, control, items, showOnload = false }) => {
   const { ref, isVisible, setIsVisible } = useComponentVisibility(showOnload);
   return (
     <div
@@ -30,8 +31,19 @@ const Footer = ({ t }) => {
   };
 
   const changeLanguage = (lng) => {
+    setFlipped(!flipped)
+
     i18n.changeLanguage(lng);
   };
+  
+  const flipIcon = (transition , deg) =>{
+    return {
+      transition :  `${transition}s` , 
+      transform  : `rotate(${deg}deg)`
+    }
+  }
+
+  const [flipped, setFlipped] = useState(false)
 
   const currentLang = langs.find((l) => l.name === i18n.language);
   const otherLangs = langs.filter((l) => l.name !== i18n.language);
@@ -43,33 +55,36 @@ const Footer = ({ t }) => {
       </div>
 
       <Dropdown
-        className={`${styles.dropdown}`}
-        control={
-          <div
-            className={styles.lang}
-            onClick={() => changeLanguage(currentLang.name)}
-          >
-            <img src={currentLang.icon} />
-            {currentLang.text}
-            <FiChevronRight />
-          </div>
-        }
-        items={
-          <>
-            {otherLangs.map((l, i) => (
-              <div
-                key={i}
-                className={styles.lang}
-                onClick={() => changeLanguage(l.name)}
-              >
-                <img src={l.icon} />
-                {l.text}
-                <FiChevronRight />
-              </div>
-            ))}
-          </>
-        }
-      />
+                className={`${styles.dropdown}`}
+                control={
+                  <div
+                    className={styles.lang}
+                    onClick={() => changeLanguage(currentLang.name)}
+                  >
+                    <img src={currentLang.icon} />
+                    {currentLang.text}
+                    <FiChevronRight style={flipped ? flipIcon(0.3, 90):  flipIcon(0.3, 0)}/>
+                    {/* {
+                      flipped ? <FiChevronRight style={{"transform":"rotate(90deg)"}}/> : <FiChevronRight style={{"transform":"rotate(0deg)"}}/>
+                    } */}
+                  </div>
+                }
+                items={
+                  <>
+                    {otherLangs.map((l, i) => (
+                      <div
+                        key={i}
+                        className={styles.lang}
+                        onClick={() => changeLanguage(l.name)}
+                      >
+                        <img src={l.icon} />
+                        {l.text}
+                        <FiChevronRight />
+                      </div>
+                    ))}
+                  </>
+                }
+              />
 
 
       <div className={styles.contacts}>

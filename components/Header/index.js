@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Header.module.css";
+import footer_style from '../Footer/Footer.module.css'
 import { withNamespaces } from "react-i18next";
 import { FaInstagram } from "react-icons/fa";
 import { FiFacebook, FiYoutube, FiChevronRight } from "react-icons/fi";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import i18n from "../../i18n";
 import { slide as Menu } from "react-burger-menu";
 import cn from "classnames";
+import {Dropdown , langs} from '../Footer/index'
 
 const Header = ({ t, blue }) => {
   var menuStyles = {
@@ -67,7 +69,14 @@ const Header = ({ t, blue }) => {
   const [isOpenNews, setOpenNews] = useState(false);
   const [isOpenGallery, setOpenGallery] = useState(false);
 
+  const [flipped, setFlipped] = useState(false)
+
+  const currentLang = langs.find((l) => l.name === i18n.language);
+  const otherLangs = langs.filter((l) => l.name !== i18n.language);
+
   const changeLanguage = (lng) => {
+    setFlipped(!flipped)
+
     i18n.changeLanguage(lng);
   };
 
@@ -105,6 +114,13 @@ const Header = ({ t, blue }) => {
   const closeFifthLink = () => {
     setOpenNews(false);
   };
+
+  const flipIcon = (transition , deg) =>{
+    return {
+      transition :  `${transition}s` , 
+      transform  : `rotate(${deg}deg)`
+    }
+  }
 
   const openSixthLink = () => {
     setOpenGallery(true);
@@ -258,12 +274,12 @@ const Header = ({ t, blue }) => {
                     {t("announcementsMenu")}
                   </a>
                 </Link>
-                <Link href="/press">
+                {/* <Link href="/press">
                   <a className={styles.dropdownLinkItem}>{t("pressMenu")}</a>
                 </Link>
                 <Link href="/faq">
                   <a className={styles.dropdownLinkItem}>{t("faqMenu")}</a>
-                </Link>
+                </Link> */}
               </div>
             ) : null}
           </div>
@@ -288,8 +304,9 @@ const Header = ({ t, blue }) => {
               </div>
             ) : null}
           </div>
+          
 
-          <div className={styles.langs}>
+          {/* <div className={styles.langs}>
             <div
               onClick={() => changeLanguage("kz")}
               className={i18n.language === "kz" && styles.activeLang}
@@ -302,7 +319,38 @@ const Header = ({ t, blue }) => {
             >
               Рус
             </div>
-          </div>
+          </div> */}
+          <Dropdown
+                className={`${footer_style.dropdown}`}
+                control={
+                  <div
+                    className={footer_style.lang}
+                    onClick={() => changeLanguage(currentLang.name)}
+                  >
+                    <img src={currentLang.icon} />
+                    {currentLang.text}
+                    <FiChevronRight style={flipped ? flipIcon(0.3, 90):  flipIcon(0.3, 0)}/>
+                    {/* {
+                      flipped ? <FiChevronRight style={{"transform":"rotate(90deg)"}}/> : <FiChevronRight style={{"transform":"rotate(0deg)"}}/>
+                    } */}
+                  </div>
+                }
+                items={
+                  <>
+                    {otherLangs.map((l, i) => (
+                      <div
+                        key={i}
+                        className={footer_style.lang}
+                        onClick={() => changeLanguage(l.name)}
+                      >
+                        <img src={l.icon} />
+                        {l.text}
+                        <FiChevronRight />
+                      </div>
+                    ))}
+                  </>
+                }
+              />
         </div>
 
         <div className={styles.menu}>
@@ -474,14 +522,14 @@ const Header = ({ t, blue }) => {
                         {t("announcementsMenu")}
                       </a>
                     </Link>
-                    <Link href="/press">
+                    {/* <Link href="/press">
                       <a className={styles.dropdownLinkItem}>
                         {t("pressMenu")}
                       </a>
                     </Link>
                     <Link href="/faq">
                       <a className={styles.dropdownLinkItem}>{t("faqMenu")}</a>
-                    </Link>
+                    </Link> */}
                   </div>
                 ) : null}
               </div>
@@ -530,28 +578,7 @@ const Header = ({ t, blue }) => {
                   </div>
                 </a>
               </div>
-              <div className={styles.langs}>
-                <div
-                  className={`${styles.lang} ${
-                    i18n.language === "ru" ? styles.activeLang : ""
-                  }`}
-                  onClick={() => {
-                    changeLanguage("ru");
-                  }}
-                >
-                  Рус
-                </div>
-                <div
-                  className={`${styles.lang} ${
-                    i18n.language === "kz" ? styles.activeLang : ""
-                  }`}
-                  onClick={() => {
-                    changeLanguage("kz");
-                  }}
-                >
-                  Қаз
-                </div>
-              </div>
+              
             </div>
           </Menu>
         </div>

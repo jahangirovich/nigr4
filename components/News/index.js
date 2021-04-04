@@ -30,7 +30,7 @@ const tabs = [
 ];
 
 const News = ({ t, page, announcements }) => {
-  const [tab, setTab] = useState("news");
+  const [tab, setTab] = useState('news');
   const size = useWindowSize();
   const [news, setNews] = useState([]);
   const [current, setCurrent] = useState(0);
@@ -38,7 +38,6 @@ const News = ({ t, page, announcements }) => {
 
   useEffect(async () => {
     const lang = i18n.language === "ru" ? "ru" : "kk";
-
     const result = await axios(
       `https://api.nigrch.kz/ghost/api/v3/content/posts/?key=26a5cee97b2078f355b708967f&filter=tag:${lang}%2Btag:${tab}`
     );
@@ -48,7 +47,7 @@ const News = ({ t, page, announcements }) => {
   }, [tab, i18n.language]);
 
   useEffect( () => {
-    setTab("announcement")
+    setTab(announcements ? "announcement" : "news")
   }, [announcements]);
 
   const setPostsWidth = () => {
