@@ -8,7 +8,7 @@ import Link from "next/link";
 import i18n from "../../i18n";
 import { slide as Menu } from "react-burger-menu";
 import cn from "classnames";
-import {Dropdown , langs} from '../Footer/index'
+import { Dropdown, langs } from '../Footer/index'
 
 const Header = ({ t, blue }) => {
   var menuStyles = {
@@ -115,10 +115,10 @@ const Header = ({ t, blue }) => {
     setOpenNews(false);
   };
 
-  const flipIcon = (transition , deg) =>{
+  const flipIcon = (transition, deg) => {
     return {
-      transition :  `${transition}s` , 
-      transform  : `rotate(${deg}deg)`
+      transition: `${transition}s`,
+      transform: `rotate(${deg}deg)`
     }
   }
 
@@ -241,11 +241,11 @@ const Header = ({ t, blue }) => {
                     {t("pilotSchoolsMenu")}
                   </a>
                 </Link>
-                <Link href="/event-plan">
+                {/* <Link href="/event-plan">
                   <a className={styles.dropdownLinkItem}>
                     {t("eventsPlanMenu")}
                   </a>
-                </Link>
+                </Link> */}
                 <Link href="/materials">
                   <a className={styles.dropdownLinkItem}>
                     {t("materialsMenu")}
@@ -304,7 +304,7 @@ const Header = ({ t, blue }) => {
               </div>
             ) : null}
           </div>
-          
+
 
           {/* <div className={styles.langs}>
             <div
@@ -321,36 +321,36 @@ const Header = ({ t, blue }) => {
             </div>
           </div> */}
           <Dropdown
-                className={`${footer_style.dropdown}`}
-                control={
-                  <div
-                    className={footer_style.lang}
-                    onClick={() => changeLanguage(currentLang.name)}
-                  >
-                    <img src={currentLang.icon} />
-                    {currentLang.text}
-                    <FiChevronRight style={flipped ? flipIcon(0.3, 90):  flipIcon(0.3, 0)}/>
-                    {/* {
+            className={`${footer_style.dropdown}`}
+            control={
+              <div
+                className={footer_style.lang}
+                onClick={() => changeLanguage(currentLang.name)}
+              >
+                <img src={currentLang.icon} />
+                {currentLang.text}
+                <FiChevronRight style={flipped ? flipIcon(0.3, 90) : flipIcon(0.3, 0)} />
+                {/* {
                       flipped ? <FiChevronRight style={{"transform":"rotate(90deg)"}}/> : <FiChevronRight style={{"transform":"rotate(0deg)"}}/>
                     } */}
+              </div>
+            }
+            items={
+              <>
+                {otherLangs.map((l, i) => (
+                  <div
+                    key={i}
+                    className={footer_style.lang}
+                    onClick={() => changeLanguage(l.name)}
+                  >
+                    <img src={l.icon} />
+                    {l.text}
+                    <FiChevronRight />
                   </div>
-                }
-                items={
-                  <>
-                    {otherLangs.map((l, i) => (
-                      <div
-                        key={i}
-                        className={footer_style.lang}
-                        onClick={() => changeLanguage(l.name)}
-                      >
-                        <img src={l.icon} />
-                        {l.text}
-                        <FiChevronRight />
-                      </div>
-                    ))}
-                  </>
-                }
-              />
+                ))}
+              </>
+            }
+          />
         </div>
 
         <div className={styles.menu}>
@@ -485,11 +485,11 @@ const Header = ({ t, blue }) => {
                         {t("pilotSchoolsMenu")}
                       </a>
                     </Link>
-                    <Link href="/event-plan">
+                    {/* <Link href="/event-plan">
                       <a className={styles.dropdownLinkItem}>
                         {t("eventsPlanMenu")}
                       </a>
-                    </Link>
+                    </Link> */}
                     <Link href="/materials">
                       <a className={styles.dropdownLinkItem}>
                         {t("materialsMenu")}
@@ -578,7 +578,7 @@ const Header = ({ t, blue }) => {
                   </div>
                 </a>
               </div>
-              
+
             </div>
           </Menu>
         </div>

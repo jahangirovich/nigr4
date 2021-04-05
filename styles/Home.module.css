@@ -10,3 +10,31 @@
   display: flex;
   flex-direction: column;
 }
+
+.divStyle{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.embedStyle{
+  width: 300px;
+  height: 400px;
+  margin: 10px;
+}
+
+@media(max-width: 767px){
+  .divStyle{
+    flex-wrap: wrap;
+  }
+
+  .embedStyle{
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+  .embedStyle{
+    width: 200px;
+  }
+}

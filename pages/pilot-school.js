@@ -13,7 +13,15 @@ export default function PilotSchool() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header blue={true} />
-      <Template>Pilot School</Template>
+      <Template>
+        <div className={styles.divStyle}>
+          <embed src="https://drive.google.com/file/d/1WKB9JbYwp-ogqvw4I-njgbJMIoer2wOx/preview" type="application/pdf" className={styles.embedStyle} />
+
+          <embed src="https://drive.google.com/file/d/1vsrux3vd6cGeNDSnJXgz5fmXD6ssuV2U/preview" type="application/pdf" className={styles.embedStyle} />
+
+          <embed src="https://drive.google.com/file/d/1l_rvcb57UqouklF3TEUElnvyE88GKKMX/preview" type="application/pdf" className={styles.embedStyle} />
+        </div>
+      </Template>
       <Footer />
     </div>
   );

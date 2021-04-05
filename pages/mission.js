@@ -1,11 +1,14 @@
 import Head from "next/head";
 import styles from "../styles/Program.module.css";
 import { withNamespaces } from "react-i18next";
-
 import { Header, Template, Footer } from "../components";
 import i18n from "../i18n";
 
 function Mission({ t }) {
+  const getText = () => {
+    let item = t("mission_full_text")
+    return { __html: item }
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -21,7 +24,7 @@ function Mission({ t }) {
           <div className={styles.title}>Миссия</div>
         </div>
         <div className={styles.content}>
-          <p className={styles.text}>{t("mission_full_text")}</p>
+          <p className={styles.text} dangerouslySetInnerHTML={getText()}></p>
         </div>
       </Template>
       <Footer />

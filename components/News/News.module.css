@@ -116,7 +116,28 @@
   display: block;
 }
 
-@media screen and (min-width: 450px) {
+@media(min-width: 768px) and (max-width:991px){
+  .news{
+    display: block !important;
+  }
+
+  .desktop{
+    display: flex !important;
+    margin-bottom: 40px !important;
+  }
+
+  .bigTab{
+    margin-right: 30px !important;
+  }
+}
+
+@media(max-width: 767px){
+  .desktop{
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 767px) {
   .news {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

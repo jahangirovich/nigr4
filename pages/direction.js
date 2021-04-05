@@ -6,6 +6,10 @@ import { Header, Template, Footer } from "../components";
 import i18n from "../i18n";
 
 function Direction({ t }) {
+  const getText = () => {
+    let item = t("direction_full_text")
+    return { __html: item }
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -18,11 +22,11 @@ function Direction({ t }) {
       <Header blue={true} />
       <Template>
         <div className={styles.image}>
-          
-        <div className={styles.title}>{t("directions_name")}</div>
-          </div>
+
+          <div className={styles.title}>{t("directions_name")}</div>
+        </div>
         <div className={styles.content}>
-          <p className={styles.text}>{t("direction_full_text")}</p>
+          <p className={styles.text} dangerouslySetInnerHTML={getText()}></p>
         </div>
       </Template>
       <Footer />

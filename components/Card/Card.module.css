@@ -6,6 +6,12 @@
   display: flex;
 }
 
+@media(min-width: 450px) and (max-width: 767px){
+  .card{
+    flex-direction: column !important;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .card {
     padding: 30px 20px;
