@@ -39,6 +39,12 @@
   padding-left: 30px;
 }
 
+.itemContent p{
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
 .item p,
 .item a {
   display: none;
@@ -66,8 +72,22 @@
     display: none;
   }
 }
+ 
+@media (min-width:767px) and (max-width: 992px){
+  .project{
+    display: block !important;
+  }
 
-@media screen and (min-width: 450px) {
+  .body{
+    width: 100% !important;
+  }
+
+  .body2{
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 767px) {
   .project {
     padding: 0;
     display: flex;
@@ -90,7 +110,7 @@
   .title {
     display: flex;
     align-items: center;
-    font-size: 32px;
+    font-size: 28px;
     text-transform: uppercase;
     font-weight: bold;
     padding-bottom: 16px;

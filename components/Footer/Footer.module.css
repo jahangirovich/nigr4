@@ -9,6 +9,12 @@
   align-items: center;
 }
 
+@media(max-width: 991px){
+  .footer{
+    column-gap: normal
+  }
+}
+
 .subtitle {
   width: 354px;
   margin-top: 7px;

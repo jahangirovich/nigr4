@@ -12,7 +12,7 @@
   column-gap: 100px;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 767px) {
   .template{
     padding: 120px 20px 20px;
   }

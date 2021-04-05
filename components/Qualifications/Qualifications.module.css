@@ -24,7 +24,7 @@
   display: flex;
   color: white;
   font-weight: 700;
-  font-size: 34px;
+  font-size: 28px;
   text-transform: uppercase;
   align-items: center;
   align-items: flex-start;
@@ -40,7 +40,8 @@
 }
 
 .eduProgram {
-  font-size: 22px;
+  font-size: 18px;
+  line-height: 32px;
   font-weight: 400;
   color: white;
 }
@@ -58,7 +59,13 @@
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 450px) {
+@media (max-width: 991px){
+  .qualifications{
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .qualifications {
     padding: 50px 20px;
     display: flex;

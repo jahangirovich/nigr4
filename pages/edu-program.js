@@ -1,9 +1,15 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import { Header, Template, Footer } from "../components";
+import styles from "../styles/Program.module.css";
 import { withNamespaces } from "react-i18next";
 
+import { Header, Template, Footer } from "../components";
+import i18n from "../i18n";
+
 function EduProgram({ t }) {
+  const getText = () => {
+    let item = t("eduProgram_full_text")
+    return { __html: item }
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -14,9 +20,18 @@ function EduProgram({ t }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header blue={true} />
-      <Template>Courses</Template>
+      <Template>
+        <div className={styles.image}>
+
+          <div className={styles.title}>{t("eduProgram_name")}</div>
+        </div>
+        <div className={styles.content}>
+          <p className={styles.text} dangerouslySetInnerHTML={getText()}></p>
+        </div>
+      </Template>
       <Footer />
     </div>
   );
 }
+
 export default withNamespaces()(EduProgram);

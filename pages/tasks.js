@@ -6,9 +6,9 @@ import { Header, Template, Footer } from "../components";
 import i18n from "../i18n";
 
 function Tasks({ t }) {
-  const getText = () =>{
+  const getText = () => {
     let item = t("tasks_full_text")
-    return {__html : item}
+    return { __html: item }
   }
   return (
     <div className={styles.container}>

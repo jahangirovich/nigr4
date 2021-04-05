@@ -108,7 +108,7 @@
   height: 20px;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 767px) {
   .hero {
     margin-top: -1px;
     padding: 150px 20px 20px;
@@ -201,5 +201,17 @@
   .arrow svg{
     width: 15px;
     height: 15px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+  .heroImage{
+    width: 490px
+  }
+}
+
+@media(min-width: 768px) and (max-width:991px){
+  .heroImage{
+    width: auto;
   }
 }

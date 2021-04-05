@@ -1,8 +1,15 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import { Header, Template, Footer } from "../components";
+import styles from "../styles/Program.module.css";
+import { withNamespaces } from "react-i18next";
 
-export default function BasicSchool() {
+import { Header, Template, Footer } from "../components";
+import i18n from "../i18n";
+
+function BasicSchool({ t }) {
+  const getText = () => {
+    let item = t("materials_full_text")
+    return { __html: item }
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -13,8 +20,18 @@ export default function BasicSchool() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header blue={true} />
-      <Template>Materials</Template>
+      <Template>
+        <div className={styles.image}>
+
+          <div className={styles.title}>{t("materials_name")}</div>
+        </div>
+        <div className={styles.content}>
+          <p className={styles.text} dangerouslySetInnerHTML={getText()}></p>
+        </div>
+      </Template>
       <Footer />
     </div>
   );
 }
+
+export default withNamespaces()(BasicSchool);

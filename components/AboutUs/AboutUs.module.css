@@ -4,7 +4,7 @@
 
 .title {
   display: flex;
-  font-size: 34px;
+  font-size: 28px;
   color: var(--black);
   font-weight: 700;
   text-transform: uppercase;
@@ -23,12 +23,29 @@
   grid-template-columns: 1fr 2fr;
   margin-top: 70px;
 }
+
+@media(max-width: 991px){
+  .gridAboutUs{
+    display: block !important;
+  }
+
+  .links{
+    height: auto !important;
+    display: block !important;
+  }
+
+  .linkTag{
+    margin-bottom: 35px !important;
+  }
+}
+
+
 .linkTag {
   display: flex;
   align-items: center;
   text-align: center;
   padding: 10px 15px 10px 0;
-  font-size: 30px;
+  font-size: 26px;
   border-radius: 10px;
   font-weight: 300;
   width: 100%;
@@ -61,11 +78,12 @@
 .card .missionTitle {
   font-size: 34px;
   font-weight: 400;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   color: var(--mainBlue);
 }
 .card .missionText {
-  font-size: 22px;
+  font-size: 18px;
+  line-height: 32px;
   text-indent: 40px;
 }
 .more {
@@ -84,7 +102,7 @@
 .links {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 500px;
 }
 
@@ -103,7 +121,7 @@
   text-decoration: underline;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 767px) {
   .aboutUs {
     padding: 50px 20px;
     display: flex;
@@ -130,7 +148,7 @@
   }
   .linkTag {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     text-align: center;
     padding: 10px 15px;
     font-size: 14px;
