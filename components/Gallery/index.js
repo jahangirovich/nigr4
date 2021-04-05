@@ -39,6 +39,10 @@ const Gallery = ({ t }) => {
 
     setGallery(fetch_gallery.data.galleries);
     setCurrent(0)
+
+    // console.log(fetch_gallery.data.galleries[0])
+    let image = tab == "video" ? await axios.get(`${API_FETCH_URL}video/getVideos?id=${fetch_gallery.data.galleries[0]._id}`) : await axios.get(`${API_FETCH_URL}gallery/getPhotos?id=${fetch_gallery.data.galleries[0]._id}`)
+    setImages(tab == "video" ? image.data.videos : image.data.photos)
   }, [tab])
 
   const changeCurrent = async (value , i) =>{
@@ -105,7 +109,9 @@ const Gallery = ({ t }) => {
               <div className={styles.wrap} key={i} >
               <div className={styles.photoBlock} key={item.id}>
                 {
-                  tab == "video" ? <iframe src={`${"https://youtube.com/embed/"+ item.url.split("=")[item.url.split("=").length - 1]}`} width="100%" height="200px"></iframe> : <img alt="Изображение" src={`https://back.nigrch.kz/${item.url}`} />
+                  tab == "video" ? 
+                  <iframe src={`${"https://youtube.com/embed/"+ item.url.split("=")[item.url.split("=").length - 1]}`} width="100%" height="300px"></iframe> : 
+                  <img alt="Изображение" src={`https://back.nigrch.kz/${item.url}`} />
                 }
                 {/* <div className={styles.zoom}>
                   <FiZoomIn size={24} />
