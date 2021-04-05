@@ -159,7 +159,7 @@ const News = ({ t, page, announcements }) => {
   );
 };
 
-const Carousel = ({ children, mobile, page, onChange }) => {
+export const Carousel = ({ children, mobile, page, onChange }) => {
   const [ready, setReady] = useState(false);
   const slider = useRef();
   const settings = {
@@ -178,7 +178,7 @@ const Carousel = ({ children, mobile, page, onChange }) => {
     setReady(true);
   }, [page]);
   return (
-    <Slider ref={slider} {...settings}>
+    <Slider ref={slider} {...settings} >
       {children}
     </Slider>
   );

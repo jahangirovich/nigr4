@@ -10,6 +10,8 @@
     overflow: hidden;
 }
 
+
+
 .photoBlock img{
     width: 100%;
     display: block;
@@ -23,7 +25,7 @@
     left: 0;
     height: 50%;
     width: 100%;
-    background: linear-gradient(180deg, rgba(128, 128, 128, 0) 0%, rgba(3, 3, 3, 0.8) 100%);
+    /* background: linear-gradient(180deg, rgba(128, 128, 128, 0) 0%, rgba(3, 3, 3, 0.8) 100%); */
 }
 
 .select{
@@ -32,10 +34,20 @@
     justify-content: space-between;
     padding: 12px;
     font-size: 16px;
-    border-radius: 3px;
+    cursor: pointer;
     background-color: var(--white);
     color: var(--black);
+}
+
+.select_collapse{
+    margin-top: 32px;
+    border-radius: 5px;
+    overflow: hidden;
     margin-bottom: 32px;
+}
+.select_container{
+    transition: 0.3s all;
+    height: 100%;
 }
 
 .zoom{
@@ -46,6 +58,7 @@
 }
 
 .photoLabel{
+    font-size: 20px;
     font-weight: 300;
     width: calc(100% - 106px);
 }
@@ -54,15 +67,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     margin-top: 32px;
 }
 
 .photoBlockArrows{
     display: grid;
+    cursor: pointer;
     grid-template-columns: 1fr 1fr;
     gap: 14px;
 }
-
+.wrap{
+    position: relative;
+}
+.slick-list{
+    max-width: 800px !important;
+}
 .arrow{
     display: flex;
     align-items: center;
@@ -82,14 +102,21 @@
 .desktop{
     display: none;
 }
-
+.block{
+    display: inline-block;
+    width: 45%;
+    padding: 0 5%;
+    height: 100%;
+    vertical-align: top;
+}
 @media screen and (min-width: 450px) {
     .gallery{
-        display: grid;
+        display: block;
+        /* display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: "a b b";
         gap: 48px;
-        padding: 100px 80px;
+        padding: 100px 80px; */
     }
     .mobile{
         display: none;
@@ -102,6 +129,6 @@
         margin: 24px 0;
     }
     .wrap{
-        grid-area: b;
+        /* grid-area: b; */
     }
 }
