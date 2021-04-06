@@ -147,7 +147,7 @@
     content: ".";
   }
   .itemTitle {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
     width: calc(100% - 80px);
   }
