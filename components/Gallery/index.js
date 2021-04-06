@@ -8,23 +8,37 @@ import i18n from "../../i18n";
 import {Carousel} from '../News/index'
 import { FiChevronRight, FiChevronLeft, FiZoomIn, FiAperture, FiFilm } from "react-icons/fi";
 
-const tabs = [
-  {
-    value: "photo",
-    label: "Фотогалерея",
-    labelKz: "Фотогалерея",
-  },
-  {
-    value: "video",
-    label: "Фотогалерея",
-    labelKz: "Видеогалерея",
-  },
-];
+// const tabs = [
+//   {
+//     value: "photo",
+//     label: "Фотогалерея",
+//     labelKz: "Фотогалерея",
+//   },
+//   {
+//     value: "video",
+//     label: "Видеогалерея",
+//     labelKz: "Видеогалерея",
+//   },
+// ];
+
 
 const API_FETCH_URL = "https://back.nigrch.kz/"
 
-const Gallery = ({ t }) => {
-  const [tab, setTab] = useState("photo");
+const Gallery = ({ t , item}) => {
+  const [tabs, setTabs] = useState([
+    {
+      value: "photo",
+      label: "Фотогалерея",
+      labelKz: "Фотогалерея",
+    },
+    {
+      value: "video",
+      label: "Видеогалерея",
+      labelKz: "Видеогалерея",
+    },
+  ].filter(tab => item != undefined ? tab.value == item : tab))
+
+  const [tab, setTab] = useState(item == undefined ? "photo" : item );
   const [gallery , setGallery] = useState([]);
   const [current_selected, setCurrent] = useState(null);
   const [open, setOpen] = useState({style: {"max-height":"0"} , opened : false})
@@ -68,12 +82,6 @@ const Gallery = ({ t }) => {
       <div className={styles.block}>
         <div className={styles.mobile}>
           <Tabs theme="white" onChange={setTab}  lang={i18n.language} value={tab} items={tabs} />
-        </div>
-        <div className={styles.desktop}>
-          <BigTab theme="white" onClick={setTab} value={tab} tab="photo">
-            <FiAperture size={24}/>
-            <span>Фотогалерея</span>
-          </BigTab>
           <div className={styles.select_collapse}>
             <div className={styles.select} onClick={() => collapse(gallery[current_selected])}>
               <span>{
@@ -94,15 +102,43 @@ const Gallery = ({ t }) => {
               }
             </div>
           </div>
-
-          
-          <BigTab theme="white" onClick={setTab} value={tab} tab="video">
-            <FiFilm size={24}/>
-            <span>Видеогалерея</span>
-          </BigTab>
         </div>
-        
+        <div className={styles.desktop}>
+          <div style={item == "video" ? {"display" : "none"} : {"display" : "block"}}>
+            <BigTab theme="white" onClick={setTab} value={tab} tab="photo">
+              <FiAperture size={24}/>
+              <span>Фотогалерея</span>
+            </BigTab>
+          </div>
+          <div className={styles.select_collapse}>
+            <div className={styles.select} onClick={() => collapse(gallery[current_selected])}>
+              <span>{
+                gallery[current_selected] != null ? (i18n.language === "ru" ? (tab == 'video' ? gallery[current_selected].name : gallery[current_selected].nameRu) : gallery[current_selected].nameKk) : ""
+              }</span>
+              <FiChevronRight size={24} />
+            </div>
+            <div className={styles.select_container} style={open.style}>
+              {
+                gallery.map((value , i)=>{
+                  if(i === current_selected) return;
+                  return (
+                    <div className={styles.select} key={i} onClick={() => changeCurrent(value, i )}>
+                      <span>{ i18n.language === "ru" ? value.nameRu : value.nameKk }</span>
+                    </div>
+                  )
+                })
+              }
+            </div>
+          </div>
+          <div style={item == "photo" ? {"display" : "none"} : {"display" : "block"}}>
+            <BigTab theme="white" onClick={setTab} value={tab} tab="video">
+              <FiFilm size={24}/>
+              <span>Видеогалерея</span>
+            </BigTab>
+          </div>
+        </div>
       </div>
+
       <div className={styles.block}>
         <Carousel mobile={mobile} page={current} onChange={setAnotherCurrent}>
           {images.map((item, i) => (
@@ -110,7 +146,7 @@ const Gallery = ({ t }) => {
               <div className={styles.photoBlock} key={item.id}>
                 {
                   tab == "video" ? 
-                  <iframe src={`${"https://youtube.com/embed/"+ item.url.split("=")[item.url.split("=").length - 1]}`} width="100%" height="300px"></iframe> : 
+                  <iframe src={`${"https://youtube.com/embed/"+ item.url.split("=")[item.url.split("=").length - 1]}`} width="100%" height="300px" frameBorder="none"></iframe> : 
                   <img alt="Изображение" src={`https://back.nigrch.kz/${item.url}`} />
                 }
                 {/* <div className={styles.zoom}>

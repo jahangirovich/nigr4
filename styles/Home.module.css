@@ -23,9 +23,17 @@
   margin: 10px;
 }
 
+.galleryContainer{
+  padding: 180px 80px 100px;
+}
+
 @media(max-width: 767px){
   .divStyle{
     flex-wrap: wrap;
+  }
+
+  .galleryContainer{
+    padding: 100px 0 0;
   }
 
   .embedStyle{

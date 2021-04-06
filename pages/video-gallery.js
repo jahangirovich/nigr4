@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { Header, Template, Footer } from "../components";
+import { Header, Template, Footer , Gallery } from "../components";
 
 export default function VideoGallery() {
   return (
@@ -13,7 +13,9 @@ export default function VideoGallery() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header blue={true} />
-      <Template>VideoGallery </Template>
+      <div className={styles.galleryContainer}>
+        <Gallery item="video"/>
+      </div>
       <Footer />
     </div>
   );

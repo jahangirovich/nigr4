@@ -109,6 +109,11 @@
     height: 100%;
     vertical-align: top;
 }
+@media screen and (max-width: 720px){
+    .block{
+        width: 100%;
+    }
+}
 @media screen and (min-width: 450px) {
     .gallery{
         display: block;

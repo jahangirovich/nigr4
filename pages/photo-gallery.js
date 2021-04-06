@@ -20,13 +20,12 @@ function PhotoGallery( { t } ) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header blue={true} />
-      <Template>
-        Photo gallery
-        <div>
-          <div className={styles.title}>{t("gallery")}</div>
-          <Gallery />
+      {/* <Template> */}
+        <div className={styles.galleryContainer}>
+          {/* <div className={styles.title}>{t("gallery")}</div> */}
+          <Gallery item="photo"/>
         </div>
-      </Template>
+      {/* </Template> */}
       <Footer />
     </div>
   );
