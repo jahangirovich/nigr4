@@ -6,8 +6,8 @@ import { Header, Template, Footer } from "../components";
 import i18n from "../i18n";
 
 function EduProgram({ t }) {
-  const getText = () => {
-    let item = t("eduProgram_full_text")
+  const getText = (val) => {
+    let item = t(val)
     return { __html: item }
   }
   return (
@@ -23,10 +23,10 @@ function EduProgram({ t }) {
       <Template>
         <div className={styles.image}>
 
-          <div className={styles.title}>{t("eduProgram_name")}</div>
+          <div className={styles.title} dangerouslySetInnerHTML={getText("eduProgram_name")}></div>
         </div>
         <div className={styles.content}>
-          <p className={styles.text} dangerouslySetInnerHTML={getText()}></p>
+          <p className={styles.text} dangerouslySetInnerHTML={getText("eduProgram_full_text")}></p>
         </div>
       </Template>
       <Footer />
