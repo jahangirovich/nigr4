@@ -6,6 +6,10 @@ import { Header, Template, Footer, Reviews } from "../components";
 import i18n from "../i18n";
 
 function ReviewsPage({ t }) {
+  const getText = () => {
+    let item = t("mission_full_text")
+    return { __html: item }
+  }
   return (
     <div className={styles.container}>
       <Head>

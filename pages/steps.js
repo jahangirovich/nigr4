@@ -6,6 +6,11 @@ import { Header, Template, Footer } from "../components";
 import i18n from "../i18n";
 
 function Steps({ t }) {
+  const getText = (val) => {
+    let item = t(val)
+    return { __html: item }
+  }
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -19,13 +24,12 @@ function Steps({ t }) {
       <Template>
         <div className={styles.image}>
           <img src="/img/steps.jpg" />
-          <div className={styles.subtitle}>
-          {t("stepsSubtitle")}
+          <div className={styles.subtitle} dangerouslySetInnerHTML={getText("stepsSubtitle")}>
           </div>
         </div>
         <div className={styles.content}>
-          <div className={styles.title}>{t("stepsTitle")}</div>
-          <p className={styles.text}>{t("stepsText")}</p>
+          <div className={styles.title} dangerouslySetInnerHTML={getText("stepsTitle")}></div>
+          <p className={styles.text} dangerouslySetInnerHTML={getText("stepsText")}></p>
         </div>
       </Template>
       <Footer />

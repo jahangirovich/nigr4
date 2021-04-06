@@ -6,8 +6,8 @@ import { Header, Template, Footer } from "../components";
 import i18n from "../i18n";
 
 function Tasks({ t }) {
-  const getText = () => {
-    let item = t("tasks_full_text")
+  const getText = (val) => {
+    let item = t(val)
     return { __html: item }
   }
   return (
@@ -22,10 +22,10 @@ function Tasks({ t }) {
       <Header blue={true} />
       <Template>
         <div className={styles.image}>
-          <div className={styles.title}>{t("tasks_name")}</div>
+          <div className={styles.title} dangerouslySetInnerHTML={getText("tasks_name")}></div>
         </div>
         <div className={styles.content}>
-          <p className={styles.text} dangerouslySetInnerHTML={getText()}></p>
+          <p className={styles.text} dangerouslySetInnerHTML={getText("tasks_full_text")}></p>
         </div>
       </Template>
       <Footer />
