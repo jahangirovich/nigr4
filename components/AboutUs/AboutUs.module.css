@@ -148,7 +148,7 @@
   }
   .linkTag {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     text-align: center;
     padding: 10px 15px;
     font-size: 14px;

@@ -75,9 +75,14 @@
   justify-content: center;
   border: 1px var(--lightBlue) solid;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 47px;
+  width: 47px;
   color: var(--mainBlue);
+}
+
+.moreStyle{
+  color: var(--mainBlue);
+  text-decoration: none;
 }
 
 .arrow svg {
@@ -181,16 +186,17 @@
     margin: 0;
   }
   .content {
-    color: var(--white);
-    background-color: var(--mainBlue);
+    color: black;
+    background-color: white;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
   }
   .content p {
-    color: var(--white);
+    color: black;
   }
   .content a {
-    color: var(--lightBlue);
+    color: var(--mainBlue);
+    text-decoration: none;
   }
 }
 
@@ -200,7 +206,7 @@
     padding: 40px 0;
   }
   .arrow{
-    height: 40px;
-    width: 40px;
+    height: 47px;
+    width: 47px;
   }
 }

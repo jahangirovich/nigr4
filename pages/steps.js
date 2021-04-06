@@ -3,13 +3,16 @@ import styles from "../styles/Program.module.css";
 import { withNamespaces } from "react-i18next";
 
 import { Header, Template, Footer } from "../components";
+import {useState,useEffect} from 'react'
 import i18n from "../i18n";
 
+const full_text = "stepsText"
+
 function Steps({ t }) {
-  const getText = (val) => {
-    let item = t(val)
-    return { __html: item }
-  }
+  const [text, setText] = useState({__html : ""})
+  useEffect(() => {
+    setText({__html : t(full_text)})
+  }, [t])
   
   return (
     <div className={styles.container}>
@@ -24,12 +27,15 @@ function Steps({ t }) {
       <Template>
         <div className={styles.image}>
           <img src="/img/steps.jpg" />
-          <div className={styles.subtitle} dangerouslySetInnerHTML={getText("stepsSubtitle")}>
+          <div className={styles.subtitle} >
+            {t("stepsSubtitle")}
           </div>
         </div>
         <div className={styles.content}>
-          <div className={styles.title} dangerouslySetInnerHTML={getText("stepsTitle")}></div>
-          <p className={styles.text} dangerouslySetInnerHTML={getText("stepsText")}></p>
+          <div className={styles.title} >
+            {t("stepsTitle")}
+          </div>
+          <p className={styles.text} dangerouslySetInnerHTML={text}></p>
         </div>
       </Template>
       <Footer />

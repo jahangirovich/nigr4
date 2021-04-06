@@ -4,12 +4,17 @@ import { withNamespaces } from "react-i18next";
 
 import { Header, Template, Footer } from "../components";
 import i18n from "../i18n";
+import {useEffect, useState} from 'react'
+
+
+const full_text = "eduProgram_full_text"
 
 function EduProgram({ t }) {
-  const getText = (val) => {
-    let item = t(val)
-    return { __html: item }
-  }
+  const [text, setText] = useState({__html : ""})
+  useEffect(() => {
+    setText({__html : t(full_text)})
+  }, [t])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -23,10 +28,10 @@ function EduProgram({ t }) {
       <Template>
         <div className={styles.image}>
 
-          <div className={styles.title} dangerouslySetInnerHTML={getText("eduProgram_name")}></div>
+        <div className={styles.title}>{t("eduProgram_name")}</div>
         </div>
         <div className={styles.content}>
-          <p className={styles.text} dangerouslySetInnerHTML={getText("eduProgram_full_text")}></p>
+          <p className={styles.text} dangerouslySetInnerHTML={text}></p>
         </div>
       </Template>
       <Footer />

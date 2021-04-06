@@ -1,4 +1,5 @@
 import styles from "./News.module.css";
+import buttonStyle from '../Button/Button.module.css'
 import { withNamespaces } from "react-i18next";
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import Tabs from "../Tabs";
@@ -111,7 +112,7 @@ const News = ({ t, page, announcements }) => {
                 )}
                 <div className={styles.content}>
                   <p>{item.excerpt}</p>
-                  <a href="#">Подробнее</a>
+                  <a href="/news-review" className={styles.moreStyle}>Подробнее</a>
                 </div>
                 {/* <div className={styles.tag}>Направления деятельности</div> */}
               </div>

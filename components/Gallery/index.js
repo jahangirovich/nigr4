@@ -46,6 +46,10 @@ const Gallery = ({ t , item}) => {
   const mobile = true
   const [current, setAnotherCurrent] = useState(0);
 
+  useEffect(()=>{
+    console.log(current)
+  },[current])
+
   useEffect(async () => {
     const fetch_gallery = tab == 'video' ?  
       await axios.get(`${API_FETCH_URL}video/?lang=${i18n.language}`) : 
@@ -68,7 +72,7 @@ const Gallery = ({ t , item}) => {
     let image = await axios.get(`${API_FETCH_URL}gallery/getPhotos?id=${value._id}`)
     image != null ? setImages(image.data.photos) : setImages([])
   }
-  const collapse =async (object) =>{
+  const collapse = async (object) =>{
     let image = tab == "video" ? await axios.get(`${API_FETCH_URL}video/getVideos?id=${object._id}`) : await axios.get(`${API_FETCH_URL}gallery/getPhotos?id=${object._id}`)
     setImages(tab == "video" ? image.data.videos : image.data.photos)
     setOpen({
@@ -157,27 +161,27 @@ const Gallery = ({ t , item}) => {
                   <div className={styles.photoLabel}>
                     {  i18n.language === "ru" ? item.captionRu : item.captionKk}
                   </div>
-                  <div className={styles.photoBlockArrows}>
-                    <div className={styles.arrow} onClick={() => {
-                        if (current > 0) {
-                          setAnotherCurrent(current - 1);
-                        }
-                      }}>
-                      <FiChevronLeft />
-                    </div>
-                    <div className={styles.arrow} onClick={() => {
-                        if (current < Math.ceil(images.length / (mobile ? 1 : 3)) - 1) {
-                          setAnotherCurrent(current + 1);
-                        }
-                      }}>
-                      <FiChevronRight />
-                    </div>
-                  </div>
                 </div>
             </div>
           ))}
 
       </Carousel>
+      <div className={styles.photoBlockArrows} style={images.length <= 1 ? {"display":"none"} : {"display":"flex"}}>
+            <div className={styles.arrow} onClick={() => {
+                if (current > 0) {
+                  setAnotherCurrent(current - 1);
+                }
+              }}>
+              <FiChevronLeft />
+            </div>
+            <div className={styles.arrow} onClick={() => {
+                if (current < Math.ceil(images.length / (mobile ? 1 : 3)) - 1) {
+                  setAnotherCurrent(current + 1);
+                }
+              }}>
+              <FiChevronRight />
+            </div>
+          </div>
       </div>
     </div>
   );

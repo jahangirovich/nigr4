@@ -3,13 +3,18 @@ import styles from "../styles/Program.module.css";
 import { withNamespaces } from "react-i18next";
 
 import { Header, Template, Footer } from "../components";
+import {useEffect, useState} from 'react'
 import i18n from "../i18n";
 
+const nameOf = "aboutProject_name"
+const full_text = "aboutProject_full_text"
+
 function AboutProject({ t }) {
-  const getText = () => {
-    let item = t("aboutProject_full_text")
-    return { __html: item }
-  }
+  const [text, setText] = useState({__html : ""})
+  useEffect(() => {
+    setText({__html : t(full_text)})
+  }, [t])
+ 
   return (
     <div className={styles.container}>
       <Head>
@@ -23,10 +28,10 @@ function AboutProject({ t }) {
       <Template>
         <div className={styles.image}>
 
-          <div className={styles.title}>{t("aboutProject_name")}</div>
+          <div className={styles.title}>{t('aboutProject_name')}</div>
         </div>
         <div className={styles.content}>
-          <p className={styles.text} dangerouslySetInnerHTML={getText()}></p>
+          <p className={styles.text} dangerouslySetInnerHTML={text}></p>
         </div>
       </Template>
       <Footer />

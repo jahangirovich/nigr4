@@ -72,10 +72,10 @@
 }
 
 .photoBlockArrows{
-    display: grid;
-    cursor: pointer;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    position: absolute;
+    display: flex;
+    right: 10%;
+    bottom: -10px;
 }
 .wrap{
     position: relative;
@@ -91,6 +91,7 @@
     border-radius: 50%;
     height: 47px;
     width: 47px;
+    margin: 0 10px;
 }
 
 .arrow svg{
@@ -108,12 +109,18 @@
     padding: 0 5%;
     height: 100%;
     vertical-align: top;
+    position: relative;
 }
 @media screen and (max-width: 720px){
     .block{
         width: 100%;
     }
+    .photoBlockArrows{
+        bottom: 0;
+        right: 0;
+    }
 }
+/* 192.168.1.20 */
 @media screen and (min-width: 450px) {
     .gallery{
         display: block;

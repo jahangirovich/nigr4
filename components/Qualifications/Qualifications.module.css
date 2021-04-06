@@ -50,7 +50,7 @@
   text-decoration: underline;
   margin-left: 10px;
 }
-.eduProgram div {
+.eduProgram div,.eduProgram a {
   display: flex;
   align-items: center;
 }

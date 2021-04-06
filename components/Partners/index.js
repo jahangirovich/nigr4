@@ -1,7 +1,10 @@
 import styles from "./Partners.module.css";
 import { withNamespaces } from "react-i18next";
 import { FiCodesandbox } from "react-icons/fi";
+import {useState,useEffect} from 'react'
+
 const Partners = ({ t }) => {
+  
   return (
     <section className={styles.partners}>
       <div className={styles.title}>

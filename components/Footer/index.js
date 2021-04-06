@@ -49,42 +49,43 @@ const Footer = ({ t }) => {
   const otherLangs = langs.filter((l) => l.name !== i18n.language);
 
   return (
+    <div>
     <footer className={styles.footer}>
       <div className={styles.logotype}>
         <div className={styles.subtitle}>{t("logotype")}</div>
       </div>
 
       <Dropdown
-                className={`${styles.dropdown}`}
-                control={
-                  <div
-                    className={styles.lang}
-                    onClick={() => changeLanguage(currentLang.name)}
-                  >
-                    <img src={currentLang.icon} />
-                    {currentLang.text}
-                    <FiChevronRight style={flipped ? flipIcon(0.3, 90):  flipIcon(0.3, 0)}/>
-                    {/* {
-                      flipped ? <FiChevronRight style={{"transform":"rotate(90deg)"}}/> : <FiChevronRight style={{"transform":"rotate(0deg)"}}/>
-                    } */}
-                  </div>
-                }
-                items={
-                  <>
-                    {otherLangs.map((l, i) => (
-                      <div
-                        key={i}
-                        className={styles.lang}
-                        onClick={() => changeLanguage(l.name)}
-                      >
-                        <img src={l.icon} />
-                        {l.text}
-                        <FiChevronRight />
-                      </div>
-                    ))}
-                  </>
-                }
-              />
+          className={`${styles.dropdown}`}
+          control={
+            <div
+              className={styles.lang}
+              onClick={() => changeLanguage(currentLang.name)}
+            >
+              <img src={currentLang.icon} />
+              {currentLang.text}
+              <FiChevronRight style={flipped ? flipIcon(0.3, 90):  flipIcon(0.3, 0)}/>
+              {/* {
+                flipped ? <FiChevronRight style={{"transform":"rotate(90deg)"}}/> : <FiChevronRight style={{"transform":"rotate(0deg)"}}/>
+              } */}
+            </div>
+          }
+          items={
+            <>
+              {otherLangs.map((l, i) => (
+                <div
+                  key={i}
+                  className={styles.lang}
+                  onClick={() => changeLanguage(l.name)}
+                >
+                  <img src={l.icon} />
+                  {l.text}
+                  <FiChevronRight />
+                </div>
+              ))}
+            </>
+          }
+        />
 
 
       <div className={styles.contacts}>
@@ -148,6 +149,7 @@ const Footer = ({ t }) => {
         {t("toUp")}
       </div>
     </footer>
+    </div>
   );
 };
 

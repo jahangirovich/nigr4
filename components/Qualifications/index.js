@@ -22,12 +22,15 @@ const Qualifications = ({ t }) => {
         {/* <div className={styles.button}>График курсов</div> */}
 
         <div className={styles.text}>{t("qualText2")}</div>
-        <div className={styles.eduProgramButton}>
-          <div>
-            <FiFileText size={30} />
+        
+          <div className={styles.eduProgramButton}>
+            <a href="/edu-program" className={styles.eduProgramButton}>
+              <div>
+                  <FiFileText size={30} />
+              </div>
+              <span>{t("eduProgram")}</span>
+            </a>
           </div>
-          <span>{t("eduProgram")}</span>
-        </div>
       </div>
     </section>
   );
