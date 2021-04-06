@@ -17,7 +17,7 @@
     padding: 120px 20px 20px;
   }
   .content{
-    display: grid;
-    grid-template-columns: 1fr;
+    display: block;
+    /* grid-template-columns: 1fr; */
   }
 }

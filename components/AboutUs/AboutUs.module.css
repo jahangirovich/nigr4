@@ -30,12 +30,12 @@
   }
 
   .links{
-    height: auto !important;
-    display: block !important;
+    /* height: auto !important; */
+    /* display: block !important; */
   }
 
   .linkTag{
-    margin-bottom: 35px !important;
+    /* margin-bottom: 1px !important; */
   }
 }
 

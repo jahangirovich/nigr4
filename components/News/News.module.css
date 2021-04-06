@@ -193,3 +193,14 @@
     color: var(--lightBlue);
   }
 }
+
+
+@media only screen and (max-width: 767px){
+  .newsPage{
+    padding: 40px 0;
+  }
+  .arrow{
+    height: 40px;
+    width: 40px;
+  }
+}

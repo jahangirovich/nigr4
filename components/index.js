@@ -13,6 +13,7 @@ import Reviews from "./Reviews";
 import Project from "./Project";
 import Qualifications from "./Qualifications";
 import Template from "./Template";
+import FileComponent from './FileComponent'
 
 
 export {
@@ -30,5 +31,6 @@ export {
   Reviews,
   Project,
   Qualifications,
-  Template
+  Template,
+  FileComponent
 };

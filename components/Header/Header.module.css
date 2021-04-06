@@ -145,7 +145,7 @@
   }
   .mobileLinks .link {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .linkFooter {
     position: absolute;
@@ -167,6 +167,9 @@
 
   .mobileDropdownMenu .dropdownLinkItem::before{
     content: "•";
+  }
+  .dropdownLinkItem{
+    margin-bottom: 5px;
   }
   .socialLogo {
     display: flex;

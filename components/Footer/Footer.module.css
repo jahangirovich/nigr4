@@ -137,6 +137,8 @@
   width: 30px;
   height: 50px;
 }
+
+
 @media screen and (max-width: 450px) {
   .footer {
     background-color: var(--lightGrey);
@@ -233,4 +235,18 @@
     text-align: right;
     color: var(--darkGrey);
   }
+}
+
+@media screen and (max-width: 767px){
+  .footer {
+    background-color: var(--lightGrey);
+    width: 100%;
+    padding: 0;
+    display: block;
+    padding: 20px 20px;
+  }
+  .footer div{
+    padding-bottom: 10px;
+  }
+  
 }

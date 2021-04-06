@@ -1,7 +1,23 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { Header, Template, Footer } from "../components";
-export default function BasicSchool() {
+import program_style from "../styles/Program.module.css";
+import {useState} from 'react';
+import { Header, Template, Footer, FileComponent } from "../components";
+import { withNamespaces } from "react-i18next";
+
+function BasicSchool2( { t } ) {
+  const [items, setItems] = useState([{
+    name: "приказ 26 от 18.0121 (рус).pdf",
+    url : "https://drive.google.com/file/d/1xy9-7zioPlWpMBzN9CX3ceWMPU6Ycqnd/view"
+  },
+  {
+    name: "Список базовых организаций образования по реализации программы.pdf",
+    url: "https://drive.google.com/file/d/1VeQ8vh_Pzl-sl6TJ3NPiG_M_AeZBRhLy/view" 
+  },
+  {
+    name: "Приказ №26 рус.pdf",
+    url: "https://drive.google.com/file/d/1qRn1pgOUwGG_aUGAxLo4F4GK5-116SOL/view"
+  }])
   return (
     <div className={styles.container}>
       <Head>
@@ -13,16 +29,14 @@ export default function BasicSchool() {
       </Head>
       <Header blue={true} />
       <Template>
-        <div className={styles.divStyle}>
+        <div className={program_style.image}>
 
-          <embed src="https://drive.google.com/file/d/1xy9-7zioPlWpMBzN9CX3ceWMPU6Ycqnd/preview" type="application/pdf" className={styles.embedStyle} />
-
-          <embed src="https://drive.google.com/file/d/1qRn1pgOUwGG_aUGAxLo4F4GK5-116SOL/preview" type="application/pdf" className={styles.embedStyle} />
-
-          <embed src="https://drive.google.com/file/d/1VeQ8vh_Pzl-sl6TJ3NPiG_M_AeZBRhLy/preview" type="application/pdf" className={styles.embedStyle} />
+          <div className={program_style.title}>{t("basicSchoolsMenu")}</div>
         </div>
+        <FileComponent items={items}/>
       </Template>
       <Footer />
     </div>
   );
 }
+export default withNamespaces()(BasicSchool2);
