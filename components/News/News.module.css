@@ -40,8 +40,8 @@
 }
 
 .content a {
-  color: var(--mainBlue);
-  text-decoration: underline;
+    color: var(--white);
+    text-decoration: underline;
 }
 
 .tag {
@@ -194,10 +194,7 @@
   .content p {
     color: black;
   }
-  .content a {
-    color: var(--mainBlue);
-    text-decoration: none;
-  }
+  
 }
 
 
