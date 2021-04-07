@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { withNamespaces } from "react-i18next";
-
 import {
   Header,
   Template,

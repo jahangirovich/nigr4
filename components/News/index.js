@@ -11,7 +11,7 @@ import {
 } from "react-icons/fi";
 import useWindowSize from "../../hooks/useWindowSize";
 import i18n from "../../i18n";
-
+import Link from "next/link";
 import axios from "axios";
 import BigTab from "../BigTab";
 import cn from "classnames";
@@ -112,7 +112,10 @@ const News = ({ t, page, announcements }) => {
                 )}
                 <div className={styles.content}>
                   <p>{item.excerpt}</p>
-                  <a href="/news-review" className={styles.moreStyle}>Подробнее</a>
+                  <Link href={`/news-review?id=${item.id}`} className={styles.moreStyle}>
+                    Подробнее
+                  </Link>
+                  {/* <a href="/news-review" className={styles.moreStyle}>Подробнее</a> */}
                 </div>
                 {/* <div className={styles.tag}>Направления деятельности</div> */}
               </div>
