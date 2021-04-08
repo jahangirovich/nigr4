@@ -51,16 +51,16 @@ const Gallery = ({ t , item}) => {
   },[current])
 
   useEffect(async () => {
-    const fetch_gallery = tab == 'video' ?  
-      await axios.get(`${API_FETCH_URL}video/?lang=${i18n.language}`) : 
-      await axios.get(`${API_FETCH_URL}gallery`)
+    // const fetch_gallery = tab == 'video' ?  
+    //   await axios.get(`${API_FETCH_URL}video/?lang=${i18n.language}`) : 
+    //   await axios.get(`${API_FETCH_URL}gallery`)
 
-    setGallery(fetch_gallery.data.galleries);
-    setCurrent(0)
+    // setGallery(fetch_gallery.data.galleries);
+    // setCurrent(0)
 
-    // console.log(fetch_gallery.data.galleries[0])
-    let image = tab == "video" ? await axios.get(`${API_FETCH_URL}video/getVideos?id=${fetch_gallery.data.galleries[0]._id}`) : await axios.get(`${API_FETCH_URL}gallery/getPhotos?id=${fetch_gallery.data.galleries[0]._id}`)
-    setImages(tab == "video" ? image.data.videos : image.data.photos)
+    // // console.log(fetch_gallery.data.galleries[0])
+    // let image = tab == "video" ? await axios.get(`${API_FETCH_URL}video/getVideos?id=${fetch_gallery.data.galleries[0]._id}`) : await axios.get(`${API_FETCH_URL}gallery/getPhotos?id=${fetch_gallery.data.galleries[0]._id}`)
+    // setImages(tab == "video" ? image.data.videos : image.data.photos)
   }, [tab])
 
   const changeCurrent = async (value , i) =>{

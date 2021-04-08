@@ -56,6 +56,10 @@
   .logos {
     overflow-y: hidden;
     column-gap: 20px;
+    display: flex;
+  }
+  .logos a{
+    margin: 0 10px;
   }
   .logos::-webkit-scrollbar {
     display: none;

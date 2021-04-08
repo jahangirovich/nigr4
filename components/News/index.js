@@ -38,13 +38,13 @@ const News = ({ t, page, announcements }) => {
   const [width, setWidth] = useState(process.browser && window.innerWidth);
 
   useEffect(async () => {
-    const lang = i18n.language === "ru" ? "ru" : "kk";
-    const result = await axios(
-      `https://api.nigrch.kz/ghost/api/v3/content/posts/?key=26a5cee97b2078f355b708967f&filter=tag:${lang}%2Btag:${tab}`
-    );
+    // const lang = i18n.language === "ru" ? "ru" : "kk";
+    // const result = await axios(
+    //   `https://api.nigrch.kz/ghost/api/v3/content/posts/?key=26a5cee97b2078f355b708967f&filter=tag:${lang}%2Btag:${tab}`
+    // );
 
-    setNews(result.data.posts);
-    setCurrent(0);
+    // setNews(result.data.posts);
+    // setCurrent(0);
   }, [tab, i18n.language]);
 
   useEffect( () => {
